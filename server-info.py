@@ -52,7 +52,7 @@ while True:
     for i, core_percent in enumerate(psutil.cpu_percent(interval=1, percpu=True)):
         core = etree.SubElement(cpu_info, f"core_{i + 1}")
         etree.SubElement(core, "usage").text = f"{core_percent}%"
-
+    
     # Storage Information (excluding loop devices)
     storage_info = etree.SubElement(root, "storage")
     lsblk_output = subprocess.check_output(["lsblk", "--output", "NAME,SIZE,TYPE,MOUNTPOINT,FSTYPE"]).decode("utf-8")
@@ -60,13 +60,24 @@ while True:
     for line in lines:
         parts = line.split()
         name = parts[0].replace("├─", "").replace("└─", "")  # Remove symbols
-        if not name.startswith("loop"):
+        if len(parts) >= 4 and not name.startswith("loop"):  # Exclude loop devices
             device = etree.SubElement(storage_info, "device")
             etree.SubElement(device, "name").text = name
             etree.SubElement(device, "size").text = parts[1]
             etree.SubElement(device, "type").text = parts[2]
-            etree.SubElement(device, "mountpoint").text = parts[3] if len(parts) >= 4 else "Not Mounted"
-            etree.SubElement(device, "fstype").text = parts[4] if len(parts) >= 5 else "Unknown"
+            etree.SubElement(device, "mountpoint").text = parts[3]
+            
+            if len(parts) >= 5:
+                etree.SubElement(device, "fstype").text = parts[4]
+            else:
+                etree.SubElement(device, "fstype").text = "Unknown"
+
+            # Get disk usage information
+            if parts[3] != "Not" and parts[4] != "Mounted":
+                usage = psutil.disk_usage(parts[3])
+                etree.SubElement(device, "used").text = f"{usage.used / (1024 ** 3):.2f} GB"
+                etree.SubElement(device, "free").text = f"{usage.free / (1024 ** 3):.2f} GB"
+                etree.SubElement(device, "usage_percent").text = f"{usage.percent}%"
 
     # RAM Information
     ram_info = etree.SubElement(root, "ram")
