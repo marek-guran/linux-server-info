@@ -14,12 +14,29 @@ while True:
     cpu_info.attrib["type"] = platform.processor()
     cpu_info.attrib["architecture"] = platform.architecture()[0]
 
+    # Check if the CPU is ARM or desktop and if it's 32-bit or 64-bit
+    machine = platform.machine().lower()
+    if os.path.exists("/proc/device-tree"):
+        cpu_info.attrib["architecture_type"] = "ARM"
+    else:
+        cpu_info.attrib["architecture_type"] = "Desktop"
+
     # Get CPU brand and name using system commands
     try:
-        lscpu_output = subprocess.check_output(["lscpu"]).decode("utf-8")
-        for line in lscpu_output.splitlines():
-            if "Model name:" in line:
-                cpu_info.attrib["brand"] = line.split(":")[1].strip()
+        cpuinfo_output = subprocess.check_output(["cat", "/proc/cpuinfo"]).decode("utf-8")
+        lines = cpuinfo_output.splitlines()
+
+        for i in range(len(lines)):
+            if "Hardware" in lines[i]:
+                hardware_line = lines[i].split(":")
+                if len(hardware_line) > 1:
+                    hardware = hardware_line[1].strip()
+                    cpu_info.attrib["hardware"] = hardware
+            elif "model name" in lines[i].lower():
+                model_name_line = lines[i].split(":")
+                if len(model_name_line) > 1:
+                    model_name = model_name_line[1].strip()
+                    cpu_info.attrib["brand"] = model_name
     except subprocess.CalledProcessError:
         cpu_info.attrib["brand"] = "Not Available"
 
