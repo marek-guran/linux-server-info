@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_hw"
+        android:icon="@drawable/baseline_memory_24"
+        android:title="@string/hardware" />
+
+    <item
+        android:id="@+id/navigation_pihole"
+        android:icon="@drawable/pi_hole"
+        android:title="@string/pi_hole" />
+
+    <item
+        android:id="@+id/navigation_updates"
+        android:icon="@drawable/round_update_24"
+        android:title="@string/updates" />
+
+</menu>

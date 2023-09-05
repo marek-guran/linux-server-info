@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name" translatable="false">Pi Monitor</string>
+
+    <string name="model_off" translatable="false">📴</string>
+
+    <string name="cpu">CPU</string>
+    <string name="cpu_usage_off">Využitie: 📴</string>
+    <string name="cpu_temp_off">Teplota: 📴</string>
+    <string name="cpu_freq_off">Frekvencia: 📴</string>
+    <string name="cpu_voltage_off">Napätie: 📴</string>
+
+    <string name="cpu_usage">Využitie: </string>
+    <string name="cpu_temp">Teplota: </string>
+    <string name="cpu_freq">Frekvencia: </string>
+    <string name="cpu_voltage">Napätie: </string>
+
+
+    <string name="gpu">GPU</string>
+    <string name="gpu_freq_off">Frekvencia: 📴</string>
+    <string name="gpu_temp_off">Teplota: 📴</string>
+
+    <string name="gpu_freq">Frekvencia: </string>
+    <string name="gpu_temp">Teplota: </string>
+
+
+    <string name="ram">RAM</string>
+    <string name="ram_usage_off">Využitie: 📴</string>
+
+    <string name="ram_usage">Využitie: </string>
+
+
+    <string name="sd_card">SD Karta</string>
+    <string name="free_storage_off">Voľné: 📴</string>
+
+    <string name="free_storage">Voľné: </string>
+
+
+    <string name="data_last_24">Dáta za posledných 24 hodín</string>
+    <string name="total_queries">Skontrolovaných Stránok</string>
+    <string name="queries_blocked">Zablokovaných Reklám</string>
+    <string name="percentage_blocked">Zablokované Reklamy v Percentách</string>
+    <string name="domains_on_adlists">Domén na Reklamnom Liste</string>
+    <string name="no_connection">Bez pripojenia</string>
+
+    <string name="temperature_error">Teplota: chyba</string>
+    <string name="usage_error">Využitie: chyba</string>
+    <string name="fequency_error">Frekvencia: chyba</string>
+    <string name="voltage_error">Napätie: chyba</string>
+    <string name="storage_error">Voľné: chyba</string>
+    <string name="model_error">Model: chyba</string>
+
+
+    <string name="hardware">Hardvér</string>
+    <string name="pi_hole">Pi-hole</string>
+    <string name="nas">NAS</string>
+
+    <string name="reboot">Reštartovať</string>
+    <string name="shutdown">Vypnúť</string>
+    <string name="restart_text">Naozaj si prajete reštartovať?</string>
+    <string name="shutdown_title">Naozaj si prajete vypnúť?</string>
+    <string name="shutdown_description">Budete musieť manuálne zapnúť zariadenie aby sa znova spustilo.</string>
+    <string name="yes">Áno</string>
+    <string name="no">Nie</string>
+
+
+    <string name="update_gravity_list">Aktualizovať AdLists</string>
+    <string name="restart_pihole">Reštartovať Pi-hole</string>
+    <string name="update_adlists_question">Aktualizovať AdLists?</string>
+    <string name="restart_pihole_question">Naozaj si prajete reštartovať Pi-hole?</string>
+
+
+    <string name="settings">Nastavenia</string>
+    <string name="updates">Aktualizácie</string>
+    <string name="open_link">Otvoriť</string>
+    <string name="version">Verzia:</string>
+
+    <string name="error">chyba</string>
+</resources>

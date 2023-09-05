@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="raspberry">#B70F3F</color>
+    <color name="card">#f2f2fb</color>
+    <color name="card_items">#424242</color>
+    <color name="text">#f2f2fb</color>
+    <color name="text_on_pill">#000000</color>
+
+    <color name="custom_background">#111217</color>
+
+    <color name="active_item">#5E5E5E</color>
+    <color name="item_color">#f2f2fb</color>
+    <color name="nav_menu_color">#292929</color>
+
+    <color name="total_queries">#007996</color>
+    <color name="percentage_blocked">#B0720C</color>
+    <color name="queries_blocked">#CE273A</color>
+    <color name="domains_on_adlist">#005C32</color>
+
+    <color name="total_queries_img">#00677F</color>
+    <color name="percentage_blocked_img">#96610A</color>
+    <color name="queries_blocked_img">#7B2B1F</color>
+    <color name="domains_on_adlist_img">#004E2B</color>
+</resources>
