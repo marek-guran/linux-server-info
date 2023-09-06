@@ -4,16 +4,16 @@ plugins {
 }
 
 android {
-    namespace 'com.marekguran.raspberrypi'
+    namespace 'com.marekguran.serverinfo'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.marekguran.raspberrypi"
+        applicationId "com.marekguran.serverinfo"
         minSdk 23
         //noinspection OldTargetApi
         targetSdk 33
         versionCode 1
-        versionName "1.1"
+        versionName "0.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -1,4 +1,4 @@
-package com.marekguran.raspberrypi
+package com.marekguran.serverinfo
 
 import org.junit.Test
 

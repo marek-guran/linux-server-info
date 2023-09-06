@@ -1,11 +1,11 @@
-package com.marekguran.raspberrypi.ui.monitoring
+package com.marekguran.serverinfo.ui.monitoring
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.marekguran.raspberrypi.databinding.FragmentMonitoringBinding
+import com.marekguran.serverinfo.databinding.FragmentMonitoringBinding
 
 class MonitoringFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.marekguran.raspberrypi.ui.hardware
+package com.marekguran.serverinfo.ui.hardware
 
 import android.R
 import android.graphics.Color
@@ -13,9 +13,8 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
-import com.marekguran.raspberrypi.databinding.FragmentHardwareBinding
+import com.marekguran.serverinfo.databinding.FragmentHardwareBinding
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
@@ -24,7 +23,6 @@ import java.io.InputStreamReader
 import java.lang.ref.WeakReference
 import java.net.HttpURLConnection
 import java.net.URL
-import androidx.core.content.ContextCompat
 
 class HardwareFragment : Fragment() {
 

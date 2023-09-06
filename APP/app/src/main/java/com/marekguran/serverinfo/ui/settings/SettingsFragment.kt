@@ -1,11 +1,11 @@
-package com.marekguran.raspberrypi.ui.settings
+package com.marekguran.serverinfo.ui.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.marekguran.raspberrypi.R
+import com.marekguran.serverinfo.R
 
 /**
  * A simple [Fragment] subclass.

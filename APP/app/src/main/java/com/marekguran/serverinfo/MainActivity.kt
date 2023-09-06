@@ -1,4 +1,4 @@
-package com.marekguran.raspberrypi
+package com.marekguran.serverinfo
 
 import android.os.AsyncTask
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-import com.marekguran.raspberrypi.databinding.ActivityMainBinding
+import com.marekguran.serverinfo.databinding.ActivityMainBinding
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStream

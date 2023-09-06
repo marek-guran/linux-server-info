@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_hw"
-        android:name="com.marekguran.raspberrypi.ui.hardware.HardwareFragment"
+        android:name="com.marekguran.serverinfo.ui.hardware.HardwareFragment"
         android:label="Hardvér"
         tools:layout="@layout/fragment_hardware" />
 
     <fragment
         android:id="@+id/navigation_system"
-        android:name="com.marekguran.raspberrypi.ui.system.SystemFragment"
+        android:name="com.marekguran.serverinfo.ui.system.SystemFragment"
         android:label="System"
         tools:layout="@layout/fragment_system" />
 
     <fragment
         android:id="@+id/navigation_monitoring"
-        android:name="com.marekguran.raspberrypi.ui.monitoring.MonitoringFragment"
+        android:name="com.marekguran.serverinfo.ui.monitoring.MonitoringFragment"
         android:label="Monitoring"
         tools:layout="@layout/fragment_monitoring" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.marekguran.raspberrypi.ui.settings.SettingsFragment"
+        android:name="com.marekguran.serverinfo.ui.settings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

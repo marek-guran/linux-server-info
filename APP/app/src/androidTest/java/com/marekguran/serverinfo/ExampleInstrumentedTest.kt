@@ -1,4 +1,4 @@
-package com.marekguran.raspberrypi
+package com.marekguran.serverinfo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.marekguran.raspberrypi.ui
+package com.marekguran.serverinfo.ui
 
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.ElementList

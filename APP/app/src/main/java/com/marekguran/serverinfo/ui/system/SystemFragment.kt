@@ -1,4 +1,4 @@
-package com.marekguran.raspberrypi.ui.system
+package com.marekguran.serverinfo.ui.system
 
 import android.os.AsyncTask
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.marekguran.raspberrypi.R
-import com.marekguran.raspberrypi.databinding.FragmentSystemBinding
+import com.marekguran.serverinfo.R
+import com.marekguran.serverinfo.databinding.FragmentSystemBinding
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStream
