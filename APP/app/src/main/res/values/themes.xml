@@ -12,14 +12,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/custom_background</item>
         <!-- Customize your theme here. -->
-        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/raspberry</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/custom_background</item>
     </style>
 
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/active_item</item>
-    </style>
-
-    <style name="MyAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:windowBackground">@drawable/dialog</item>
     </style>
 </resources>

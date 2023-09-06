@@ -17,134 +17,134 @@
             android:id="@+id/distribution"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="5dp"
             android:text="@string/model_off"
             android:textAlignment="center"
             android:textColor="@color/text"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/cpu_name"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:background="@drawable/sidepill"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:text="@string/cpu"
+                android:textAlignment="center"
+                android:textColor="@color/text_on_pill"
+                android:textSize="40sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/cpu_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cpu"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="20dp"
-                    android:background="@drawable/sidepill"
-                    android:textAlignment="center"
-                    android:textColor="@color/text_on_pill"
-                    android:textSize="40sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/cpu_usage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cpu_usage_off"
-                    android:textColor="@color/text"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textSize="26sp" />
-
-                <TextView
-                    android:id="@+id/cpu_temp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cpu_temp_off"
-                    android:textColor="@color/text"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textSize="26sp" />
-
-                <TextView
-                    android:id="@+id/cpu_speed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cpu_freq_off"
-                    android:textColor="@color/text"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textSize="26sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/cpu_usage"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/cpu_usage_off"
+                android:textColor="@color/text"
+                android:textSize="26sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Memory"
-                    android:textAlignment="center"
-                    android:background="@drawable/sidepill"
-                    android:textColor="@color/text_on_pill"
-                    android:textSize="40sp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="20dp"
-                    android:paddingBottom="5dp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/cpu_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/cpu_temp_off"
+                android:textColor="@color/text"
+                android:textSize="26sp" />
 
-                <TextView
-                    android:id="@+id/ram_usage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cpu_usage_off"
-                    android:textColor="@color/text"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textSize="26sp" />
+            <TextView
+                android:id="@+id/cpu_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/cpu_freq_off"
+                android:textColor="@color/text"
+                android:textSize="26sp" />
 
-                <TextView
-                    android:id="@+id/ram_free"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Free: "
-                    android:textColor="@color/text"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textSize="26sp" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/ram_total"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total: "
-                    android:textColor="@color/text"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:textSize="26sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sidepill"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Memory"
+                android:textAlignment="center"
+                android:textColor="@color/text_on_pill"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ram_usage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/cpu_usage_off"
+                android:textColor="@color/text"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/ram_free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Free: "
+                android:textColor="@color/text"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/ram_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Total: "
+                android:textColor="@color/text"
+                android:textSize="26sp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/storage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Storage"
                 android:background="@drawable/sidepill"
                 android:paddingStart="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="5dp"
+                android:text="Storage"
                 android:textColor="@color/text_on_pill"
                 android:textSize="40sp"
                 android:textStyle="bold" />
@@ -165,8 +165,47 @@
                 android:id="@+id/storageContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:orientation="vertical" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sidepill"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="Network"
+                android:textColor="@color/text_on_pill"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="@color/card_items"
+            app:cardCornerRadius="20dp"
+            app:cardPreventCornerOverlap="true">
+
+            <LinearLayout
+                android:id="@+id/networkContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical" />
         </com.google.android.material.card.MaterialCardView>
 
 

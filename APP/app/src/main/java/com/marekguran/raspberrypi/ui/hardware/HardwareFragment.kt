@@ -52,15 +52,36 @@ class HardwareFragment : Fragment() {
         val ramFreeTextView: TextView = binding.ramFree
         val ramTotalTextView: TextView = binding.ramTotal
         val storageContainer: LinearLayout = binding.storageContainer
+        val networkContainer: LinearLayout = binding.networkContainer
 
 
         // Fetch JSON data initially
-        fetchDataAndUpdateViews(cpuUsageTextView, cpuTempTextView, cpuClockTextView, distributionTextView, ramFreeTextView, ramTotalTextView, ramUsageTextView, storageContainer)
+        fetchDataAndUpdateViews(
+            cpuUsageTextView,
+            cpuTempTextView,
+            cpuClockTextView,
+            distributionTextView,
+            ramFreeTextView,
+            ramTotalTextView,
+            ramUsageTextView,
+            storageContainer,
+            networkContainer
+        )
 
         // Schedule periodic data refresh every 5 seconds
         handler.postDelayed(object : Runnable {
             override fun run() {
-                fetchDataAndUpdateViews(cpuUsageTextView, cpuTempTextView, cpuClockTextView, distributionTextView, ramUsageTextView, ramFreeTextView, ramTotalTextView, storageContainer)
+                fetchDataAndUpdateViews(
+                    cpuUsageTextView,
+                    cpuTempTextView,
+                    cpuClockTextView,
+                    distributionTextView,
+                    ramUsageTextView,
+                    ramFreeTextView,
+                    ramTotalTextView,
+                    storageContainer,
+                    networkContainer
+                )
                 handler.postDelayed(this, 5000) // 5000 milliseconds = 5 seconds
             }
         }, 5000) // Initial delay also set to 5 seconds
@@ -83,9 +104,20 @@ class HardwareFragment : Fragment() {
         ramUsageTextView: TextView,
         ramFreeTextView: TextView,
         ramTotalTextView: TextView,
-        storageContainer: LinearLayout
+        storageContainer: LinearLayout,
+        networkContainer: LinearLayout
     ) {
-        FetchJsonDataTask(cpuUsageTextView, cpuTempTextView, cpuClockTextView, distributionTextView, ramTotalTextView, ramFreeTextView, ramUsageTextView, storageContainer).execute(jsonUrl)
+        FetchJsonDataTask(
+            cpuUsageTextView,
+            cpuTempTextView,
+            cpuClockTextView,
+            distributionTextView,
+            ramTotalTextView,
+            ramFreeTextView,
+            ramUsageTextView,
+            storageContainer,
+            networkContainer
+        ).execute(jsonUrl)
     }
 
     private class FetchJsonDataTask(
@@ -96,13 +128,15 @@ class HardwareFragment : Fragment() {
         private val ramTotalTextView: TextView,
         private val ramFreeTextView: TextView,
         private val ramUsedTextView: TextView,
-        private val storageContainer: LinearLayout
+        private val storageContainer: LinearLayout,
+        private val networkContainer: LinearLayout
     ) : AsyncTask<String, Void, JSONObject>() {
 
         private val weakCpuUsageTextView: WeakReference<TextView> = WeakReference(cpuUsageTextView)
         private val weakCpuTempTextView: WeakReference<TextView> = WeakReference(cpuTempTextView)
         private val weakCpuClockTextView: WeakReference<TextView> = WeakReference(cpuClockTextView)
-        private val weakDistributionTextView: WeakReference<TextView> = WeakReference(distributionTextView)
+        private val weakDistributionTextView: WeakReference<TextView> =
+            WeakReference(distributionTextView)
         private val weakRamFreeTextView: WeakReference<TextView> = WeakReference(ramFreeTextView)
         private val weakRamTotalTextView: WeakReference<TextView> = WeakReference(ramTotalTextView)
         private val weakRamUsageTextView: WeakReference<TextView> = WeakReference(ramUsedTextView)
@@ -138,9 +172,41 @@ class HardwareFragment : Fragment() {
 
         override fun onPostExecute(jsonObject: JSONObject?) {
             super.onPostExecute(jsonObject)
-            jsonObject?.let { updateTextViews(it)
-                createStorageViews(it)}
+            jsonObject?.let {
+                updateTextViews(it)
+                createStorageViews(it)
+                createNetworkViews(it)
+            }
             Log.d("JSON Data", jsonObject.toString())
+        }
+
+        private fun createNetworkViews(jsonObject: JSONObject) {
+            // Clear existing views
+            networkContainer.removeAllViews()
+
+            val networkObject = jsonObject.getJSONObject("network")
+
+            val networkNames = networkObject.keys()
+            while (networkNames.hasNext()) {
+                val name = networkNames.next()
+                val networkData = networkObject.getJSONObject(name)
+
+                val isUp = networkData.getBoolean("is_up")
+                val speed = networkData.getString("speed")
+
+                val networkNameTextView = TextView(weakCpuUsageTextView.get()?.context)
+                networkNameTextView.text = name
+                networkNameTextView.setTextColor(Color.parseColor("#f2f2fb"))
+
+                val networkSpeedTextView = TextView(weakCpuUsageTextView.get()?.context)
+                networkSpeedTextView.text = "Running: $isUp \nSpeed: $speed"
+                networkSpeedTextView.setTextColor(Color.parseColor("#f2f2fb"))
+                networkSpeedTextView.setPadding(0, 0, 0, 10)
+
+                // Add the views to the network container
+                networkContainer.addView(networkNameTextView)
+                networkContainer.addView(networkSpeedTextView)
+            }
         }
 
         private fun createStorageViews(jsonObject: JSONObject) {
@@ -155,9 +221,12 @@ class HardwareFragment : Fragment() {
                 val usagePercent = storageObject.getString("usage_percent")
                 val usedStorage = storageObject.getString("used")
                 val totalStorage = storageObject.getString("size")
+                val mountedStorage = storageObject.getString("mountpoint")
+                val fstypeStorage = storageObject.getString("fstype")
 
                 val storageNameTextView = TextView(weakCpuUsageTextView.get()?.context)
-                storageNameTextView.text = name
+                storageNameTextView.text = "$name \nMounted at: $mountedStorage\n" +
+                        "File System: $fstypeStorage"
                 storageNameTextView.setTextColor(Color.parseColor("#f2f2fb"))
 
                 val progressBar = ProgressBar(
@@ -170,6 +239,7 @@ class HardwareFragment : Fragment() {
                 val progressBarTextView = TextView(weakCpuUsageTextView.get()?.context)
                 progressBarTextView.text = "Used $usedStorage out of $totalStorage"
                 progressBarTextView.setTextColor(Color.parseColor("#f2f2fb"))
+                progressBarTextView.setPadding(0, 0, 0, 10)
 
                 // Add the views to the storage container
                 storageContainer.addView(storageNameTextView)

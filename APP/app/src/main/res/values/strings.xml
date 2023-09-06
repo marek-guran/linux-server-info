@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Pi Monitor</string>
+    <string name="app_name">Server Info</string>
 
     <string name="model_off" translatable="false">📴</string>
 
@@ -77,4 +77,6 @@
     <string name="version">Version:</string>
 
     <string name="error">error</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

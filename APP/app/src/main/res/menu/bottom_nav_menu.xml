@@ -3,17 +3,22 @@
 
     <item
         android:id="@+id/navigation_hw"
-        android:icon="@drawable/baseline_memory_24"
-        android:title="@string/hardware" />
+        android:icon="@drawable/cpu"
+        android:title="Hardware" />
 
     <item
-        android:id="@+id/navigation_pihole"
-        android:icon="@drawable/pi_hole"
-        android:title="@string/pi_hole" />
+        android:id="@+id/navigation_system"
+        android:icon="@drawable/dist_default"
+        android:title="System" />
 
     <item
-        android:id="@+id/navigation_updates"
-        android:icon="@drawable/round_update_24"
-        android:title="@string/updates" />
+        android:id="@+id/navigation_monitoring"
+        android:icon="@drawable/graph"
+        android:title="Monitoring" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/settings"
+        android:title="Settings" />
 
 </menu>
