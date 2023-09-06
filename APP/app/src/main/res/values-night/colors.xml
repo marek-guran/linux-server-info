@@ -20,6 +20,16 @@
     <color name="item_color">#f2f2fb</color>
     <color name="nav_menu_color">#292929</color>
 
+    <color name="ubuntu">#dd4814</color>
+    <color name="raspbian">#B70F3F</color>
+    <color name="raspbian_green">#46ae4b</color>
+    <color name="linux_default">#FFFFFF</color>
+    <color name="debian">#d70a53</color>
+
+    <color name="amd">#FFFFFF</color>
+    <color name="broadcom">#FFFFFF</color>
+    <color name="broadcom_red">#cc092f</color>
+
     <color name="total_queries">#007996</color>
     <color name="percentage_blocked">#B0720C</color>
     <color name="queries_blocked">#CE273A</color>

@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="@string/cpu_usage_off"
+                android:text="Usage:"
                 android:textColor="@color/text"
                 android:textSize="26sp" />
 
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="@string/cpu_temp_off"
+                android:text="Temperature"
                 android:textColor="@color/text"
                 android:textSize="26sp" />
 
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="@string/cpu_freq_off"
+                android:text="Clock Speed:"
                 android:textColor="@color/text"
                 android:textSize="26sp" />
 
@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="@string/cpu_usage_off"
+                android:text="Used:"
                 android:textColor="@color/text"
                 android:textSize="26sp" />
 
