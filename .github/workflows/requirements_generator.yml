@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x
+        python-version: 3.11
 
     - name: Install pipreqs
       run: |
@@ -30,7 +30,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
       run: |
-        git config user.name "Marek Guráň"
+        git config user.name "Requirements Update"
         git config user.email "skemgi2@gmail.com"
         git add requirements.txt
         git commit -m "Update requirements.txt"
