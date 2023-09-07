@@ -1,5 +1,8 @@
 # Work in progress
 Documentation will be added once its done. (You are here too soon)
+# Sneak Peak
+![20230907_181409746](https://github.com/marek-guran/linux-server-info/assets/26904790/7ad7f24e-e40d-4fd9-9048-00f0f90e5e4b)
+![20230907_181409749](https://github.com/marek-guran/linux-server-info/assets/26904790/f3fc92f4-300b-4220-835f-6d025aeb1ee3)
 
 # If you want to test very alpha versions
 ## Install these packages
