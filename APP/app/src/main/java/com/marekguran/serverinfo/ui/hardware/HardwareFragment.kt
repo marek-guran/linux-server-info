@@ -1,6 +1,7 @@
 package com.marekguran.serverinfo.ui.hardware
 
 import android.R
+import android.content.Context
 import android.graphics.Color
 import android.os.AsyncTask
 import android.os.Bundle
@@ -13,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.marekguran.serverinfo.databinding.FragmentHardwareBinding
 import org.json.JSONObject
@@ -23,6 +25,7 @@ import java.io.InputStreamReader
 import java.lang.ref.WeakReference
 import java.net.HttpURLConnection
 import java.net.URL
+import kotlin.coroutines.coroutineContext
 
 class HardwareFragment : Fragment() {
 
@@ -51,7 +54,10 @@ class HardwareFragment : Fragment() {
         val ramTotalTextView: TextView = binding.ramTotal
         val storageContainer: LinearLayout = binding.storageContainer
         val networkContainer: LinearLayout = binding.networkContainer
-
+        val cpuUsageProgressBar: ProgressBar = binding.cpuUsageProgress
+        val cpuTempProgressBar: ProgressBar = binding.cpuTemperatureProgress
+        val ramUsagePercent: TextView = binding.ramUsagePercent
+        val ramUsageProgress: ProgressBar = binding.ramUsageProgress
 
         // Fetch JSON data initially
         fetchDataAndUpdateViews(
@@ -63,7 +69,11 @@ class HardwareFragment : Fragment() {
             ramTotalTextView,
             ramUsageTextView,
             storageContainer,
-            networkContainer
+            networkContainer,
+            cpuUsageProgressBar,
+            cpuTempProgressBar,
+            ramUsagePercent,
+            ramUsageProgress
         )
 
         // Schedule periodic data refresh every 5 seconds
@@ -78,7 +88,11 @@ class HardwareFragment : Fragment() {
                     ramFreeTextView,
                     ramTotalTextView,
                     storageContainer,
-                    networkContainer
+                    networkContainer,
+                    cpuUsageProgressBar,
+                    cpuTempProgressBar,
+                    ramUsagePercent,
+                    ramUsageProgress
                 )
                 handler.postDelayed(this, 5000) // 5000 milliseconds = 5 seconds
             }
@@ -103,7 +117,11 @@ class HardwareFragment : Fragment() {
         ramFreeTextView: TextView,
         ramTotalTextView: TextView,
         storageContainer: LinearLayout,
-        networkContainer: LinearLayout
+        networkContainer: LinearLayout,
+        cpuUsageProgressBar: ProgressBar,
+        cpuTempProgressBar: ProgressBar,
+        ramUsagePercent: TextView,
+        ramUsageProgress: ProgressBar
     ) {
         FetchJsonDataTask(
             cpuUsageTextView,
@@ -114,7 +132,11 @@ class HardwareFragment : Fragment() {
             ramFreeTextView,
             ramUsageTextView,
             storageContainer,
-            networkContainer
+            networkContainer,
+            cpuUsageProgressBar,
+            cpuTempProgressBar,
+            ramUsagePercent,
+            ramUsageProgress
         ).execute(jsonUrl)
     }
 
@@ -127,7 +149,11 @@ class HardwareFragment : Fragment() {
         private val ramFreeTextView: TextView,
         private val ramUsedTextView: TextView,
         private val storageContainer: LinearLayout,
-        private val networkContainer: LinearLayout
+        private val networkContainer: LinearLayout,
+        private val cpuUsageProgressBar: ProgressBar,
+        private val cpuTempProgressBar: ProgressBar,
+        private val ramUsagePercent: TextView,
+        private val ramUsageProgress: ProgressBar
     ) : AsyncTask<String, Void, JSONObject>() {
 
         private val weakCpuUsageTextView: WeakReference<TextView> = WeakReference(cpuUsageTextView)
@@ -135,9 +161,10 @@ class HardwareFragment : Fragment() {
         private val weakCpuClockTextView: WeakReference<TextView> = WeakReference(cpuClockTextView)
         private val weakDistributionTextView: WeakReference<TextView> =
             WeakReference(distributionTextView)
+        private val weakRamUsageTextView: WeakReference<TextView> = WeakReference(ramUsedTextView)
         private val weakRamFreeTextView: WeakReference<TextView> = WeakReference(ramFreeTextView)
         private val weakRamTotalTextView: WeakReference<TextView> = WeakReference(ramTotalTextView)
-        private val weakRamUsageTextView: WeakReference<TextView> = WeakReference(ramUsedTextView)
+        private val weakRamUsagePercentTextView: WeakReference<TextView> = WeakReference(ramUsagePercent)
 
         override fun doInBackground(vararg params: String?): JSONObject? {
             val urlString = params[0]
@@ -250,7 +277,10 @@ class HardwareFragment : Fragment() {
             try {
                 val cpuInfo = jsonObject.getJSONObject("cpu")
                 val cpuUsage = cpuInfo.getString("usage")
+                // Extract the numeric part (excluding %) and convert it to an integer
+                val cpuUsageProgressValue = cpuUsage.split(".")[0].toIntOrNull() ?: 0
                 val cpuTemp = cpuInfo.getString("temperature")
+                val cpuTempProgressValue = cpuTemp.split(".")[0].toIntOrNull() ?: 0
                 val cpuClock = cpuInfo.getString("speed")
 
                 val os = jsonObject.getJSONObject("os")
@@ -260,17 +290,25 @@ class HardwareFragment : Fragment() {
                 val ramUsage = ram.getString("used")
                 val ramFree = ram.getString("free")
                 val ramTotal = ram.getString("total")
+                val ramPercent = ram.getString("usage_percent")
+                val ramProgressValue = ramPercent.split("%")[0].toIntOrNull() ?: 0
 
-                weakCpuUsageTextView.get()?.text = "Usage: $cpuUsage"
-                weakCpuTempTextView.get()?.text = "Temperature: $cpuTemp℃"
+                weakCpuUsageTextView.get()?.text = cpuUsage
+                cpuUsageProgressBar.progress = cpuUsageProgressValue
+                cpuTempProgressBar.progress = cpuTempProgressValue
+                weakCpuTempTextView.get()?.text = "$cpuTemp℃"
                 weakCpuClockTextView.get()?.text = "Clock Speed: $cpuClock"
                 weakDistributionTextView.get()?.text = "$distribution"
                 weakRamUsageTextView.get()?.text = "Used: $ramUsage"
                 weakRamFreeTextView.get()?.text = "Free: $ramFree"
                 weakRamTotalTextView.get()?.text = "Total: $ramTotal"
+                weakRamUsagePercentTextView.get()?.text = ramPercent
+                ramUsageProgress.progress = ramProgressValue
             } catch (e: Exception) {
                 e.printStackTrace()
             }
         }
     }
 }
+
+

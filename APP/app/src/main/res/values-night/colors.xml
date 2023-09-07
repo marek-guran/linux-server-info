@@ -30,6 +30,9 @@
     <color name="broadcom">#FFFFFF</color>
     <color name="broadcom_red">#cc092f</color>
 
+    <color name="background_progress_bar">#424242</color>
+    <color name="usage_progress_bar">#111217</color>
+
     <color name="total_queries">#007996</color>
     <color name="percentage_blocked">#B0720C</color>
     <color name="queries_blocked">#CE273A</color>
