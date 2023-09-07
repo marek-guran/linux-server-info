@@ -1,4 +1,4 @@
-![Linux Badge](https://img.shields.io/badge/-Linux-grey?logo=linux) ![Kotlin Badge](https://img.shields.io/badge/-Kotlin-0095D5?logo=kotlin&logoColor=white) ![Python Badge](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
+![Linux Badge](https://img.shields.io/badge/-Linux-grey?logo=linux) ![Kotlin Badge](https://img.shields.io/badge/-Kotlin-0095D5?logo=kotlin&logoColor=white) ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) 
 # Work in progress
 Documentation will be added once its done. (You are here too soon)
 # Sneak Peak
