@@ -28,7 +28,7 @@ jobs:
 
     - name: Commit changes
       env:
-        GITHUB_TOKEN: ${{ secrets.actions_token }}
+        GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
       run: |
         git config user.name "Marek Guráň"
         git config user.email "skemgi2@gmail.com"
