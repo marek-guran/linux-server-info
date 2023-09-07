@@ -57,7 +57,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
+                    android:layout_marginStart="10dp"
                     android:paddingEnd="10dp"
                     android:text="Usage"
                     android:textColor="@color/text"
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
+                    android:layout_marginStart="10dp"
                     android:paddingEnd="10dp"
                     android:text="Temperature"
                     android:textColor="@color/text"
@@ -132,7 +132,7 @@
                     android:id="@+id/cpu_speed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
+                    android:layout_marginStart="10dp"
                     android:paddingEnd="10dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="5dp"
@@ -167,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
+                    android:layout_marginEnd="10dp"
                     android:text="Usage"
                     android:layout_gravity="right"
                     android:textColor="@color/text"
@@ -185,7 +185,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="45sp"
                         android:progress="0"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
                         android:progressDrawable="@drawable/custom_progress_bar" />
 
                     <TextView
@@ -206,7 +206,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
                     android:text="Used:"
                     android:textColor="@color/text"
@@ -218,9 +218,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
-                    android:text="Free: "
+                    android:text="Free:"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -230,9 +230,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
-                    android:text="Total: "
+                    android:text="Total:"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
