@@ -1,0 +1,35 @@
+name: Generate requirements.txt
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+
+    - name: Install pipreqs
+      run: |
+        pip install pipreqs
+
+    - name: Generate requirements.txt
+      run: |
+        pipreqs --force .
+
+    - name: Commit changes
+      run: |
+        git config user.name "Marek Guráň"
+        git config user.email "skemgi2@gmail.com"
+        git add requirements.txt
+        git commit -m "Update requirements.txt"
+        git push origin main
