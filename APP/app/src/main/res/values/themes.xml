@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/custom_background</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/custom_background</item>
     </style>
 

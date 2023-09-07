@@ -71,12 +71,11 @@
 
                     <ProgressBar
                         android:id="@+id/cpu_usage_progress"
-                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        style="@style/CustomProgressBarStyle"
                         android:layout_width="match_parent"
                         android:layout_height="45sp"
                         android:progress="0"
-                        android:layout_marginStart="10dp"
-                        android:progressDrawable="@drawable/custom_progress_bar" />
+                        android:layout_marginStart="10dp" />
 
                     <TextView
                         android:id="@+id/cpu_usage"
@@ -108,12 +107,11 @@
 
                     <ProgressBar
                         android:id="@+id/cpu_temperature_progress"
-                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        style="@style/CustomProgressBarStyle"
                         android:layout_width="match_parent"
                         android:layout_height="45sp"
                         android:progress="0"
-                        android:layout_marginStart="10dp"
-                        android:progressDrawable="@drawable/custom_progress_bar" />
+                        android:layout_marginStart="10dp" />
 
                     <TextView
                         android:id="@+id/cpu_temp"
@@ -181,12 +179,11 @@
 
                     <ProgressBar
                         android:id="@+id/ram_usage_progress"
-                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        style="@style/CustomProgressBarStyle"
                         android:layout_width="match_parent"
                         android:layout_height="45sp"
                         android:progress="0"
-                        android:layout_marginEnd="10dp"
-                        android:progressDrawable="@drawable/custom_progress_bar" />
+                        android:layout_marginEnd="10dp" />
 
                     <TextView
                         android:id="@+id/ram_usage_percent"
@@ -266,7 +263,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="@color/card_items"
+            app:cardBackgroundColor="@color/card"
             app:cardCornerRadius="20dp"
             app:cardPreventCornerOverlap="true">
 
@@ -305,7 +302,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="@color/card_items"
+            app:cardBackgroundColor="@color/card"
             app:cardCornerRadius="20dp"
             app:cardPreventCornerOverlap="true">
 

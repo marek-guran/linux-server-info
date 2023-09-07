@@ -1,6 +1,5 @@
 package com.marekguran.serverinfo.ui.hardware
 
-import android.R
 import android.content.Context
 import android.graphics.Color
 import android.os.AsyncTask
@@ -14,7 +13,8 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.marekguran.serverinfo.databinding.FragmentHardwareBinding
 import org.json.JSONObject
@@ -25,7 +25,8 @@ import java.io.InputStreamReader
 import java.lang.ref.WeakReference
 import java.net.HttpURLConnection
 import java.net.URL
-import kotlin.coroutines.coroutineContext
+import android.R as R1
+import com.marekguran.serverinfo.R as R2
 
 class HardwareFragment : Fragment() {
 
@@ -222,11 +223,13 @@ class HardwareFragment : Fragment() {
                 val networkNameTextView = TextView(weakCpuUsageTextView.get()?.context)
                 networkNameTextView.text = name
                 networkNameTextView.setTextColor(Color.parseColor("#f2f2fb"))
+                networkNameTextView.setTextSize(16F)
 
                 val networkSpeedTextView = TextView(weakCpuUsageTextView.get()?.context)
                 networkSpeedTextView.text = "Running: $isUp \nSpeed: $speed"
                 networkSpeedTextView.setTextColor(Color.parseColor("#f2f2fb"))
                 networkSpeedTextView.setPadding(0, 0, 0, 10)
+                networkSpeedTextView.setTextSize(16F)
 
                 // Add the views to the network container
                 networkContainer.addView(networkNameTextView)
@@ -253,18 +256,32 @@ class HardwareFragment : Fragment() {
                 storageNameTextView.text = "$name \nMounted at: $mountedStorage\n" +
                         "File System: $fstypeStorage"
                 storageNameTextView.setTextColor(Color.parseColor("#f2f2fb"))
+                storageNameTextView.setTextSize(16F)
+                storageNameTextView.setPadding(0, 0, 0, 5)
 
                 val progressBar = ProgressBar(
                     weakCpuUsageTextView.get()?.context,
                     null,
-                    R.attr.progressBarStyleHorizontal
+                    R1.attr.progressBarStyleHorizontal
                 )
                 progressBar.progress = usagePercent.replace("%", "").toFloat().toInt()
+                // Retrieve the Drawable from the resource ID using ContextCompat
+                progressBar.progressDrawable = ContextCompat.getDrawable(weakCpuUsageTextView?.get()?.context!!, R2.drawable.custom_progress_bar)
+
+                val progressBarHeightInPixels = 40
+
+                val layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    progressBarHeightInPixels
+                )
+
+                progressBar.layoutParams = layoutParams
 
                 val progressBarTextView = TextView(weakCpuUsageTextView.get()?.context)
                 progressBarTextView.text = "Used $usedStorage out of $totalStorage"
                 progressBarTextView.setTextColor(Color.parseColor("#f2f2fb"))
-                progressBarTextView.setPadding(0, 0, 0, 10)
+                progressBarTextView.setTextSize(16F)
+                progressBarTextView.setPadding(0, 5, 0, 10)
 
                 // Add the views to the storage container
                 storageContainer.addView(storageNameTextView)
