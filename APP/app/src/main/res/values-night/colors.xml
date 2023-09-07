@@ -9,17 +9,17 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="raspberry">#B70F3F</color>
-    <color name="pill">#FFFFFF</color>
-    <color name="card">#2B2A2A</color>
+    <color name="pill">#264653</color>
+    <color name="card">#365A6C</color>
     <color name="card_items">#424242</color>
     <color name="text">#f2f2fb</color>
-    <color name="text_on_pill">#000000</color>
+    <color name="text_on_pill">#f2f2fb</color>
 
-    <color name="custom_background">#111217</color>
+    <color name="custom_background">#1B2E37</color>
 
-    <color name="active_item">#5E5E5E</color>
-    <color name="item_color">#f2f2fb</color>
-    <color name="nav_menu_color">#292929</color>
+    <color name="active_item">#254E5E</color>
+    <color name="item_color">#79C0DC</color>
+    <color name="nav_menu_color">#1F343E</color>
 
     <color name="ubuntu">#dd4814</color>
     <color name="raspbian">#B70F3F</color>
@@ -31,8 +31,8 @@
     <color name="broadcom">#FFFFFF</color>
     <color name="broadcom_red">#cc092f</color>
 
-    <color name="background_progress_bar">#424242</color>
-    <color name="usage_progress_bar">#111217</color>
+    <color name="background_progress_bar">#478198</color>
+    <color name="usage_progress_bar">#74B2CA</color>
 
     <color name="total_queries">#007996</color>
     <color name="percentage_blocked">#B0720C</color>
