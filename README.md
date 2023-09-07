@@ -2,7 +2,7 @@
 Documentation will be added once its done. (You are here too soon)
 
 # If you want to test very alpha versions
-##Install these packages
+## Install these packages
 ``sudo apt-get update && sudo apt-get install -y python3 lsb-release util-linux ifstat && pip3 install psutil``
 ## Download the python file
 Edit it for your paths (file output should be location off your web server www file location. You can use for example httpd as web server.
