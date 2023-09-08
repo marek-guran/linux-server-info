@@ -43,7 +43,7 @@ while True:
     try:
         with open("/sys/class/thermal/thermal_zone0/temp", "r") as temp_file:
             temperature = int(temp_file.read()) / 1000.0
-        system_info["cpu"]["temperature"] = f"{temperature}°C"
+        system_info["cpu"]["temperature"] = f"{temperature:.1f}"
     except FileNotFoundError:
         system_info["cpu"]["temperature"] = "N/A"
 
@@ -53,26 +53,35 @@ while True:
     for i, core_percent in enumerate(core_percentages):
         system_info["cpu"]["cores"][f"core_{i + 1}"] = f"{core_percent}%"
 
-    # Storage Information (excluding loop devices)
+    # Storage Information (excluding loop devices and non-mounted partitions)
     storage_info = []
     lsblk_output = subprocess.check_output(["lsblk", "--output", "NAME,SIZE,TYPE,MOUNTPOINT,FSTYPE"]).decode("utf-8")
     lines = lsblk_output.strip().split("\n")[1:]  # Skip header
     for line in lines:
         parts = line.split()
         name = parts[0].replace("├─", "").replace("└─", "")  # Remove symbols
-        if len(parts) >= 4 and not name.startswith("loop"):  # Exclude loop devices
+        if len(parts) >= 4 and parts[2] not in ("loop", "rom"):  # Exclude loop and rom devices
             device_info = {
                 "name": name,
-                "size": parts[1],
-                "type": parts[2],
-                "mountpoint": parts[3],
-                "fstype": parts[4] if len(parts) >= 5 else "Unknown"
+                "size": parts[1] if len(parts) > 1 else "Unknown",
+                "type": parts[2] if len(parts) > 2 else "Unknown",
+                "mountpoint": parts[3] if len(parts) > 3 else "Unknown",
+                "fstype": parts[4] if len(parts) > 4 else "Unknown"
             }
-            if parts[3] != "Not" and parts[4] != "Mounted":
-                usage = psutil.disk_usage(parts[3])
-                device_info["used"] = f"{usage.used / (1024 ** 3):.2f} GB"
-                device_info["free"] = f"{usage.free / (1024 ** 3):.2f} GB"
-                device_info["usage_percent"] = f"{usage.percent}%"
+            if device_info["mountpoint"] != "N/A" and device_info["fstype"] != "N/A":
+                try:
+                    usage = psutil.disk_usage(device_info["mountpoint"])
+                    device_info["used"] = f"{usage.used / (1024 ** 3):.2f} GB"
+                    device_info["free"] = f"{usage.free / (1024 ** 3):.2f} GB"
+                    device_info["usage_percent"] = f"{usage.percent}%"
+                except FileNotFoundError:
+                    device_info["used"] = "N/A"
+                    device_info["free"] = "N/A"
+                    device_info["usage_percent"] = "N/A"
+            else:
+                device_info["used"] = "N/A"
+                device_info["free"] = "N/A"
+                device_info["usage_percent"] = "N/A"
             storage_info.append(device_info)
     system_info["storage"] = storage_info
 
