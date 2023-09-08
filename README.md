@@ -1,9 +1,13 @@
+![Linux Badge](https://img.shields.io/badge/-Linux-grey?logo=linux) ![Android Badge](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) ![Kotlin Badge](https://img.shields.io/badge/-Kotlin-0095D5?logo=kotlin&logoColor=white) ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) 
 # Work in progress
 Documentation will be added once its done. (You are here too soon)
+# Sneak Peak
+![20230907_181409746](https://github.com/marek-guran/linux-server-info/assets/26904790/7ad7f24e-e40d-4fd9-9048-00f0f90e5e4b)
+![20230907_181409749](https://github.com/marek-guran/linux-server-info/assets/26904790/f10bc69f-ad4b-49e5-88a5-57199058c67e)
 
 # If you want to test very alpha versions
 ## Install these packages
-```sudo apt-get update && sudo apt-get install -y python3 lsb-release util-linux ifstat && pip3 install psutil```
+```sudo apt-get update && sudo apt-get install -y python3 lsb-release util-linux ifstat && pip3 install -r requirements.txt```
 ## Download the python file
 Edit it for your paths (file output should be location off your web server www file location. You can use for example httpd as web server.
 ## Download service file (if you want it to run as a service)
