@@ -77,11 +77,11 @@ while True:
                 except FileNotFoundError:
                     device_info["used"] = "N/A"
                     device_info["free"] = "N/A"
-                    device_info["usage_percent"] = "N/A"
+                    device_info["usage_percent"] = "0.0%"
             else:
                 device_info["used"] = "N/A"
                 device_info["free"] = "N/A"
-                device_info["usage_percent"] = "N/A"
+                device_info["usage_percent"] = "0.0%"
             storage_info.append(device_info)
     system_info["storage"] = storage_info
 
