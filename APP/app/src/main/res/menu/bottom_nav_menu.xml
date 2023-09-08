@@ -12,11 +12,6 @@
         android:title="System" />
 
     <item
-        android:id="@+id/navigation_monitoring"
-        android:icon="@drawable/graph"
-        android:title="Monitoring" />
-
-    <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/settings"
         android:title="Settings" />

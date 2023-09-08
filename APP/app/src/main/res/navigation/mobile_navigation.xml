@@ -18,12 +18,6 @@
         tools:layout="@layout/fragment_system" />
 
     <fragment
-        android:id="@+id/navigation_monitoring"
-        android:name="com.marekguran.serverinfo.ui.monitoring.MonitoringFragment"
-        android:label="Monitoring"
-        tools:layout="@layout/fragment_monitoring" />
-
-    <fragment
         android:id="@+id/navigation_settings"
         android:name="com.marekguran.serverinfo.ui.settings.SettingsFragment"
         android:label="Settings"

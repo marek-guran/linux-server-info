@@ -12,8 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <!-- Section 1: Distribution name, Kernel, Uptime -->
         <LinearLayout
@@ -26,16 +25,22 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginEnd="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/sidepill">
 
                 <!-- Distribution name -->
                 <TextView
                     android:id="@+id/Distribution"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Distribution name"
-                    android:textColor="@color/text"
+                    android:text="Distribution:"
+                    android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
+                    android:layout_marginStart="10dp"
                     android:textStyle="bold"/>
 
                 <!-- Kernel -->
@@ -43,9 +48,10 @@
                     android:id="@+id/Kernel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kernel"
-                    android:textColor="@color/text"
+                    android:text="Kernel:"
+                    android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
+                    android:layout_marginStart="10dp"
                     android:textStyle="bold"/>
 
                 <!-- Uptime -->
@@ -53,17 +59,18 @@
                     android:id="@+id/Uptime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Uptime"
-                    android:textColor="@color/text"
+                    android:text="Uptime:"
+                    android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
+                    android:layout_marginStart="10dp"
                     android:textStyle="bold"/>
             </LinearLayout>
 
-            <!-- Image (1:1 aspect ratio) -->
             <ImageView
                 android:id="@+id/distributionImage"
-                android:layout_width="80sp"
-                android:layout_height="80sp"
+                android:layout_width="90sp"
+                android:layout_height="90sp"
+                android:layout_marginEnd="10dp"
                 android:src="@drawable/sys_default"
                 android:layout_gravity="center"
                 android:contentDescription="Distribution image"/>
@@ -75,36 +82,53 @@
             android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
+            <ImageView
+                android:id="@+id/cpuImage"
+                android:layout_width="115sp"
+                android:layout_height="115sp"
+                android:src="@drawable/sys_cpu"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:contentDescription="CPU Brand Logo"/>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/sidepill_reversed"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:paddingEnd="10dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/Cpu_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CPU Name"
-                    android:textColor="@color/text"
+                    android:text="CPU:"
+                    android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
+                    android:layout_marginStart="10dp"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/Cpu_architecture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CPU Architecture"
-                    android:textColor="@color/text"
+                    android:text="Architecture:"
+                    android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
+                    android:layout_marginStart="10dp"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/Cpu_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CPU Type"
-                    android:textColor="@color/text"
+                    android:text="Type:"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold"/>
 
@@ -112,20 +136,14 @@
                     android:id="@+id/Cpu_cores"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CPU Cores"
-                    android:textColor="@color/text"
+                    android:text="Cores:"
+                    android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
+                    android:layout_marginStart="10dp"
                     android:textStyle="bold"/>
             </LinearLayout>
 
             <!-- Image (1:1 aspect ratio) -->
-            <ImageView
-                android:id="@+id/cpuImage"
-                android:layout_width="100sp"
-                android:layout_height="100sp"
-                android:src="@drawable/sys_cpu"
-                android:layout_gravity="center"
-                android:contentDescription="CPU Brand Logo"/>
         </LinearLayout>
 
         <LinearLayout
@@ -141,6 +159,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:text="Network Devices:"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/text"/>
         </LinearLayout>
     </LinearLayout>

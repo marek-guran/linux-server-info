@@ -143,10 +143,10 @@ class SystemFragment : Fragment() {
                     binding.CpuName.text = "CPU: $cpuName"
                 }
                 if (!TextUtils.isEmpty(cpuArchitecture)) {
-                    binding.CpuArchitecture.text = "CPU Architecture: $cpuArchitectureType - $cpuArchitecture"
+                    binding.CpuArchitecture.text = "Architecture: $cpuArchitectureType - $cpuArchitecture"
                 }
                 if (!TextUtils.isEmpty(cpuType)) {
-                    binding.CpuType.text = "CPU Type: $cpuType"
+                    binding.CpuType.text = "Type: $cpuType"
                 }
                 if (!TextUtils.isEmpty(cpuCores)) {
                     val coresJson = jsonObject.getJSONObject("cpu").getJSONObject("cores")
@@ -160,7 +160,7 @@ class SystemFragment : Fragment() {
                         }
                     }
 
-                    val cpuCores = "CPU Cores: $coreCount"
+                    val cpuCores = "Cores: $coreCount"
                     binding.CpuCores.text = cpuCores
                 }
                 if (!TextUtils.isEmpty(networkDevices.toString())) {
