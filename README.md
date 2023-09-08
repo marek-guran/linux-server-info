@@ -2,9 +2,9 @@
 # Work in progress
 Documentation will be added once its done. (You are here too soon)
 # Sneak Peak (now with notifications)
-![Screenshot_20230908-145818_Pixel Launcher](https://github.com/marek-guran/linux-server-info/assets/26904790/2f5a6bc9-bda8-484f-b162-42ea0089048b)
-![20230908_150014073](https://github.com/marek-guran/linux-server-info/assets/26904790/3172182b-3ef1-4f05-b327-ee47146ce00d)
-![20230908_150014119](https://github.com/marek-guran/linux-server-info/assets/26904790/141ac3b9-dd9d-4ab5-a5c5-fedb64c683fd)
+![20230908_150643176](https://github.com/marek-guran/linux-server-info/assets/26904790/e5f53c9f-b310-461b-84e4-2239fa4a166d)
+![20230908_150643181](https://github.com/marek-guran/linux-server-info/assets/26904790/21c522b2-4641-4854-8089-f350285c4cb1)
+![Screenshot_20230908-145818_Pixel Launcher](https://github.com/marek-guran/linux-server-info/assets/26904790/11ddc459-b3fb-455f-a376-5fc8fbe730f2)
 
 
 # If you want to test very alpha versions
