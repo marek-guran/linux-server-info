@@ -38,7 +38,14 @@ while True:
 
     system_info["cpu"]["usage"] = f"{psutil.cpu_percent(interval=1)}%"
     system_info["cpu"]["speed"] = f"{psutil.cpu_freq().current / 1000:.2f} GHz"
-    system_info["cpu"]["temperature"] = os.popen('vcgencmd measure_temp').readline().replace("temp=", "").replace("'C\n", "")
+
+    # CPU Temperature (Alternative Method)
+    try:
+        with open("/sys/class/thermal/thermal_zone0/temp", "r") as temp_file:
+            temperature = int(temp_file.read()) / 1000.0
+        system_info["cpu"]["temperature"] = f"{temperature}°C"
+    except FileNotFoundError:
+        system_info["cpu"]["temperature"] = "N/A"
 
     # CPU Cores
     system_info["cpu"]["cores"] = {}
@@ -103,7 +110,6 @@ while True:
             pass
 
         return None, None
-
 
     # Network Information
     network_info = {}
