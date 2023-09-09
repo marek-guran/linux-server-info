@@ -1,9 +1,11 @@
 ![Linux Badge](https://img.shields.io/badge/-Linux-grey?logo=linux) ![Android Badge](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) ![Kotlin Badge](https://img.shields.io/badge/-Kotlin-0095D5?logo=kotlin&logoColor=white) ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) 
 # Work in progress
 Documentation will be added once its done. (You are here too soon)
-# Sneak Peak
-![20230907_181409746](https://github.com/marek-guran/linux-server-info/assets/26904790/7ad7f24e-e40d-4fd9-9048-00f0f90e5e4b)
-![20230907_181409749](https://github.com/marek-guran/linux-server-info/assets/26904790/f10bc69f-ad4b-49e5-88a5-57199058c67e)
+# Sneak Peak (now with notifications)
+![20230908_150643176](https://github.com/marek-guran/linux-server-info/assets/26904790/e5f53c9f-b310-461b-84e4-2239fa4a166d)
+![20230908_150643181](https://github.com/marek-guran/linux-server-info/assets/26904790/21c522b2-4641-4854-8089-f350285c4cb1)
+![Screenshot_20230908-145818_Pixel Launcher](https://github.com/marek-guran/linux-server-info/assets/26904790/11ddc459-b3fb-455f-a376-5fc8fbe730f2)
+
 
 # If you want to test very alpha versions
 ## Install these packages
