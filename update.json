@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.1",
-    "Description": "First release. Monitor your server status, get notified about high CPU temperatures.",
-    "Version": "1.0.1"
+    "Title": "Stable 1.0.2 - Hotfix",
+    "Description": "This update is only for server-info.py. It fixes hardware detection. (If device is not arm, it will not return hardware, but brand and this caused app crashes. Fixed it.)",
+    "Version": "1.0.2"
 }
