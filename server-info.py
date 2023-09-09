@@ -34,7 +34,18 @@ while True:
                 if len(model_name_line) > 1:
                     system_info["cpu"]["brand"] = model_name_line[1].strip()
     except subprocess.CalledProcessError:
-        system_info["cpu"]["brand"] = "Not Available"
+        system_info["cpu"]["brand"] = "Unknown"
+
+    # Check if the "brand" key exists in the system_info dictionary
+    if "brand" not in system_info["cpu"]:
+        # If "brand" is not found, set it to "Unknown"
+        system_info["cpu"]["brand"] = "Unknown"
+
+    # Set the "hardware" field to the value of "brand" if "Hardware" is not found
+    if "hardware" not in system_info["cpu"]:
+        # If "hardware" is not found, set it to the value of "brand" (or "Unknown" if "brand" is not found)
+        system_info["cpu"]["hardware"] = system_info["cpu"].get("brand", "Unknown")
+
 
     system_info["cpu"]["usage"] = f"{psutil.cpu_percent(interval=1)}%"
     system_info["cpu"]["speed"] = f"{psutil.cpu_freq().current / 1000:.2f} GHz"
