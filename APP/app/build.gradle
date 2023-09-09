@@ -10,8 +10,7 @@ android {
     defaultConfig {
         applicationId "com.marekguran.serverinfo"
         minSdk 23
-        //noinspection OldTargetApi
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0.1"
 
@@ -20,7 +19,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
