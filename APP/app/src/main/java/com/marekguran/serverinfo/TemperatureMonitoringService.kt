@@ -28,7 +28,16 @@ class TemperatureMonitoringService : Service() {
 
     private val handler = Handler(Looper.getMainLooper())
     private val notificationChannelId = "CPU_TEMP_CHANNEL"
-    private val jsonUrl = "http://10.0.1.1:9000/system_info.json" // Adjust the URL as needed
+    private lateinit var apiAddressManager: ApiAddressManager
+
+    private val jsonUrl: String
+        get() = apiAddressManager.getApiAddress()
+
+    override fun onCreate() {
+        super.onCreate()
+        // Initialize apiAddressManager here
+        apiAddressManager = ApiAddressManager(this.applicationContext)
+    }
 
     private var notificationSent = false // Flag to track if notification has been sent
 

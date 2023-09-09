@@ -33,14 +33,4 @@
 
     <color name="background_progress_bar">#478198</color>
     <color name="usage_progress_bar">#74B2CA</color>
-
-    <color name="total_queries">#007996</color>
-    <color name="percentage_blocked">#B0720C</color>
-    <color name="queries_blocked">#CE273A</color>
-    <color name="domains_on_adlist">#005C32</color>
-
-    <color name="total_queries_img">#00677F</color>
-    <color name="percentage_blocked_img">#96610A</color>
-    <color name="queries_blocked_img">#7B2B1F</color>
-    <color name="domains_on_adlist_img">#004E2B</color>
 </resources>

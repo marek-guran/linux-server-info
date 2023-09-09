@@ -12,17 +12,159 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
         <TextView
-            android:id="@+id/release_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/sidepill"
+            android:paddingStart="10dp"
+            android:paddingTop="2.5dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="5dp"
+            android:text="API Address"
+            android:textAlignment="center"
+            android:textColor="@color/text_on_pill"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/api_address_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/api_address"
+                android:hint="API Address"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/text_on_pill"
+                android:textColorHint="@color/text_on_pill"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/save_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/pill"
+                android:text="SAVE"
+                android:textColor="@color/text_on_pill"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/release_name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dark mode"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/dark_mode_switch"
+                style="@style/SwitchStyle"
+                android:layout_width="0dp"
+                android:layout_height="20sp"
+                android:layout_weight="1"
+                android:checked="false"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/api_updates_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/sidepill"
+            android:paddingStart="10dp"
+            android:paddingTop="2.5dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="5dp"
+            android:text="API Updates"
+            android:textAlignment="center"
+            android:textColor="@color/text_on_pill"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:text="TBA"
-            android:textAlignment="center"
-            android:textColor="@color/text"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            app:cardBackgroundColor="@color/card"
+            app:cardCornerRadius="20dp"
+            app:cardPreventCornerOverlap="true">
+
+            <LinearLayout
+                android:id="@+id/api_updates_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Title:"
+                    android:textColor="@color/text_on_pill"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="Description:"
+                    android:textColor="@color/text_on_pill"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/update_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/pill"
+            android:text="OPEN"
+            android:textColor="@color/text_on_pill"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
     </LinearLayout>
 </ScrollView>

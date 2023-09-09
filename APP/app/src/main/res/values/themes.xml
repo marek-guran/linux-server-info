@@ -19,4 +19,10 @@
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/active_item</item>
     </style>
+
+    <style name="SwitchStyle" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <!-- The color for the track when the switch is checked (enabled) -->
+        <item name="trackTint">@color/background_progress_bar</item>
+        <item name="thumbTint">@color/usage_progress_bar</item>
+    </style>
 </resources>

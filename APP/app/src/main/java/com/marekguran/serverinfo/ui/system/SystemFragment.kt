@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.marekguran.serverinfo.ApiAddressManager
 import com.marekguran.serverinfo.R
 import com.marekguran.serverinfo.databinding.FragmentSystemBinding
 import org.json.JSONObject
@@ -23,6 +24,14 @@ class SystemFragment : Fragment() {
 
     private var _binding: FragmentSystemBinding? = null
     private val binding get() = _binding!!
+
+    private fun getApi(): String {
+        val apiAddressManager = ApiAddressManager(requireContext())
+        return apiAddressManager.getApiAddress()
+    }
+
+    private val jsonUrl: String
+        get() = getApi()
 
     private val handler = Handler(Looper.getMainLooper())
 
@@ -54,7 +63,6 @@ class SystemFragment : Fragment() {
     }
 
     private fun fetchDataAndUpdateViews() {
-        val jsonUrl = "http://10.0.1.1:9000/system_info.json" // Adjust the URL as needed
         FetchJsonDataTask().execute(jsonUrl)
     }
 
