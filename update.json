@@ -1,5 +1,5 @@
 {
-    "Title": "You are still too soon here",
-    "Description": "Bug named Bunny",
-    "Version": "0.0.0"
+    "Title": "Stable 1.0.1",
+    "Description": "First release. Monitor your server status, get notified about high CPU temperatures.",
+    "Version": "1.0.1"
 }
