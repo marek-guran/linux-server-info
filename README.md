@@ -2,27 +2,27 @@
 # Installation (web server in docker by default uses port 9000)
 Full Install
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info-test/main/Full%20Install.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Full%20Install.sh | bash
 ```
 
 Dependencies + Service
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info-test/main/Dependencies%20%2B%20Service.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Dependencies%20%2B%20Service.sh | bash
 ```
 
 Dependencies Only
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info-test/main/Dependencies%20Only.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Dependencies%20Only.sh | bash
 ```
 
 Full Uninstall
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info-test/main/Full%20Uninstall.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Full%20Uninstall.sh | bash
 ```
 
 Uninstall Service
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info-test/main/Uninstall%20Service.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Uninstall%20Service.sh | bash
 ```
 - Full install - installs docker.io, httpd container linked to `/home/user/linux-server-info/` and listens on port 9000. Installs all dependencies, service (enable, start), installs requirements.txt for python
 - Dependencies + Service - as above but without docker
