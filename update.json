@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.2 - Hotfix",
-    "Description": "This update is only for server-info.py. It fixes hardware detection. (If device is not arm, it will not return hardware, but brand and this caused app crashes. Fixed it.)",
-    "Version": "1.0.2"
+    "Title": "Stable 1.0.3",
+    "Description": "Fixed APP crashes on Android versions lower than Android 8.\nNew automatic install scripts\nAnd APP is now available on Google Play Store",
+    "Version": "1.0.3"
 }
