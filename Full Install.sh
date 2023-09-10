@@ -38,7 +38,7 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target
 EOL
-
+sudo chmod -R 777 /etc/systemd/system/server-info.service
 # Reload and enable/start the service
 sudo systemctl daemon-reload
 sudo systemctl enable server-info
