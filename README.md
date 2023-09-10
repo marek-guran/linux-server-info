@@ -39,16 +39,20 @@ Uninstall Service
 ```
 curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Uninstall%20Service.sh | bash
 ```
-| Option             | Docker | Dependencies | Service | Requirements.txt |
+| Option             | Docker + httpd container | Dependencies | Service | Requirements.txt |
 |--------------------|--------|--------------|---------|------------------|
 | Full Install       | ✅     | ✅           | ✅      | ✅               |
 | Dependencies + Service | ❌ | ✅           | ✅      | ✅               |
 | Dependencies only | ❌     | ✅           | ❌      | ✅               |
 
+Web server will use ```/home/user/server-info/``` directory to publish json file for app and will be on port ```9000```. Will be used httpd container and ```docker.io package```.
+
 | Option           | Docker | Service | Docker Container |
 |------------------|--------|---------|------------------------------|
 | Full Uninstall   | ❌     | ✅      | ✅                           |
 | Uninstall Service| ❌     | ✅      | ❌                           |
+
+You can uninstall ```docker.io``` by ```sudo apt remove docker.io -y```. It is not removed automatically, since docker is used by many people.
 ## Instalation (manual)
 Download the ```requirements.txt```, then execute commands:
 ```sudo apt-get update && sudo apt-get install -y python3 python3-pip lsb-release util-linux ifstat && sudo pip3 install -r requirements.txt```
