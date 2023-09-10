@@ -7,9 +7,6 @@ current_user=$(whoami)
 sudo apt-get update
 sudo apt-get install -y python3 python3-pip lsb-release util-linux ifstat git
 
-# Install Python packages from requirements.txt and handle errors
-pip3 install -r requirements.txt || { echo "Error: Failed to install Python requirements."; }
-
 # Clone the GitHub repository
 git clone https://github.com/marek-guran/linux-server-info
 sudo chmod -R 777 linux-server-info
