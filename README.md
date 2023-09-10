@@ -1,11 +1,16 @@
-![Linux Badge](https://img.shields.io/badge/-Linux-grey?logo=linux) ![Android Badge](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white) ![Kotlin Badge](https://img.shields.io/badge/-Kotlin-0095D5?logo=kotlin&logoColor=white) ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) 
+<p align="center">
+    <img src="https://img.shields.io/badge/-Linux-grey?logo=linux">
+    <img src="https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white">
+    <img src="https://img.shields.io/badge/-Kotlin-0095D5?logo=kotlin&logoColor=white">
+    <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white">
+</p>
 
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.marekguran.serverinfo" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/c074bafd-eae7-417f-a330-5f0018865717" width="300px">
+  <a href="https://play.google.com/store/apps/details?id=com.marekguran.serverinfo" style="margin-right: 20px;">
+        <img src="google-play-badge.png" width="300" alt="Server Info App">
   </a>
-  <a href="https://github.com/marek-guran/linux-server-info/releases" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/f8bbf937-1bf8-422e-a7fa-ef391024cbef" width="300px">
+  <a href="https://github.com/marek-guran/linux-server-info/releases">
+        <img src="github-badge.png" width="300" alt="GitHub Releases">
   </a>
 </p>
 
