@@ -39,11 +39,16 @@ Uninstall Service
 ```
 curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Uninstall%20Service.sh | bash
 ```
-- Full install - installs docker.io, httpd container linked to `/home/user/linux-server-info/` and listens on port 9000. Installs all dependencies, service (enable, start), installs requirements.txt for python
-- Dependencies + Service - as above but without docker
-- Dependencies only - only dependencies, downloads the repository and installs requirements.txt for python
-- Full Uninstall - uninstalls server-info (docker, service)
-- Uninstall Service - uninstalls service
+| Option             | Docker | Dependencies | Service | Requirements.txt |
+|--------------------|--------|--------------|---------|------------------|
+| Full Install       | ✅     | ✅           | ✅      | ✅               |
+| Dependencies + Service | ❌ | ✅           | ✅      | ✅               |
+| Dependencies only | ❌     | ✅           | ❌      | ✅               |
+
+| Option           | Docker | Service | Docker Container |
+|------------------|--------|---------|------------------------------|
+| Full Uninstall   | ❌     | ✅      | ✅                           |
+| Uninstall Service| ❌     | ✅      | ❌                           |
 ## Instalation (manual)
 Download the ```requirements.txt```, then execute commands:
 ```sudo apt-get update && sudo apt-get install -y python3 python3-pip lsb-release util-linux ifstat && sudo pip3 install -r requirements.txt```
