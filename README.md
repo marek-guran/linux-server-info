@@ -27,7 +27,7 @@ curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/U
 - Full install - installs docker.io, httpd container linked to `/home/user/linux-server-info/` and listens on port 9000. Installs all dependencies, service (enable, start), installs requirements.txt for python
 - Dependencies + Service - as above but without docker
 - Dependencies only - only dependencies, downloads the repository and installs requirements.txt for python
-- Full Uninstall - uninstalls server-info (docker, service)
+- Full Uninstall - uninstalls server-info (docker container and service)
 - Uninstall Service - uninstalls service
 ## Instalation (manual)
 Download the ```requirements.txt```, then execute commands:
