@@ -55,9 +55,10 @@ class TemperatureMonitoringService : Service() {
         notificationManager.createNotificationChannel(channel)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        createNotificationChannel()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            createNotificationChannel()
+        }
 
         // Start monitoring CPU temperature
         startMonitoringTemperature()
