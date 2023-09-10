@@ -45,7 +45,7 @@ curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/U
 | Dependencies + Service | ❌ | ✅           | ✅      | ✅               |
 | Dependencies only | ❌     | ✅           | ❌      | ✅               |
 
-Web server will use ```/home/user/server-info/``` directory to publish json file for app and will be on port ```9000```. Will be used httpd container and ```docker.io package```.
+Web server will use ```/home/user/server-info/``` directory to publish json file for app and will be on port ```9000```. Will be used httpd container and ```docker.io package```. You will be able to access it at: ```http://device-ip:9000/system_info.json```
 
 | Option           | Docker | Service | Docker Container |
 |------------------|--------|---------|------------------------------|
