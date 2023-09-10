@@ -160,7 +160,7 @@ while True:
     }
 
     # Save the JSON data to a file
-    with open("/home/pi/rss/system_info.json", "w") as json_file:
+    with open("system_info.json", "w") as json_file:
         json.dump(system_info, json_file, indent=4)
 
     # Sleep for 15 seconds before the next iteration
