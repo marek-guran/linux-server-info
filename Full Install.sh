@@ -13,7 +13,7 @@ sudo chmod -R 777 linux-server-info
 cd linux-server-info
 
 # Install requirements inside linux-server-info directory
-pip3 install -r requirements.txt || { echo "Error: Failed to install Python requirements inside linux-server-info directory."; }
+sudo pip3 install -r requirements.txt || { echo "Error: Failed to install Python requirements inside linux-server-info directory."; }
 
 # Install Docker if not already installed
 sudo apt-get install docker.io -y
