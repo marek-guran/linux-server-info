@@ -19,7 +19,7 @@ sudo pip3 install -r requirements.txt || { echo "Error: Failed to install Python
 sudo apt-get install docker.io -y
 
 # Run Docker container with restart always, linking to /home/user/linux-server-info/
-sudo docker run -d --restart=always -p 9000:80 -v /home/$current_user/linux-server-info/:/var/www/html/ --name server-info httpd:latest
+sudo docker run -d --restart=always -p 9000:80 -v /home/$current_user/linux-server-info:/var/www/html/ --name server-info httpd:latest
 
 echo "Webserver installed and running on port 9000."
 
