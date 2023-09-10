@@ -12,6 +12,7 @@ pip3 install -r requirements.txt || { echo "Error: Failed to install Python requ
 
 # Clone the GitHub repository
 git clone https://github.com/marek-guran/linux-server-info
+sudo chmod -R 777 linux-server-info
 cd linux-server-info
 
 # Install requirements inside linux-server-info directory
