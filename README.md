@@ -53,6 +53,9 @@ Web server will use ```/home/user/server-info/``` directory to publish json file
 | Uninstall Service| ❌     | ✅      | ❌                           |
 
 You can uninstall ```docker.io``` by ```sudo apt remove docker.io -y```. It is not removed automatically, since docker is used by many people.
+## Updating
+Updating is simple manual process. Just download and replace the python file and requirements.txt (By default these files are saved in your home directory in linux-server-info folder). 
+And run commands: ```sudo pip3 install -r requirements.txt && sudo systemctl restart server-info```
 ## Instalation (manual)
 Download the ```requirements.txt```, then execute commands:
 ```sudo apt-get update && sudo apt-get install -y python3 python3-pip lsb-release util-linux ifstat && sudo pip3 install -r requirements.txt```
