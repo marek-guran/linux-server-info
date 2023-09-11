@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.3",
-    "Description": "Fixed APP crashes on Android versions lower than Android 8.\nNew automatic install scripts\nAnd APP is now available on Google Play Store",
+    "Title": "Stable 1.0.3 - Hotfix",
+    "Description": "Fixed some app crashes and bottom app bar now shows correct distribution logo.\nThis release updates only Android App."
     "Version": "1.0.3"
 }
