@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.marekguran.serverinfo
 
 import android.content.Intent
@@ -13,7 +15,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
@@ -27,6 +28,7 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 import java.io.IOException
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView
+        val navView: BottomNavigationView = binding.navView as BottomNavigationView
 
         val serviceIntent = Intent(this, TemperatureMonitoringService::class.java)
         startService(serviceIntent)
@@ -116,14 +118,23 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun getApi(): String {
+        val apiAddressManager = ApiAddressManager(this)
+        return apiAddressManager.getApiAddress()
+    }
+
+    private val jsonUrl: String
+        get() = getApi()
+
     private fun fetchDataAndUpdateIcon(navView: BottomNavigationView) {
-        val jsonUrl = "http://10.0.1.1:9000/system_info.json" // Adjust the URL as needed
+        getApi()
         FetchJsonDataTask(navView).execute(jsonUrl)
     }
 
     private class FetchJsonDataTask(private val navView: BottomNavigationView) :
         AsyncTask<String, Void, JSONObject>() {
 
+        @Deprecated("Deprecated in Java")
         override fun doInBackground(vararg params: String?): JSONObject? {
             val urlString = params[0]
             try {
@@ -153,18 +164,20 @@ class MainActivity : AppCompatActivity() {
             return null
         }
 
+        @Deprecated("Deprecated in Java")
         override fun onPostExecute(jsonObject: JSONObject?) {
             super.onPostExecute(jsonObject)
             jsonObject?.let {
                 // Assuming you have parsed the distribution data
                 val os = jsonObject.getJSONObject("os")
-                val distribution = os.getString("distribution").toLowerCase()
+                val distribution = os.getString("distribution").lowercase(Locale.ROOT)
 
                 // Determine the drawable resource based on the distribution
                 val drawableResId = when {
                     distribution.contains("ubuntu") -> R.drawable.dist_ubuntu
                     distribution.contains("debian") -> R.drawable.dist_debian
                     distribution.contains("raspbian") -> R.drawable.dist_raspbian
+                    distribution.contains("raspberry") -> R.drawable.dist_raspbian
                     else -> R.drawable.dist_default // Default drawable if no match is found
                 }
 

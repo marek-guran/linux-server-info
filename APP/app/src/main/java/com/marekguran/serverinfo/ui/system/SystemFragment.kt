@@ -1,5 +1,8 @@
+@file:Suppress("DEPRECATION", "NAME_SHADOWING")
+
 package com.marekguran.serverinfo.ui.system
 
+import android.annotation.SuppressLint
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
@@ -18,6 +21,7 @@ import java.io.InputStream
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 class SystemFragment : Fragment() {
@@ -41,9 +45,8 @@ class SystemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSystemBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {
@@ -66,13 +69,6 @@ class SystemFragment : Fragment() {
         FetchJsonDataTask().execute(jsonUrl)
     }
 
-    private fun formatUptime(uptimeInSeconds: Double): String {
-        val days = TimeUnit.SECONDS.toDays(uptimeInSeconds.toLong())
-        val hours = TimeUnit.SECONDS.toHours(uptimeInSeconds.toLong()) % 24
-        val minutes = TimeUnit.SECONDS.toMinutes(uptimeInSeconds.toLong()) % 60
-        return String.format("%02d:%02d:%02d", days, hours, minutes)
-    }
-
     private fun schedulePeriodicUpdates() {
         handler.postDelayed(object : Runnable {
             override fun run() {
@@ -83,6 +79,7 @@ class SystemFragment : Fragment() {
     }
 
     private inner class FetchJsonDataTask : AsyncTask<String, Void, JSONObject>() {
+        @Deprecated("Deprecated in Java")
         override fun doInBackground(vararg params: String?): JSONObject? {
             val urlString = params[0]
             try {
@@ -110,6 +107,8 @@ class SystemFragment : Fragment() {
             return null
         }
 
+        @SuppressLint("SetTextI18n")
+        @Deprecated("Deprecated in Java")
         override fun onPostExecute(jsonObject: JSONObject?) {
             super.onPostExecute(jsonObject)
             jsonObject?.let {
@@ -125,7 +124,7 @@ class SystemFragment : Fragment() {
                 val networkDevices = jsonObject.getJSONObject("network")
 
                 if (!TextUtils.isEmpty(distribution)) {
-                    binding.Distribution.text = "Distribution: $distribution"
+                    binding!!.Distribution?.text = "Distribution: $distribution"
                 }
                 if (!TextUtils.isEmpty(kernel)) {
                     binding.Kernel.text = "Kernel: $kernel"
@@ -185,18 +184,19 @@ class SystemFragment : Fragment() {
                     binding.NetworkDevices.text = networkDevices
                 }
                 val distributionImageResource = when {
-                    distribution?.toLowerCase()?.contains("ubuntu") == true -> R.drawable.sys_ubuntu
-                    distribution?.toLowerCase()?.contains("debian") == true -> R.drawable.sys_debian
-                    distribution?.toLowerCase()?.contains("raspbian") == true -> R.drawable.sys_raspbian
+                    distribution.toLowerCase(Locale.ROOT).contains("ubuntu") -> R.drawable.sys_ubuntu
+                    distribution.toLowerCase(Locale.ROOT).contains("debian") -> R.drawable.sys_debian
+                    distribution.toLowerCase(Locale.ROOT).contains("raspbian") -> R.drawable.sys_raspbian
+                    distribution.toLowerCase(Locale.ROOT).contains("raspberry") -> R.drawable.sys_raspbian
                     else -> R.drawable.sys_default
                 }
                 binding.distributionImage.setImageResource(distributionImageResource)
 
                 // Set CPU image based on CPU name
                 val cpuImageResource = when {
-                    cpuName?.toLowerCase()?.contains("amd") == true -> R.drawable.amd
-                    cpuName?.toLowerCase()?.contains("intel") == true -> R.drawable.intel
-                    cpuName?.toLowerCase()?.contains("bcm") == true -> R.drawable.broadcom
+                    cpuName.toLowerCase(Locale.ROOT).contains("amd") -> R.drawable.amd
+                    cpuName.toLowerCase(Locale.ROOT).contains("intel") -> R.drawable.intel
+                    cpuName.toLowerCase(Locale.ROOT).contains("bcm") -> R.drawable.broadcom
                     else -> R.drawable.sys_cpu
                 }
                 binding.cpuImage.setImageResource(cpuImageResource)
