@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.3 Hotfix",
-    "Description": "Fixed some app crashes and bottom app bar now shows correct distribution logo.\n\nThis release updates only Android App.",
-    "Version": "1.0.3"
+    "Title": "Stable 1.0.4",
+    "Description": "App now supports Chromebooks and Android TVs.\n\nAlso there is a new left navigation bar when you use landscape mode.",
+    "Version": "1.0.4"
 }
