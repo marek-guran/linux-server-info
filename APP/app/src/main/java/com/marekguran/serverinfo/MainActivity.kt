@@ -4,11 +4,14 @@ package com.marekguran.serverinfo
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -20,6 +23,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigationrail.NavigationRailView
 import com.marekguran.serverinfo.databinding.ActivityMainBinding
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -37,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val handler = Handler(Looper.getMainLooper())
+    private var navView: View? = null
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,17 +50,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView as BottomNavigationView
-
         val serviceIntent = Intent(this, TemperatureMonitoringService::class.java)
         startService(serviceIntent)
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_hw, R.id.navigation_system, R.id.navigation_settings
-            )
-        )
-        navView.setupWithNavController(navController)
+
+        // Get the current device orientation
+        val currentOrientation = resources.configuration.orientation
+
+        if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+            navView = binding.navView as NavigationRailView
+            val navController = findNavController(R.id.nav_host_fragment_activity_main)
+            AppBarConfiguration(setOf(
+                R.id.navigation_hw, R.id.navigation_system, R.id.navigation_settings))
+
+            (navView as NavigationRailView).setupWithNavController(navController)
+        } else {
+            navView = binding.navView as BottomNavigationView
+            val navController = findNavController(R.id.nav_host_fragment_activity_main)
+            AppBarConfiguration(setOf(
+                R.id.navigation_hw, R.id.navigation_system, R.id.navigation_settings))
+
+            (navView as BottomNavigationView).setupWithNavController(navController)
+        }
 
         val darkMode = DarkMode(this)
 
@@ -126,13 +141,32 @@ class MainActivity : AppCompatActivity() {
     private val jsonUrl: String
         get() = getApi()
 
-    private fun fetchDataAndUpdateIcon(navView: BottomNavigationView) {
-        getApi()
-        FetchJsonDataTask(navView).execute(jsonUrl)
+    private fun fetchDataAndUpdateIcon(navView: View?) {
+        navView?.let {
+            if (it is BottomNavigationView) {
+                getApi()
+                FetchJsonDataTask(it as BottomNavigationView).execute(jsonUrl)
+            } else if (it is NavigationRailView) {
+                getApi()
+                FetchJsonDataTask(it as NavigationRailView).execute(jsonUrl)
+            } else {
+                // Handle other cases here if needed
+            }
+        }
     }
 
-    private class FetchJsonDataTask(private val navView: BottomNavigationView) :
+    private class FetchJsonDataTask(private val navView: View?) :
         AsyncTask<String, Void, JSONObject>() {
+        private var menuItem: MenuItem? = null
+
+        init {
+            if (navView is BottomNavigationView) {
+                // Find the menu item in your navigation view
+                menuItem = navView.menu.findItem(R.id.navigation_system)
+            } else if (navView is NavigationRailView) {
+                menuItem = navView.menu.findItem(R.id.navigation_system)
+        }
+        }
 
         @Deprecated("Deprecated in Java")
         override fun doInBackground(vararg params: String?): JSONObject? {
@@ -180,12 +214,7 @@ class MainActivity : AppCompatActivity() {
                     distribution.contains("raspberry") -> R.drawable.dist_raspbian
                     else -> R.drawable.dist_default // Default drawable if no match is found
                 }
-
-                // Find the menu item in your navigation view
-                val menuItem = navView.menu.findItem(R.id.navigation_system)
-
-                // Update the icon for the menu item
-                menuItem.setIcon(drawableResId)
+                menuItem?.setIcon(drawableResId)
             }
         }
 
