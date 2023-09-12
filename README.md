@@ -14,6 +14,9 @@
   </a>
 </p>
 
+## Monitor your server with this resources light python script without root priviges.
+After successful setup, you are able to monitor your server or anything what is running Debian based Linux by Android App app, which is compatible with all Android 6+ devices including Chromebooks and Android TV.
+
 # Automatic Installation (web server in docker by default uses port 9000)
 Full Install
 ```
