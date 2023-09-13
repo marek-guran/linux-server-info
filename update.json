@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.4",
-    "Description": "App now supports Chromebooks and Android TVs.\n\nAlso there is a new left navigation bar when you use landscape mode.",
-    "Version": "1.0.4"
+    "Title": "Stable 1.0.5",
+    "Description": "Fixed some app crashes and app now hopefully fulfills standards for Google Play Store (for Android TVs).",
+    "Version": "1.0.5"
 }
