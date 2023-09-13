@@ -10,6 +10,7 @@
 
     <color name="raspberry">#B70F3F</color>
     <color name="pill">#1C274C</color>
+    <color name="pill_focused">#2D3F7C</color>
     <color name="card">#354475</color>
     <color name="card_items">#424242</color>
     <color name="text">#000000</color>

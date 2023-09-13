@@ -39,14 +39,17 @@
                     android:textAlignment="center"
                     android:textColor="@color/text_on_pill"
                     android:textSize="40sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:focusable="true"
+                    android:nextFocusRight="@id/memory_text"
+                    android:nextFocusDown="@id/storage" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="Usage"
+                    android:text="@string/usage"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -82,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="Temperature"
+                    android:text="@string/temperature"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -121,7 +124,7 @@
                     android:paddingEnd="10dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="5dp"
-                    android:text="Clock Speed:"
+                    android:text="@string/clock_speed"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -136,25 +139,29 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/memory_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/sidepill_reversed"
                     android:paddingEnd="10dp"
                     android:paddingStart="20dp"
                     android:layout_gravity="right"
-                    android:text="Memory"
+                    android:text="@string/memory"
                     android:paddingBottom="5dp"
                     android:textAlignment="center"
                     android:textColor="@color/text_on_pill"
                     android:textSize="40sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:focusable="true"
+                    android:nextFocusLeft="@id/cpu_name"
+                    android:nextFocusDown="@id/storage"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:text="Usage"
+                    android:text="@string/usage"
                     android:layout_gravity="right"
                     android:textColor="@color/text"
                     android:textSize="18sp"
@@ -193,7 +200,7 @@
                     android:paddingStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
-                    android:text="Used:"
+                    android:text="@string/used"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -205,7 +212,7 @@
                     android:paddingStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
-                    android:text="Free:"
+                    android:text="@string/free"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -217,7 +224,7 @@
                     android:paddingStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
-                    android:text="Total:"
+                    android:text="@string/total"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -238,10 +245,13 @@
                 android:paddingStart="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="5dp"
-                android:text="Storage"
+                android:text="@string/storage"
                 android:textColor="@color/text_on_pill"
                 android:textSize="40sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:focusable="true"
+                android:nextFocusUp="@id/cpu_name"
+                android:nextFocusDown="@id/storageContainer"/>
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
@@ -260,7 +270,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:orientation="vertical" />
+                android:orientation="vertical"
+                android:focusable="true"
+                android:nextFocusUp="@id/storage"
+                android:nextFocusDown="@id/network"/>
         </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
@@ -277,10 +290,12 @@
                 android:paddingStart="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="5dp"
-                android:text="Network"
+                android:text="@string/network"
                 android:textColor="@color/text_on_pill"
                 android:textSize="40sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:focusable="true"
+                android:nextFocusUp="@id/storageContainer"/>
         </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView

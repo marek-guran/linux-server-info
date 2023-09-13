@@ -14,6 +14,7 @@
 
 
         <TextView
+            android:id="@+id/api_address_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
@@ -22,11 +23,13 @@
             android:paddingTop="2.5dp"
             android:paddingEnd="20dp"
             android:paddingBottom="5dp"
-            android:text="API Address"
+            android:text="@string/api_address"
             android:textAlignment="center"
             android:textColor="@color/text_on_pill"
             android:textSize="40sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:focusable="true"
+            android:nextFocusDown="@id/api_address_edit_text"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,7 +44,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/api_address"
-                android:hint="API Address"
+                android:hint="@string/api_address"
                 android:paddingStart="10dp"
                 android:paddingTop="5dp"
                 android:paddingEnd="10dp"
@@ -51,7 +54,10 @@
                 android:textColorHint="@color/text_on_pill"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                tools:ignore="TouchTargetSizeCheck" />
+                tools:ignore="TouchTargetSizeCheck"
+                android:focusable="true"
+                android:nextFocusUp="@id/api_address_text"
+                android:nextFocusDown="@id/save_btn"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/save_btn"
@@ -60,11 +66,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
                 android:backgroundTint="@color/pill"
-                android:text="SAVE"
+                android:text="@string/save"
                 android:textColor="@color/text_on_pill"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:focusable="true"
+                android:nextFocusUp="@id/api_address_text"
+                android:nextFocusDown="@id/dark_mode_switch"/>
         </LinearLayout>
 
         <LinearLayout
@@ -80,7 +89,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Dark mode"
+                android:text="@string/dark_mode"
                 android:textColor="@color/text"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -92,7 +101,10 @@
                 android:layout_height="20sp"
                 android:layout_weight="1"
                 android:checked="false"
-                tools:ignore="TouchTargetSizeCheck" />
+                tools:ignore="TouchTargetSizeCheck"
+                android:focusable="true"
+                android:nextFocusUp="@id/save_btn"
+                android:nextFocusDown="@id/api_updates_name"/>
 
         </LinearLayout>
 
@@ -106,11 +118,14 @@
             android:paddingTop="2.5dp"
             android:paddingEnd="20dp"
             android:paddingBottom="5dp"
-            android:text="API Updates"
+            android:text="@string/api_updates"
             android:textAlignment="center"
             android:textColor="@color/text_on_pill"
             android:textSize="40sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:focusable="true"
+            android:nextFocusUp="@id/dark_mode_switch"
+            android:nextFocusDown="@id/update_btn"/>
 
         <com.google.android.material.card.MaterialCardView
             style="@style/Widget.Material3.CardView.Filled"
@@ -136,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:text="Title:"
+                    android:text="@string/title"
                     android:textColor="@color/text_on_pill"
                     android:textSize="28sp"
                     android:textStyle="bold" />
@@ -147,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:text="Description:"
+                    android:text="@string/description"
                     android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -161,10 +176,12 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
             android:backgroundTint="@color/pill"
-            android:text="OPEN"
+            android:text="@string/open"
             android:textColor="@color/text_on_pill"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:focusable="true"
+            android:nextFocusUp="@id/api_updates_name"/>
     </LinearLayout>
 </ScrollView>

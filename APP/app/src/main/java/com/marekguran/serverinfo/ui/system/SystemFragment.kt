@@ -110,96 +110,111 @@ class SystemFragment : Fragment() {
         @SuppressLint("SetTextI18n")
         @Deprecated("Deprecated in Java")
         override fun onPostExecute(jsonObject: JSONObject?) {
-            super.onPostExecute(jsonObject)
-            jsonObject?.let {
-                val os = jsonObject.getJSONObject("os")
-                val distribution = os.getString("distribution")
-                val kernel = os.getString("kernel_version")
-                val cpuName = jsonObject.getJSONObject("cpu").getString("hardware")
-                val cpuArchitecture = jsonObject.getJSONObject("cpu").getString("architecture")
-                val cpuArchitectureType = jsonObject.getJSONObject("cpu").getString("architecture_type")
-                val cpuType = jsonObject.getJSONObject("cpu").getString("type")
-                val cpuCores = jsonObject.getJSONObject("cpu").getString("cores")
-                val uptimeInSeconds = os.getString("uptime")
-                val networkDevices = jsonObject.getJSONObject("network")
+            if (binding != null) {
+                super.onPostExecute(jsonObject)
+                jsonObject?.let {
+                    val os = jsonObject.getJSONObject("os")
+                    val distribution = os.getString("distribution")
+                    val kernel = os.getString("kernel_version")
+                    val cpuName = jsonObject.getJSONObject("cpu").getString("hardware")
+                    val cpuArchitecture = jsonObject.getJSONObject("cpu").getString("architecture")
+                    val cpuArchitectureType =
+                        jsonObject.getJSONObject("cpu").getString("architecture_type")
+                    val cpuType = jsonObject.getJSONObject("cpu").getString("type")
+                    val cpuCores = jsonObject.getJSONObject("cpu").getString("cores")
+                    val uptimeInSeconds = os.getString("uptime")
+                    val networkDevices = jsonObject.getJSONObject("network")
 
-                if (!TextUtils.isEmpty(distribution)) {
-                    binding!!.Distribution?.text = "Distribution: $distribution"
-                }
-                if (!TextUtils.isEmpty(kernel)) {
-                    binding.Kernel.text = "Kernel: $kernel"
-                }
-                if (!TextUtils.isEmpty(uptimeInSeconds)) {
-                    val uptimeSplit = uptimeInSeconds.split(".")
-                    val uptimeInSecondsInt = uptimeSplit[0].toLong()
-                    val uptimeFraction = uptimeSplit[1].substring(0, 2).toLong() // Extract seconds as well
+                    if (!TextUtils.isEmpty(distribution)) {
+                        binding!!.Distribution?.text = "Distribution: $distribution"
+                    }
+                    if (!TextUtils.isEmpty(kernel)) {
+                        binding.Kernel.text = "Kernel: $kernel"
+                    }
+                    if (!TextUtils.isEmpty(uptimeInSeconds)) {
+                        val uptimeSplit = uptimeInSeconds.split(".")
+                        val uptimeInSecondsInt = uptimeSplit[0].toLong()
+                        val uptimeFraction =
+                            uptimeSplit[1].substring(0, 2).toLong() // Extract seconds as well
 
-                    val timestamp = uptimeInSecondsInt * 1000 + uptimeFraction // Convert to milliseconds
-                    val currentTimeMillis = System.currentTimeMillis()
-                    val uptimeMillis = currentTimeMillis - timestamp
+                        val timestamp =
+                            uptimeInSecondsInt * 1000 + uptimeFraction // Convert to milliseconds
+                        val currentTimeMillis = System.currentTimeMillis()
+                        val uptimeMillis = currentTimeMillis - timestamp
 
-                    val days = TimeUnit.MILLISECONDS.toDays(uptimeMillis)
-                    val hours = TimeUnit.MILLISECONDS.toHours(uptimeMillis) % 24
-                    val minutes = TimeUnit.MILLISECONDS.toMinutes(uptimeMillis) % 60
-                    val seconds = TimeUnit.MILLISECONDS.toSeconds(uptimeMillis) % 60
+                        val days = TimeUnit.MILLISECONDS.toDays(uptimeMillis)
+                        val hours = TimeUnit.MILLISECONDS.toHours(uptimeMillis) % 24
+                        val minutes = TimeUnit.MILLISECONDS.toMinutes(uptimeMillis) % 60
+                        val seconds = TimeUnit.MILLISECONDS.toSeconds(uptimeMillis) % 60
 
-                    val formattedUptime = String.format("%02d:%02d:%02d:%02d", days, hours, minutes, seconds)
-                    binding.Uptime.text = "Uptime: $formattedUptime"
-                }
-                if (!TextUtils.isEmpty(cpuName)) {
-                    binding.CpuName.text = "CPU: $cpuName"
-                }
-                if (!TextUtils.isEmpty(cpuArchitecture)) {
-                    binding.CpuArchitecture.text = "Architecture: $cpuArchitectureType - $cpuArchitecture"
-                }
-                if (!TextUtils.isEmpty(cpuType)) {
-                    binding.CpuType.text = "Type: $cpuType"
-                }
-                if (!TextUtils.isEmpty(cpuCores)) {
-                    val coresJson = jsonObject.getJSONObject("cpu").getJSONObject("cores")
-                    var coreCount = 0
-                    val keys = coresJson.keys()
+                        val formattedUptime =
+                            String.format("%02d:%02d:%02d:%02d", days, hours, minutes, seconds)
+                        binding.Uptime.text = "Uptime: $formattedUptime"
+                    }
+                    if (!TextUtils.isEmpty(cpuName)) {
+                        binding.CpuName.text = "CPU: $cpuName"
+                    }
+                    if (!TextUtils.isEmpty(cpuArchitecture)) {
+                        binding.CpuArchitecture.text =
+                            "Architecture: $cpuArchitectureType - $cpuArchitecture"
+                    }
+                    if (!TextUtils.isEmpty(cpuType)) {
+                        binding.CpuType.text = "Type: $cpuType"
+                    }
+                    if (!TextUtils.isEmpty(cpuCores)) {
+                        val coresJson = jsonObject.getJSONObject("cpu").getJSONObject("cores")
+                        var coreCount = 0
+                        val keys = coresJson.keys()
 
-                    while (keys.hasNext()) {
-                        val key = keys.next()
-                        if (key.startsWith("core_")) {
-                            coreCount++
+                        while (keys.hasNext()) {
+                            val key = keys.next()
+                            if (key.startsWith("core_")) {
+                                coreCount++
+                            }
                         }
+
+                        val cpuCores = "Cores: $coreCount"
+                        binding.CpuCores.text = cpuCores
                     }
+                    if (!TextUtils.isEmpty(networkDevices.toString())) {
+                        val networkJson = jsonObject.getJSONObject("network")
+                        var networkDeviceCount = 0
+                        val keys = networkJson.keys()
 
-                    val cpuCores = "Cores: $coreCount"
-                    binding.CpuCores.text = cpuCores
-                }
-                if (!TextUtils.isEmpty(networkDevices.toString())) {
-                    val networkJson = jsonObject.getJSONObject("network")
-                    var networkDeviceCount = 0
-                    val keys = networkJson.keys()
+                        while (keys.hasNext()) {
+                            keys.next() // Move to the next key
+                            networkDeviceCount++
+                        }
 
-                    while (keys.hasNext()) {
-                        keys.next() // Move to the next key
-                        networkDeviceCount++
+                        val networkDevices = "Network Devices: $networkDeviceCount"
+                        binding.NetworkDevices.text = networkDevices
                     }
+                    val distributionImageResource = when {
+                        distribution.toLowerCase(Locale.ROOT)
+                            .contains("ubuntu") -> R.drawable.sys_ubuntu
 
-                    val networkDevices = "Network Devices: $networkDeviceCount"
-                    binding.NetworkDevices.text = networkDevices
-                }
-                val distributionImageResource = when {
-                    distribution.toLowerCase(Locale.ROOT).contains("ubuntu") -> R.drawable.sys_ubuntu
-                    distribution.toLowerCase(Locale.ROOT).contains("debian") -> R.drawable.sys_debian
-                    distribution.toLowerCase(Locale.ROOT).contains("raspbian") -> R.drawable.sys_raspbian
-                    distribution.toLowerCase(Locale.ROOT).contains("raspberry") -> R.drawable.sys_raspbian
-                    else -> R.drawable.sys_default
-                }
-                binding.distributionImage.setImageResource(distributionImageResource)
+                        distribution.toLowerCase(Locale.ROOT)
+                            .contains("debian") -> R.drawable.sys_debian
 
-                // Set CPU image based on CPU name
-                val cpuImageResource = when {
-                    cpuName.toLowerCase(Locale.ROOT).contains("amd") -> R.drawable.amd
-                    cpuName.toLowerCase(Locale.ROOT).contains("intel") -> R.drawable.intel
-                    cpuName.toLowerCase(Locale.ROOT).contains("bcm") -> R.drawable.broadcom
-                    else -> R.drawable.sys_cpu
+                        distribution.toLowerCase(Locale.ROOT)
+                            .contains("raspbian") -> R.drawable.sys_raspbian
+
+                        distribution.toLowerCase(Locale.ROOT)
+                            .contains("raspberry") -> R.drawable.sys_raspbian
+
+                        else -> R.drawable.sys_default
+                    }
+                    binding.distributionImage.setImageResource(distributionImageResource)
+
+                    // Set CPU image based on CPU name
+                    val cpuImageResource = when {
+                        cpuName.toLowerCase(Locale.ROOT).contains("amd") -> R.drawable.amd
+                        cpuName.toLowerCase(Locale.ROOT).contains("intel") -> R.drawable.intel
+                        cpuName.toLowerCase(Locale.ROOT).contains("bcm") -> R.drawable.broadcom
+                        else -> R.drawable.sys_cpu
+                    }
+                    binding.cpuImage.setImageResource(cpuImageResource)
                 }
-                binding.cpuImage.setImageResource(cpuImageResource)
             }
         }
     }

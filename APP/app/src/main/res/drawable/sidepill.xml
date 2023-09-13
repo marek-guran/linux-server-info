@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape>
+            <!-- Background color for focused state -->
+            <solid android:color="@color/pill_focused" />
 
-    <!-- Background color -->
-    <solid android:color="@color/pill" />
+            <!-- Rounded corners -->
+            <corners
+                android:bottomRightRadius="18dp"
+                android:topRightRadius="18dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <!-- Default background color -->
+            <solid android:color="@color/pill" />
 
-    <!-- Rounded corners -->
-    <corners
-        android:bottomRightRadius="18dp"
-        android:topRightRadius="18dp" />
-
-</shape>
+            <!-- Rounded corners -->
+            <corners
+                android:bottomRightRadius="18dp"
+                android:topRightRadius="18dp" />
+        </shape>
+    </item>
+</selector>
