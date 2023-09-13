@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.5",
-    "Description": "Fixed some app crashes and app now hopefully fulfills standards for Google Play Store (for Android TVs).",
-    "Version": "1.0.5"
+    "Title": "Stable 1.0.6 - App",
+    "Description": "Fixed small issue with focusing for Android TVs.",
+    "Version": "1.0.6"
 }
