@@ -134,13 +134,17 @@ while True:
     # Network Information
     network_info = {}
     for iface, stats in psutil.net_if_stats().items():
+        # Skip interfaces with names starting with "veth"
+        if iface.startswith("veth") or iface.startswith("lo") or iface.startswith("br-"):
+            continue
+
         iface_info = {
             "is_up": stats.isup,
         }
 
         # Get network speed information for the interface
         download_speed_mbps, upload_speed_mbps = get_network_speed(iface)
-    
+
         # Check if speed values are available
         if download_speed_mbps is not None and upload_speed_mbps is not None:
             iface_info["speed"] = f"↓{download_speed_mbps:.2f} Mbps ↑{upload_speed_mbps:.2f} Mbps"
