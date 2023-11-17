@@ -22,6 +22,7 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.Locale
+import com.marekguran.serverinfo.R as R2
 import java.util.concurrent.TimeUnit
 
 class SystemFragment : Fragment() {
@@ -125,11 +126,20 @@ class SystemFragment : Fragment() {
                     val uptimeInSeconds = os.getString("uptime")
                     val networkDevices = jsonObject.getJSONObject("network")
 
+                    val distributionText = context?.getString(R2.string.distribution)
+                    val kernelText = context?.getString(R2.string.kernel)
+                    val uptimeText = context?.getString(R2.string.uptime)
+                    val cpuText = context?.getString(R2.string.cpu_sys)
+                    val architectureText = context?.getString(R2.string.architecture)
+                    val typeText = context?.getString(R2.string.type)
+                    val coresText = context?.getString(R2.string.cores)
+                    val networkDevicesText = context?.getString(R2.string.network_devices)
+
                     if (!TextUtils.isEmpty(distribution)) {
-                        binding!!.Distribution?.text = "Distribution: $distribution"
+                        binding!!.Distribution?.text = "$distributionText $distribution"
                     }
                     if (!TextUtils.isEmpty(kernel)) {
-                        binding.Kernel.text = "Kernel: $kernel"
+                        binding.Kernel.text = "$kernelText $kernel"
                     }
                     if (!TextUtils.isEmpty(uptimeInSeconds)) {
                         val uptimeSplit = uptimeInSeconds.split(".")
@@ -149,17 +159,17 @@ class SystemFragment : Fragment() {
 
                         val formattedUptime =
                             String.format("%02d:%02d:%02d:%02d", days, hours, minutes, seconds)
-                        binding.Uptime.text = "Uptime: $formattedUptime"
+                        binding.Uptime.text = "$uptimeText $formattedUptime"
                     }
                     if (!TextUtils.isEmpty(cpuName)) {
-                        binding.CpuName.text = "CPU: $cpuName"
+                        binding.CpuName.text = "$cpuText $cpuName"
                     }
                     if (!TextUtils.isEmpty(cpuArchitecture)) {
                         binding.CpuArchitecture.text =
-                            "Architecture: $cpuArchitectureType - $cpuArchitecture"
+                            "$architectureText $cpuArchitectureType - $cpuArchitecture"
                     }
                     if (!TextUtils.isEmpty(cpuType)) {
-                        binding.CpuType.text = "Type: $cpuType"
+                        binding.CpuType.text = "$typeText $cpuType"
                     }
                     if (!TextUtils.isEmpty(cpuCores)) {
                         val coresJson = jsonObject.getJSONObject("cpu").getJSONObject("cores")
@@ -173,7 +183,7 @@ class SystemFragment : Fragment() {
                             }
                         }
 
-                        val cpuCores = "Cores: $coreCount"
+                        val cpuCores = "$coresText $coreCount"
                         binding.CpuCores.text = cpuCores
                     }
                     if (!TextUtils.isEmpty(networkDevices.toString())) {
@@ -186,7 +196,7 @@ class SystemFragment : Fragment() {
                             networkDeviceCount++
                         }
 
-                        val networkDevices = "Network Devices: $networkDeviceCount"
+                        val networkDevices = "$networkDevicesText $networkDeviceCount"
                         binding.NetworkDevices.text = networkDevices
                     }
                     val distributionImageResource = when {

@@ -41,6 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/distribution"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -52,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/kernel"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -63,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/uptime"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -114,6 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/cpu_sys"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -124,6 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/architecture"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -134,6 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/type"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -144,6 +150,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@string/cores"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text_on_pill"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -166,6 +173,7 @@
                 android:focusable="true"
                 android:nextFocusUp="@id/hw"
                 android:text="@string/network_devices"
+                android:fontFamily="@font/nunitobold"
                 android:textColor="@color/text"
                 android:textSize="20sp"
                 android:textStyle="bold" />

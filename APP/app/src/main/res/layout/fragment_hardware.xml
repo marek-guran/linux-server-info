@@ -42,6 +42,7 @@
                     android:textStyle="bold"
                     android:focusable="true"
                     android:nextFocusRight="@id/memory_text"
+                    android:fontFamily="@font/nunitobold"
                     android:nextFocusDown="@id/storage" />
 
                 <TextView
@@ -52,6 +53,7 @@
                     android:text="@string/usage"
                     android:textColor="@color/text"
                     android:textSize="18sp"
+                    android:fontFamily="@font/nunitobold"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -75,6 +77,7 @@
                         android:layout_marginTop="7.5sp"
                         android:layout_marginBottom="5sp"
                         android:text=""
+                        android:fontFamily="@font/nunitosemibold"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -88,6 +91,7 @@
                     android:text="@string/temperature"
                     android:textColor="@color/text"
                     android:textSize="18sp"
+                    android:fontFamily="@font/nunitobold"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -111,6 +115,7 @@
                         android:layout_marginTop="7.5sp"
                         android:layout_marginBottom="5sp"
                         android:text=""
+                        android:fontFamily="@font/nunitosemibold"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -125,6 +130,7 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="5dp"
                     android:text="@string/clock_speed"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -154,6 +160,7 @@
                     android:textStyle="bold"
                     android:focusable="true"
                     android:nextFocusLeft="@id/cpu_name"
+                    android:fontFamily="@font/nunitobold"
                     android:nextFocusDown="@id/storage"/>
 
                 <TextView
@@ -165,6 +172,7 @@
                     android:layout_gravity="right"
                     android:textColor="@color/text"
                     android:textSize="18sp"
+                    android:fontFamily="@font/nunitobold"
                     android:textStyle="bold" />
 
                 <RelativeLayout
@@ -188,6 +196,7 @@
                         android:layout_marginTop="7.5sp"
                         android:layout_marginBottom="5sp"
                         android:text=""
+                        android:fontFamily="@font/nunitosemibold"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -201,6 +210,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
                     android:text="@string/used"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -213,6 +223,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
                     android:text="@string/free"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -225,6 +236,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_gravity="right"
                     android:text="@string/total"
+                    android:fontFamily="@font/nunitobold"
                     android:textColor="@color/text"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -251,6 +263,7 @@
                 android:textStyle="bold"
                 android:focusable="true"
                 android:nextFocusUp="@id/cpu_name"
+                android:fontFamily="@font/nunitobold"
                 android:nextFocusDown="@id/storageContainer"/>
         </LinearLayout>
 
@@ -295,6 +308,7 @@
                 android:textSize="40sp"
                 android:textStyle="bold"
                 android:focusable="true"
+                android:fontFamily="@font/nunitobold"
                 android:nextFocusUp="@id/storageContainer"/>
         </LinearLayout>
 

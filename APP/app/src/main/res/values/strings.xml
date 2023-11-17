@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Server Info</string>
+    <string name="app_name" translatable="false">Server Info</string>
 
     <string name="cpu">CPU</string>
     <string name="memory">Memory</string>
@@ -15,7 +15,7 @@
     <string name="api_address">API Address</string>
     <string name="save">SAVE</string>
     <string name="dark_mode">Dark mode</string>
-    <string name="api_updates">API Updates</string>
+    <string name="api_updates">Updates</string>
     <string name="title">Title:</string>
     <string name="description">Description:</string>
     <string name="open">OPEN</string>
@@ -27,4 +27,13 @@
     <string name="type">Type:</string>
     <string name="cores">Cores:</string>
     <string name="network_devices">Network Devices:</string>
+    <string name="running">Running:</string>
+    <string name="speed">Speed:</string>
+    <string name="mounted_at">Mounted at:</string>
+    <string name="fs">File System:</string>
+    <string name="used_storage1">Used</string>
+    <string name="used_storage2">out of</string>
+    <string name="hardware">Hardware</string>
+    <string name="system">System</string>
+    <string name="settings">Settings</string>
 </resources>
