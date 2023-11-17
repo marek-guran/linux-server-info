@@ -1,5 +1,5 @@
 {
     "Title": "Stable 1.0.7 - Script and App",
-    "Description": "Script:\nScript now skips veth devices and br- (not br1,br3...) devices (these are mainly named by docker so it is not neccessary to have hundreds of them listed)\n\nApp:\nAdded translation support, Slovak and Czech translations and app now has more modern font named Nunito",
+    "Description": "Script:\nScript now skips veth devices and br- (not br1,br3...) devices (these are mainly named by docker so it is not neccessary to have hundreds of them listed)\n\nApp:\nAdded translations support, new translations for SK and CZ and lastly new font: Nunito",
     "Version": "1.0.7"
 }
