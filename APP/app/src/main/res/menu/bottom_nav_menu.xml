@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_hw"
         android:icon="@drawable/cpu"
-        android:title="Hardware" />
+        android:title="@string/hardware" />
 
     <item
         android:id="@+id/navigation_system"
         android:icon="@drawable/dist_default"
-        android:title="System" />
+        android:title="@string/system" />
 
     <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/settings"
-        android:title="Settings" />
+        android:title="@string/settings" />
 
 </menu>

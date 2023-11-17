@@ -1,5 +1,6 @@
 package com.marekguran.serverinfo.ui.hardware
 
+import android.content.Context
 import android.graphics.Color
 import android.os.AsyncTask
 import android.os.Bundle
@@ -15,6 +16,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.marekguran.serverinfo.ApiAddressManager
+import com.marekguran.serverinfo.R as R2
 import com.marekguran.serverinfo.databinding.FragmentHardwareBinding
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -24,8 +26,6 @@ import java.io.InputStreamReader
 import java.lang.ref.WeakReference
 import java.net.HttpURLConnection
 import java.net.URL
-import android.R as R1
-import com.marekguran.serverinfo.R as R2
 
 class HardwareFragment : Fragment() {
 
@@ -40,7 +40,6 @@ class HardwareFragment : Fragment() {
     private val jsonUrl: String
         get() = getApi()
 
-    // Handler to periodically fetch data
     private val handler = Handler(Looper.getMainLooper())
 
     override fun onCreateView(
@@ -51,7 +50,6 @@ class HardwareFragment : Fragment() {
         _binding = FragmentHardwareBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        // Initialize TextViews
         val cpuUsageTextView: TextView = binding.cpuUsage
         val cpuTempTextView: TextView = binding.cpuTemp
         val cpuClockTextView: TextView = binding.cpuSpeed
@@ -65,7 +63,6 @@ class HardwareFragment : Fragment() {
         val ramUsagePercent: TextView = binding.ramUsagePercent
         val ramUsageProgress: ProgressBar = binding.ramUsageProgress
 
-        // Fetch JSON data initially
         fetchDataAndUpdateViews(
             cpuUsageTextView,
             cpuTempTextView,
@@ -81,7 +78,6 @@ class HardwareFragment : Fragment() {
             ramUsageProgress
         )
 
-        // Schedule periodic data refresh every 5 seconds
         handler.postDelayed(object : Runnable {
             override fun run() {
                 fetchDataAndUpdateViews(
@@ -98,9 +94,9 @@ class HardwareFragment : Fragment() {
                     ramUsagePercent,
                     ramUsageProgress
                 )
-                handler.postDelayed(this, 5000) // 5000 milliseconds = 5 seconds
+                handler.postDelayed(this, 5000)
             }
-        }, 5000) // Initial delay also set to 5 seconds
+        }, 5000)
 
         return root
     }
@@ -108,7 +104,6 @@ class HardwareFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-        // Remove any pending callbacks when the fragment is destroyed
         handler.removeCallbacksAndMessages(null)
     }
 
@@ -138,7 +133,8 @@ class HardwareFragment : Fragment() {
             cpuUsageProgressBar,
             cpuTempProgressBar,
             ramUsagePercent,
-            ramUsageProgress
+            ramUsageProgress,
+            requireContext()
         ).execute(jsonUrl)
     }
 
@@ -154,16 +150,9 @@ class HardwareFragment : Fragment() {
         private val cpuUsageProgressBar: ProgressBar,
         private val cpuTempProgressBar: ProgressBar,
         private val ramUsagePercent: TextView,
-        private val ramUsageProgress: ProgressBar
+        private val ramUsageProgress: ProgressBar,
+        private val context: Context
     ) : AsyncTask<String, Void, JSONObject>() {
-
-        private val weakCpuUsageTextView: WeakReference<TextView> = WeakReference(cpuUsageTextView)
-        private val weakCpuTempTextView: WeakReference<TextView> = WeakReference(cpuTempTextView)
-        private val weakCpuClockTextView: WeakReference<TextView> = WeakReference(cpuClockTextView)
-        private val weakRamUsageTextView: WeakReference<TextView> = WeakReference(ramUsedTextView)
-        private val weakRamFreeTextView: WeakReference<TextView> = WeakReference(ramFreeTextView)
-        private val weakRamTotalTextView: WeakReference<TextView> = WeakReference(ramTotalTextView)
-        private val weakRamUsagePercentTextView: WeakReference<TextView> = WeakReference(ramUsagePercent)
 
         override fun doInBackground(vararg params: String?): JSONObject? {
             val urlString = params[0]
@@ -205,7 +194,6 @@ class HardwareFragment : Fragment() {
         }
 
         private fun createNetworkViews(jsonObject: JSONObject) {
-            // Clear existing views
             networkContainer.removeAllViews()
 
             val networkObject = jsonObject.getJSONObject("network")
@@ -218,25 +206,26 @@ class HardwareFragment : Fragment() {
                 val isUp = networkData.getBoolean("is_up")
                 val speed = networkData.getString("speed")
 
-                val networkNameTextView = TextView(weakCpuUsageTextView.get()?.context)
+                val networkNameTextView = TextView(context)
                 networkNameTextView.text = name
                 networkNameTextView.setTextColor(Color.parseColor("#f2f2fb"))
                 networkNameTextView.setTextSize(16F)
 
-                val networkSpeedTextView = TextView(weakCpuUsageTextView.get()?.context)
-                networkSpeedTextView.text = "Running: $isUp \nSpeed: $speed"
+                val networkSpeedTextView = TextView(context)
+                val runningLabel = context.getString(R2.string.running)
+                val speedLabel = context.getString(R2.string.speed)
+
+                networkSpeedTextView.text = "$runningLabel $isUp\n$speedLabel $speed"
                 networkSpeedTextView.setTextColor(Color.parseColor("#f2f2fb"))
                 networkSpeedTextView.setPadding(0, 0, 0, 10)
                 networkSpeedTextView.setTextSize(16F)
 
-                // Add the views to the network container
                 networkContainer.addView(networkNameTextView)
                 networkContainer.addView(networkSpeedTextView)
             }
         }
 
         private fun createStorageViews(jsonObject: JSONObject) {
-            // Clear existing views
             storageContainer.removeAllViews()
 
             val storageArray = jsonObject.getJSONArray("storage")
@@ -250,24 +239,25 @@ class HardwareFragment : Fragment() {
                 val mountedStorage = storageObject.getString("mountpoint")
                 val fstypeStorage = storageObject.getString("fstype")
 
-                val storageNameTextView = TextView(weakCpuUsageTextView.get()?.context)
-                storageNameTextView.text = "$name \nMounted at: $mountedStorage\n" +
-                        "File System: $fstypeStorage"
+                val mounted = context.getString(R2.string.mounted_at)
+                val fs = context.getString(R2.string.fs)
+
+                val storageNameTextView = TextView(context)
+                storageNameTextView.text = "$name \n$mounted $mountedStorage\n" +
+                        "$fs $fstypeStorage"
                 storageNameTextView.setTextColor(Color.parseColor("#f2f2fb"))
                 storageNameTextView.setTextSize(16F)
                 storageNameTextView.setPadding(0, 0, 0, 5)
 
                 val progressBar = ProgressBar(
-                    weakCpuUsageTextView.get()?.context,
+                    context,
                     null,
-                    R1.attr.progressBarStyleHorizontal
+                    android.R.attr.progressBarStyleHorizontal
                 )
                 progressBar.progress = usagePercent.replace("%", "").toFloat().toInt()
-                // Retrieve the Drawable from the resource ID using ContextCompat
-                progressBar.progressDrawable = ContextCompat.getDrawable(weakCpuUsageTextView?.get()?.context!!, R2.drawable.custom_progress_bar)
+                progressBar.progressDrawable = ContextCompat.getDrawable(context, R2.drawable.custom_progress_bar)
 
                 val progressBarHeightInPixels = 40
-
                 val layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     progressBarHeightInPixels
@@ -275,13 +265,15 @@ class HardwareFragment : Fragment() {
 
                 progressBar.layoutParams = layoutParams
 
-                val progressBarTextView = TextView(weakCpuUsageTextView.get()?.context)
-                progressBarTextView.text = "Used $usedStorage out of $totalStorage"
+                val storage1 = context.getString(R2.string.used_storage1)
+                val storage2 = context.getString(R2.string.used_storage2)
+
+                val progressBarTextView = TextView(context)
+                progressBarTextView.text = "$storage1 $usedStorage $storage2 $totalStorage"
                 progressBarTextView.setTextColor(Color.parseColor("#f2f2fb"))
                 progressBarTextView.setTextSize(16F)
                 progressBarTextView.setPadding(0, 5, 0, 10)
 
-                // Add the views to the storage container
                 storageContainer.addView(storageNameTextView)
                 storageContainer.addView(progressBar)
                 storageContainer.addView(progressBarTextView)
@@ -292,7 +284,6 @@ class HardwareFragment : Fragment() {
             try {
                 val cpuInfo = jsonObject.getJSONObject("cpu")
                 val cpuUsage = cpuInfo.getString("usage")
-                // Extract the numeric part (excluding %) and convert it to an integer
                 val cpuUsageProgressValue = cpuUsage.split(".")[0].toIntOrNull() ?: 0
                 val cpuTemp = cpuInfo.getString("temperature")
                 val cpuTempProgressValue = cpuTemp.split(".")[0].toIntOrNull() ?: 0
@@ -305,15 +296,19 @@ class HardwareFragment : Fragment() {
                 val ramPercent = ram.getString("usage_percent")
                 val ramProgressValue = ramPercent.split("%")[0].toIntOrNull() ?: 0
 
-                weakCpuUsageTextView.get()?.text = cpuUsage
+                cpuUsageTextView.text = cpuUsage
                 cpuUsageProgressBar.progress = cpuUsageProgressValue
                 cpuTempProgressBar.progress = cpuTempProgressValue
-                weakCpuTempTextView.get()?.text = "$cpuTemp℃"
-                weakCpuClockTextView.get()?.text = "Clock Speed: $cpuClock"
-                weakRamUsageTextView.get()?.text = "Used: $ramUsage"
-                weakRamFreeTextView.get()?.text = "Free: $ramFree"
-                weakRamTotalTextView.get()?.text = "Total: $ramTotal"
-                weakRamUsagePercentTextView.get()?.text = ramPercent
+                cpuTempTextView.text = "$cpuTemp℃"
+                val currentCpuClockText = cpuClockTextView.text.toString()
+                cpuClockTextView.text = currentCpuClockText.split(":")[0] + ": $cpuClock"
+                val currentRamFreeText = ramFreeTextView.text.toString()
+                ramFreeTextView.text = currentRamFreeText.split(":")[0] + ": $ramFree"
+                val currentRamUsageText = ramUsedTextView.text.toString()
+                ramUsedTextView.text = currentRamUsageText.split(":")[0] + ": $ramUsage"
+                val currentRamTotalText = ramTotalTextView.text.toString()
+                ramTotalTextView.text = currentRamTotalText.split(":")[0] + ": $ramTotal"
+                ramUsagePercent.text = ramPercent
                 ramUsageProgress.progress = ramProgressValue
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -321,5 +316,3 @@ class HardwareFragment : Fragment() {
         }
     }
 }
-
-

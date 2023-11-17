@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cpu">CPU</string>
+    <string name="memory">RAM</string>
+    <string name="usage">Využitie</string>
+    <string name="temperature">Teplota</string>
+    <string name="used">Využité:</string>
+    <string name="free">Voľné</string>
+    <string name="total">Celkom:</string>
+    <string name="clock_speed">Frekvencia:</string>
+    <string name="storage">Úložisko:</string>
+    <string name="network">Sieť:</string>
+    <string name="api_address">API Adresa</string>
+    <string name="save">ULOŽIŤ</string>
+    <string name="dark_mode">Tmavý režim</string>
+    <string name="api_updates">Aktualizácie</string>
+    <string name="title">Titulok:</string>
+    <string name="description">Popis:</string>
+    <string name="open">OTVORIŤ</string>
+    <string name="distribution">Distribúcia:</string>
+    <string name="kernel">Kernel:</string>
+    <string name="uptime">Čas spustenia:</string>
+    <string name="cpu_sys">CPU:</string>
+    <string name="architecture">Architektúra:</string>
+    <string name="type">Druh:</string>
+    <string name="cores">Jadrá:</string>
+    <string name="network_devices">Sieťové Zariadenia:</string>
+    <string name="running">Spustené:</string>
+    <string name="speed">Rýchlosť:</string>
+    <string name="mounted_at">Pripojené na:</string>
+    <string name="fs">Súborový Systém:</string>
+    <string name="used_storage1">Využité</string>
+    <string name="used_storage2">z</string>
+    <string name="hardware">Hardvér</string>
+    <string name="system">Systém</string>
+    <string name="settings">Nastavenia</string>
+</resources>

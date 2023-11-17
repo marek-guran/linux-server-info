@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/custom_background</item>
+        <item name="android:navigationBarColor">@color/nav_menu_color</item>
     </style>
 
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
