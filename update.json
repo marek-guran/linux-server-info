@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.6 - App",
-    "Description": "Fixed small issue with focusing for Android TVs.",
-    "Version": "1.0.6"
+    "Title": "Stable 1.0.7 - Script and App",
+    "Description": "Script: Script now skips veth devices and br- (not br1,br3...) devices (these are mainly named by docker so it is not neccessary to have hundreds of them listed)\n\nApp: Added translation support, Slovak and Czech translations and app now has more modern font named Nunito",
+    "Version": "1.0.7"
 }
