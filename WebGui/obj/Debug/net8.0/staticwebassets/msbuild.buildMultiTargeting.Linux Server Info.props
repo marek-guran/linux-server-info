@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Linux Server Info.props" />
+</Project>

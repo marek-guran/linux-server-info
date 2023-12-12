@@ -1,0 +1,30 @@
+C:\Users\skemg\Desktop\Linux Server Info\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\skemg\Desktop\Linux Server Info\bin\Debug\net8.0\appsettings.json
+C:\Users\skemg\Desktop\Linux Server Info\bin\Debug\net8.0\Linux Server Info.staticwebassets.runtime.json
+C:\Users\skemg\Desktop\Linux Server Info\bin\Debug\net8.0\Linux Server Info.exe
+C:\Users\skemg\Desktop\Linux Server Info\bin\Debug\net8.0\Linux Server Info.deps.json
+C:\Users\skemg\Desktop\Linux Server Info\bin\Debug\net8.0\Linux Server Info.runtimeconfig.json
+C:\Users\skemg\Desktop\Linux Server Info\bin\Debug\net8.0\Linux Server Info.dll
+C:\Users\skemg\Desktop\Linux Server Info\bin\Debug\net8.0\Linux Server Info.pdb
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.AssemblyInfoInputs.cache
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.AssemblyInfo.cs
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.csproj.CoreCompileInputs.cache
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.RazorAssemblyInfo.cache
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.RazorAssemblyInfo.cs
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\staticwebassets\msbuild.Linux Server Info.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\staticwebassets\msbuild.build.Linux Server Info.props
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Linux Server Info.props
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Linux Server Info.props
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\scopedcss\bundle\Linux Server Info.styles.css
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\scopedcss\projectbundle\Linux Server Info.bundle.scp.css
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.dll
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\refint\Linux Server Info.dll
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.pdb
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\Linux Server Info.genruntimeconfig.cache
+C:\Users\skemg\Desktop\Linux Server Info\obj\Debug\net8.0\ref\Linux Server Info.dll
