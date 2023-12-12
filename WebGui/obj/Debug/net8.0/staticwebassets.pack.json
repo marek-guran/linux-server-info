@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Linux Server Info.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\api\\system_info.json",
+      "PackagePath": "staticwebassets\\api\\system_info.json"
+    },
+    {
       "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

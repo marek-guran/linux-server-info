@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gO1bfq0K7UFZEJYEwbUefrlYkZ+dig102o0sPoo6Dyw=",
+  "Hash": "q3VGGOFgYR2C7xJ38wvQ6MuGdI3QlU5a3eN1vKMoxF4=",
   "Source": "Linux Server Info",
   "BasePath": "_content/Linux Server Info",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Linux Server Info.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\api\\system_info.json",
+      "SourceId": "Linux Server Info",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
+      "BasePath": "_content/Linux Server Info",
+      "RelativePath": "api/system_info.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\api\\system_info.json"
     },
     {
       "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\css\\site.css",
