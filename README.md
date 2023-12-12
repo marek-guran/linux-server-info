@@ -7,10 +7,10 @@
 
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=com.marekguran.serverinfo" style="margin-right: 20px;">
-        <img src="google-play-badge.png" width="300" alt="Server Info App">
+        <img src="Github-Assets/google-play-badge.png" width="300" alt="Server Info App">
   </a>
   <a href="https://github.com/marek-guran/linux-server-info/releases">
-        <img src="github-badge.png" width="300" alt="GitHub Releases">
+        <img src="Github-Assets/github-badge.png" width="300" alt="GitHub Releases">
   </a>
 </p>
 
