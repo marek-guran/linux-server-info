@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/nunito/nunito.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
   font-size: 14px;
 }
@@ -12,13 +19,26 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+* {
+    font-family: 'Nunito' !important;
+}
+
 html {
   position: relative;
   min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #1C274C;
+}
+
+.container {
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    padding: 10px;
+    border-radius: 18px;
 }
 
 .card {
@@ -27,7 +47,7 @@ body {
 }
 
 .graph-container {
-    background-color: #003366;
+    background-color: #85BDD3;
     border-radius: 25px;
     width: 100%;
     height: 40px;
@@ -36,7 +56,7 @@ body {
 }
 
 .graph-bar {
-    background-color: #0099FF;
+    background-color: #1C274C;
     border-radius: 25px;
     height: 30px;
     width: 100%;
@@ -49,6 +69,16 @@ body {
     transition: width 0.5s ease;
 }
 
+.graph-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #85BDD3;
+    width: 0%;
+    transition: width 0.8s ease;
+}
+
 .graph-container span {
     position: absolute;
     color: white;
@@ -59,12 +89,29 @@ body {
     white-space: nowrap;
 }
 
-.graph-mask {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #003366;
-    width: 0%;
-    transition: width 0.5s ease;
+.left-pill {
+    background-color: #1C274C;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: -20px;
+    display: inline-block;
+    color: white;
 }
+
+.right-pill {
+    background-color: #1C274C;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: -20px;
+    display: inline-block;
+    color: white;
+}
+
+.ram-info {
+    text-align: right;
+}
+
