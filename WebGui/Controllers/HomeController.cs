@@ -27,9 +27,28 @@ namespace Linux_Server_Info.Controllers
             {
                 var json = streamReader.ReadToEnd();
                 var serverInfo = JsonSerializer.Deserialize<ServerInfoModel>(json);
-                return View(serverInfo); // Pass the deserialized object to the view
+
+                var distribution = serverInfo?.Os?.Distribution?.ToLower() ?? "";
+                var svgFile = "linux.svg"; // default
+
+                if (distribution.Contains("ubuntu"))
+                {
+                    svgFile = "ubuntu.svg";
+                }
+                else if (distribution.Contains("raspbian") || distribution.Contains("raspberry"))
+                {
+                    svgFile = "raspberry.svg";
+                }
+                else if (distribution.Contains("debian"))
+                {
+                    svgFile = "debian.svg";
+                }
+
+                ViewBag.SvgFile = svgFile;
+                return View(serverInfo);
             }
         }
+
 
 
         public IActionResult Privacy()

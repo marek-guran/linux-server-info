@@ -10,23 +10,40 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="container navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mt-3 mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Linux Server Info</a>
+                <a class="navbar-brand ml-3" href="/">
+                    <img src="assets/logo.png" alt="Logo" style="width: 60px; height: 60px;" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Hardware</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                                <div class="icon-text">
+                                    <img src="~/assets/cpu.svg" alt="CPU" style="height: 48px; width: 48px;">
+                                    <span>Hardware</span>
+                                </div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="System" asp-action="Index">System</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="System" asp-action="Index">
+                                <div class="icon-text">
+                                    <img src="~/assets/@ViewBag.SvgFile" alt="System Icon" style="height: 48px; width: 48px;">
+                                    <span>System</span>
+                                </div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">
+                                <div class="icon-text">
+                                    <img src="~/assets/settings.svg" alt="CPU" style="height: 48px; width: 48px;">
+                                    <span>Settings</span>
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>

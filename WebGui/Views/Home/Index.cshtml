@@ -9,7 +9,7 @@
         <div class="col-6 mb-3">
             <h1 class="left-pill"><strong>CPU</strong></h1>
             <div class="mt-1">
-            <div>
+                <div>
                     <div>
                         <p style="margin-bottom: 0;"><strong>Usage</strong></p>
                         <div id="cpuUsageGraph" class="graph-container">
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <p><strong>Frequency: @Model?.Cpu?.Speed</strong></p>
-            </div>
+                </div>
             </div>
         </div>
         <div class="col-6 mb-3 ram-info">
@@ -54,13 +54,17 @@
     <div class="row">
         <div class="col-12 mb-3">
             <h1 class="left-pill"><strong>Storage</strong></h1>
-            <div class="card mt-3">
-                <div class="card-body">
-                    @if (Model?.Storage != null)
-                    {
-                        @foreach (var storage in Model.Storage)
-                        {
-                            <p><strong>@storage?.Name</strong></p>
+        </div>
+    </div>
+    @if (Model?.Storage != null)
+    {
+        <div class="row">
+            @foreach (var storage in Model.Storage)
+            {
+                <div class="col-md-6 mb-3">
+                    <div class="card mt-0">
+                        <div class="card-body">
+                            <h4><strong>@storage?.Name</strong></h4>
                             <p><strong>Mounted at:</strong> @storage?.Mountpoint</p>
                             <p><strong>File System:</strong> @storage?.Fstype</p>
                             <div class="graph-container">
@@ -70,37 +74,46 @@
                                 <span id="storageUsageGraphText_@storageIndex">@storage?.UsagePercent</span>
                             </div>
                             <p>Used @storage?.Used out of @storage?.Free</p>
-
-                            storageIndex++;
-                        }
-                    }
+                        </div>
+                    </div>
                 </div>
-            </div>
+                storageIndex++;
+            }
         </div>
-    </div>
+    }
 
     <div class="row">
         <div class="col-12 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title">Network</h1>
-                    @if (Model?.Network != null)
-                    {
-                        @foreach (var interfaceEntry in Model.Network)
-                        {
-                            <h2>Interface Name: @interfaceEntry.Key</h2>
-                            <p>Is Up: @interfaceEntry.Value.IsUp</p>
-                            <p>Speed: @interfaceEntry.Value.Speed</p>
-                        }
-                    }
-                    else
-                    {
-                        <p>No Network Data Found</p>
-                    }
-                </div>
-            </div>
+            <h1 class="left-pill"><strong>Network</strong></h1>
         </div>
     </div>
+
+    @if (Model?.Network != null)
+    {
+        <div class="row">
+            <!-- Start of the row for network cards -->
+            @foreach (var interfaceEntry in Model.Network)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card mt-0">
+                        <div class="card-body">
+                            <h4><strong>@interfaceEntry.Key</strong></h4>
+                            <p>Is Up: @interfaceEntry.Value.IsUp</p>
+                            <p>Speed: @interfaceEntry.Value.Speed</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div> <!-- End of the row for network cards -->
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-12">
+                <p>No Network Data Found</p>
+            </div>
+        </div>
+    }
 
     <div class="row">
         <div class="col-12">
@@ -116,35 +129,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    window.onload = function () {
-        // Temperature pill
-        var cpuTemperature = parseFloat(document.getElementById('tempGraphText').innerText);
-        var maxTemperature = 100;
-        var tempMaskWidth = 100 - (cpuTemperature / maxTemperature) * 100;
-        var tempMask = document.getElementById('tempGraphMask');
-        tempMask.style.width = tempMaskWidth + '%';
-
-        // CPU usage pill
-        var cpuUsage = parseFloat(document.getElementById('cpuUsageGraphText').innerText);
-        var cpuUsageMask = document.getElementById('cpuUsageGraphMask');
-        cpuUsageMask.style.width = (100 - cpuUsage) + '%';
-
-        // RAM usage pill
-        var ramUsage = parseFloat(document.getElementById('ramUsageGraphText').innerText);
-        var ramUsageMask = document.getElementById('ramUsageGraphMask');
-        ramUsageMask.style.width = (100 - ramUsage) + '%';
-
-        // Storage usage pills
-        var storageElements = document.querySelectorAll('[id^="storageUsageGraphText_"]');
-        storageElements.forEach(function (el) {
-            var storageUsage = parseFloat(el.innerText);
-            var storageIndex = el.id.split('_')[1];
-            var storageMask = document.getElementById('storageUsageGraphMask_' + storageIndex);
-            storageMask.style.width = (100 - storageUsage) + '%';
-        });
-    };
-</script>
-
-

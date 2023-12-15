@@ -44,6 +44,8 @@ body {
 .card {
     border-radius: 18px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #354475;
+    color: white;
 }
 
 .graph-container {
@@ -115,3 +117,36 @@ body {
     text-align: right;
 }
 
+.icon-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+    .icon-text img {
+        margin-right: 5px;
+    }
+
+
+/* Custom style for the navbar toggler */
+.navbar-toggler {
+    border: none; /* Removes the default border */
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #354475; /* Sets a background color */
+    width: 50px; /* Sets a specific width */
+    height: 50px; /* Sets a specific height */
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers horizontally in the flex container */
+    align-items: center; /* Centers vertically in the flex container */
+    padding: 0; /* Removes padding */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' linecap='round' stroke-miterlimit='10' d='M4 11h22M4 15h22M4 19h22'/%3E%3C/svg%3E"); /* Sets the icon color to white */
+    background-size: 150%; /* Adjust the size of the SVG icon */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
