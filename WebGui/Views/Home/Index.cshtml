@@ -3,6 +3,110 @@
     ViewData["Title"] = "Hardware";
 }
 
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <h1>CPU</h1>
+            <div class="card mt-3">
+            <div class="card-body">
+                    <div>
+                        <p style="margin-bottom: 0;">Usage</p>
+                        <div id="cpuUsageGraph" class="graph-container">
+                            <div class="graph-bar" id="cpuUsageGraphBar">
+                                <div class="graph-mask" id="cpuUsageGraphMask"></div>
+                            </div>
+                            <span id="cpuUsageGraphText">@Model?.Cpu?.Usage</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 0;">Temperature</p>
+                        <div id="temperatureGraph" class="graph-container">
+                            <div class="graph-bar" id="tempGraphBar">
+                                <div class="graph-mask" id="tempGraphMask"></div>
+                            </div>
+                            <span id="tempGraphText">@Model?.Cpu?.Temperature°C</span>
+                        </div>
+                    </div>
+                <p>Frequency: @Model?.Cpu?.Speed</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <h1>RAM</h1>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <p>Ram Usage Percent: @Model?.Ram?.UsagePercent</p>
+                    <p>Free RAM: @Model?.Ram?.Free</p>
+                    <p>Used RAM: @Model?.Ram?.Used</p>
+                    <p>Total RAM: @Model?.Ram?.Total</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h1>Storage</h1>
+            <div class="card mt-3">
+                <div class="card-body">
+                    @if (Model?.Storage != null)
+                    {
+                        @foreach (var storage in Model.Storage)
+                        {
+                            <p>Name: @storage?.Name</p>
+                            <p>Size: @storage?.Size</p>
+                            <p>Type: @storage?.Type</p>
+                            <p>Mountpoint: @storage?.Mountpoint</p>
+                            <p>FSType: @storage?.Fstype</p>
+                            <p>Used: @storage?.Used</p>
+                            <p>Free: @storage?.Free</p>
+                            <p>Usage Percent: @storage?.UsagePercent</p>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Network</h1>
+                    @if (Model?.Network != null)
+                    {
+                        @foreach (var interfaceEntry in Model.Network)
+                        {
+                            <h2>Interface Name: @interfaceEntry.Key</h2>
+                            <p>Is Up: @interfaceEntry.Value.IsUp</p>
+                            <p>Speed: @interfaceEntry.Value.Speed</p>
+                        }
+                    }
+                    else
+                    {
+                        <p>No Network Data Found</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">System</h1>
+                    <p>Name: @Model?.Os?.Name</p>
+                    <p>Distribution: @Model?.Os?.Distribution</p>
+                    <p>Kernel Version: @Model?.Os?.KernelVersion</p>
+                    <p>Uptime: @Model?.Os?.Uptime</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <h1>CPU</h1>
 <p>Type: @Model?.Cpu?.Type</p>
 <p>Architecture: @Model?.Cpu?.Architecture</p>
@@ -55,3 +159,22 @@ else
 <p>Distribution: @Model?.Os?.Distribution</p>
 <p>Kernel Version: @Model?.Os?.KernelVersion</p>
 <p>Uptime: @Model?.Os?.Uptime</p>
+
+<script>
+    window.onload = function () {
+        // Temperature graph logic
+        var cpuTemperature = parseFloat(document.getElementById('tempGraphText').innerText);
+        var maxTemperature = 100;
+        var tempMaskWidth = 100 - (cpuTemperature / maxTemperature) * 100; // Calculate mask width
+        var tempMask = document.getElementById('tempGraphMask');
+        tempMask.style.width = tempMaskWidth + '%';
+
+        // CPU usage graph logic
+        var cpuUsage = parseFloat(document.getElementById('cpuUsageGraphText').innerText);
+        var cpuUsageMask = document.getElementById('cpuUsageGraphMask');
+        cpuUsageMask.style.width = (100 - cpuUsage) + '%'; // Calculate mask width for CPU usage
+    };
+
+</script>
+
+

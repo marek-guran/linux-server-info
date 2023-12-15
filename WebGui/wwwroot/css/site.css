@@ -20,3 +20,51 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.card {
+    border-radius: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.graph-container {
+    background-color: #003366;
+    border-radius: 25px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.graph-bar {
+    background-color: #0099FF;
+    border-radius: 25px;
+    height: 30px;
+    width: 100%;
+    margin: 5px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.graph-container span {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+.graph-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #003366;
+    width: 0%;
+    transition: width 0.5s ease;
+}
