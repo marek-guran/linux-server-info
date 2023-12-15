@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj": {}
+    "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj": {
+    "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj",
+        "projectUniqueName": "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj",
         "projectName": "Linux Server Info",
-        "projectPath": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj",
+        "projectPath": "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj",
         "packagesPath": "C:\\Users\\skemg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\obj\\",
+        "outputPath": "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\skemg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

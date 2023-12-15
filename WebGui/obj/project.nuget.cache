@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VP0sOcr8a1GLEGL2y2n/X+D4Tvqe3aAeD71jwQMGZhytfN67kz+E3noRyWd1JiZncMFW25AkBxakMrIYshPjRw==",
+  "dgSpecHash": "bUF0lOWCZ8femGhXrtLDQp1RFjnOVG+PPEAFP5Ny0AobviBnnFEmNBHdRWndgTFBdLrPLEaWbjGtVE/xeyn7vw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj",
+  "projectFilePath": "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\skemg\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\skemg\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -93,6 +93,7 @@
     "C:\\Users\\skemg\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\skemg\\.nuget\\packages\\microsoft.jsinterop\\8.0.0\\microsoft.jsinterop.8.0.0.nupkg.sha512",
     "C:\\Users\\skemg\\.nuget\\packages\\microsoft.net.stringtools\\17.7.2\\microsoft.net.stringtools.17.7.2.nupkg.sha512",
+    "C:\\Users\\skemg\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\skemg\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\8.0.0\\microsoft.visualstudio.web.codegeneration.8.0.0.nupkg.sha512",
     "C:\\Users\\skemg\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\8.0.0\\microsoft.visualstudio.web.codegeneration.core.8.0.0.nupkg.sha512",
     "C:\\Users\\skemg\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.design\\8.0.0\\microsoft.visualstudio.web.codegeneration.design.8.0.0.nupkg.sha512",
