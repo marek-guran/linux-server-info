@@ -29,7 +29,7 @@ namespace Linux_Server_Info.Controllers
                 var serverInfo = JsonSerializer.Deserialize<ServerInfoModel>(json);
 
                 var distribution = serverInfo?.Os?.Distribution?.ToLower() ?? "";
-                var svgFile = "linux.svg"; // default
+                var svgFile = "linux.svg";
 
                 if (distribution.Contains("ubuntu"))
                 {
@@ -47,13 +47,6 @@ namespace Linux_Server_Info.Controllers
                 ViewBag.SvgFile = svgFile;
                 return View(serverInfo);
             }
-        }
-
-
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

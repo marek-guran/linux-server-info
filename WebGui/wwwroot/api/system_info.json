@@ -1,70 +1,70 @@
 {
-    "cpu": {
-        "type": "aarch64",
-        "architecture": "64bit",
-        "architecture_type": "ARM",
-        "hardware": "BCM2835",
-        "brand": "Unknown",
-        "usage": "1.5%",
-        "speed": "0.60 GHz",
-        "temperature": "40.9",
-        "cores": {
-            "core_1": "1.0%",
-            "core_2": "1.0%",
-            "core_3": "2.0%",
-            "core_4": "1.0%"
-        }
-    },
-    "storage": [
-        {
-            "name": "sda1",
-            "size": "256M",
-            "type": "part",
-            "mountpoint": "/boot/firmware",
-            "fstype": "vfat",
-            "used": "0.12 GB",
-            "free": "0.13 GB",
-            "usage_percent": "47.1%"
-        },
-        {
-            "name": "sda2",
-            "size": "953,6G",
-            "type": "part",
-            "mountpoint": "/",
-            "fstype": "ext4",
-            "used": "786.58 GB",
-            "free": "104.31 GB",
-            "usage_percent": "88.3%"
-        }
-    ],
-    "ram": {
-        "total": "3.70 GB",
-        "free": "2.61 GB",
-        "used": "0.90 GB",
-        "usage_percent": "29%"
-    },
-    "network": {
-        "eth0": {
-            "is_up": true,
-            "speed": "\u21930.02 Mbps \u21910.01 Mbps"
-        },
-        "br0": {
-            "is_up": true,
-            "speed": "\u21930.00 Mbps \u21910.00 Mbps"
-        },
-        "wlan0": {
-            "is_up": true,
-            "speed": "\u21930.00 Mbps \u21910.00 Mbps"
-        },
-        "docker0": {
-            "is_up": true,
-            "speed": "\u21930.00 Mbps \u21910.00 Mbps"
-        }
-    },
-    "os": {
-        "name": "Linux",
-        "distribution": "Ubuntu 23.10",
-        "kernel_version": "6.5.0-1006-raspi",
-        "uptime": "1702240414.00 seconds"
+  "cpu": {
+    "type": "aarch64",
+    "architecture": "64bit",
+    "architecture_type": "ARM",
+    "hardware": "BCM2835",
+    "brand": "Unknown",
+    "usage": "0.8%",
+    "speed": "0.60 GHz",
+    "temperature": "39.9",
+    "cores": {
+      "core_1": "2.0%",
+      "core_2": "1.0%",
+      "core_3": "2.0%",
+      "core_4": "1.0%"
     }
+  },
+  "storage": [
+    {
+      "name": "sda1",
+      "size": "256M",
+      "type": "part",
+      "mountpoint": "/boot/firmware",
+      "fstype": "vfat",
+      "used": "0.12 GB",
+      "free": "0.13 GB",
+      "usage_percent": "47.1%"
+    },
+    {
+      "name": "sda2",
+      "size": "953,6G",
+      "type": "part",
+      "mountpoint": "/",
+      "fstype": "ext4",
+      "used": "786.21 GB",
+      "free": "104.69 GB",
+      "usage_percent": "88.2%"
+    }
+  ],
+  "ram": {
+    "total": "3.70 GB",
+    "free": "2.63 GB",
+    "used": "0.89 GB",
+    "usage_percent": "28%"
+  },
+  "network": {
+    "eth0": {
+      "is_up": true,
+      "speed": "\u21930.00 Mbps \u21910.00 Mbps"
+    },
+    "br0": {
+      "is_up": true,
+      "speed": "\u21930.01 Mbps \u21910.00 Mbps"
+    },
+    "docker0": {
+      "is_up": true,
+      "speed": "\u21930.00 Mbps \u21910.00 Mbps"
+    },
+    "wlan0": {
+      "is_up": false,
+      "speed": "\u21930.00 Mbps \u21910.00 Mbps"
+    }
+  },
+  "os": {
+    "name": "Linux",
+    "distribution": "Ubuntu 23.10",
+    "kernel_version": "6.5.0-1006-raspi",
+    "uptime": "1702586471.00 seconds"
+  }
 }
