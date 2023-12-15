@@ -36,9 +36,9 @@
 <p>Ram Usage Percent: @Model?.Ram?.UsagePercent</p>
 
 <h1>Network Info</h1>
-@if (Model?.Network?.Interfaces != null)
+@if (Model?.Network != null)
 {
-    @foreach (var interfaceEntry in Model.Network.Interfaces)
+    @foreach (var interfaceEntry in Model.Network)
     {
         <h2>Interface Name: @interfaceEntry.Key</h2>
         <p>Is Up: @interfaceEntry.Value.IsUp</p>

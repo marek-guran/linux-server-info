@@ -16,7 +16,7 @@ namespace Linux_Server_Info.Models
         public RamInfo? Ram { get; set; }
 
         [JsonPropertyName("network")]
-        public NetworkInfo? Network { get; set; }
+        public Dictionary<string, NetworkInterfaceInfo>? Network { get; set; }
 
         [JsonPropertyName("os")]
         public OsInfo? Os { get; set; }
@@ -92,12 +92,6 @@ namespace Linux_Server_Info.Models
 
         [JsonPropertyName("usage_percent")]
         public string? UsagePercent { get; set; }
-    }
-
-    public class NetworkInfo
-    {
-        [JsonPropertyName("network")]
-        public Dictionary<string, NetworkInterfaceInfo>? Interfaces { get; set; }
     }
 
     public class NetworkInterfaceInfo
