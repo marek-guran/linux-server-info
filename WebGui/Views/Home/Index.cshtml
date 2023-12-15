@@ -1,9 +1,9 @@
 ﻿@model Linux_Server_Info.Models.ServerInfoModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Hardware";
 }
 
-<h1>CPU Info</h1>
+<h1>CPU</h1>
 <p>Type: @Model?.Cpu?.Type</p>
 <p>Architecture: @Model?.Cpu?.Architecture</p>
 <p>Architecture Type: @Model?.Cpu?.ArchitectureType</p>
@@ -13,7 +13,13 @@
 <p>Speed: @Model?.Cpu?.Speed</p>
 <p>Temperature: @Model?.Cpu?.Temperature</p>
 
-<h1>Storage Info</h1>
+<h1>RAM</h1>
+<p>Total RAM: @Model?.Ram?.Total</p>
+<p>Free RAM: @Model?.Ram?.Free</p>
+<p>Used RAM: @Model?.Ram?.Used</p>
+<p>Ram Usage Percent: @Model?.Ram?.UsagePercent</p>
+
+<h1>Storage</h1>
 @if (Model?.Storage != null)
 {
     @foreach (var storage in Model.Storage)
@@ -29,13 +35,7 @@
     }
 }
 
-<h1>RAM Info</h1>
-<p>Total RAM: @Model?.Ram?.Total</p>
-<p>Free RAM: @Model?.Ram?.Free</p>
-<p>Used RAM: @Model?.Ram?.Used</p>
-<p>Ram Usage Percent: @Model?.Ram?.UsagePercent</p>
-
-<h1>Network Info</h1>
+<h1>Network</h1>
 @if (Model?.Network != null)
 {
     @foreach (var interfaceEntry in Model.Network)
@@ -50,7 +50,7 @@ else
     <p>No Network Data Found</p>
 }
 
-<h1>OS Info</h1>
+<h1>System</h1>
 <p>Name: @Model?.Os?.Name</p>
 <p>Distribution: @Model?.Os?.Distribution</p>
 <p>Kernel Version: @Model?.Os?.KernelVersion</p>

@@ -11,7 +11,7 @@ namespace Linux_Server_Info.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IWebHostEnvironment _webHostEnvironment; // Add this field
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
         public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webHostEnvironment) // Inject IWebHostEnvironment
         {

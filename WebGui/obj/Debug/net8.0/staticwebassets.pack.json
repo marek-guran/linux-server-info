@@ -9,6 +9,42 @@
       "PackagePath": "staticwebassets\\api\\system_info.json"
     },
     {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\amd.svg",
+      "PackagePath": "staticwebassets\\assets\\amd.svg"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\broadcom.svg",
+      "PackagePath": "staticwebassets\\assets\\broadcom.svg"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\cpu.svg",
+      "PackagePath": "staticwebassets\\assets\\cpu.svg"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\debian.svg",
+      "PackagePath": "staticwebassets\\assets\\debian.svg"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\intel.svg",
+      "PackagePath": "staticwebassets\\assets\\intel.svg"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\linux.svg",
+      "PackagePath": "staticwebassets\\assets\\linux.svg"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\raspberry.svg",
+      "PackagePath": "staticwebassets\\assets\\raspberry.svg"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\settings.svg",
+      "PackagePath": "staticwebassets\\assets\\settings.svg"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\ubuntu.svg",
+      "PackagePath": "staticwebassets\\assets\\ubuntu.svg"
+    },
+    {
       "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
