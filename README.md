@@ -14,7 +14,6 @@
   </a>
 </p>
 
-```WEB GUI Coming soon```
 
 ## Monitor your server with this resources light python script without root priviges.
 After successful setup, you are able to monitor your server or anything what is running Debian based Linux by Android App, which is compatible with all Android 6+ devices including Chromebooks and Android TV. Or use WEB GUi that comes with this repository.
