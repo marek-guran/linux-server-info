@@ -29,7 +29,10 @@ namespace Linux_Server_Info.Controllers
                 var serverInfo = JsonSerializer.Deserialize<ServerInfoModel>(json);
 
                 var distribution = serverInfo?.Os?.Distribution?.ToLower() ?? "";
+                var cpu1 = serverInfo?.Cpu?.Hardware?.ToLower() ?? "";
+                var cpu2 = serverInfo?.Cpu?.Brand?.ToLower() ?? "";
                 var svgFile = "linux.svg";
+                var cpuInfo = "cpu.svg";
 
                 if (distribution.Contains("ubuntu"))
                 {
@@ -44,7 +47,21 @@ namespace Linux_Server_Info.Controllers
                     svgFile = "debian.svg";
                 }
 
+                if (cpu1.Contains("amd") || cpu2.Contains("amd"))
+                {
+                    cpuInfo = "amd.svg";
+                }
+                else if (cpu1.Contains("intel") || cpu2.Contains("intel"))
+                {
+                    cpuInfo = "intel.svg";
+                }
+                else if (cpu1.Contains("bcm") || cpu1.Contains("broadcom") || cpu2.Contains("bcm") || cpu2.Contains("broadcom"))
+                {
+                    cpuInfo = "broadcom.svg";
+                }
+
                 ViewBag.SvgFile = svgFile;
+                ViewBag.CpuInfo = cpuInfo;
                 return View(serverInfo);
             }
         }

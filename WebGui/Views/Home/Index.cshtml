@@ -65,15 +65,15 @@
                     <div class="card mt-0">
                         <div class="card-body">
                             <h4><strong>@storage?.Name</strong></h4>
-                            <p><strong>Mounted at:</strong> @storage?.Mountpoint</p>
-                            <p><strong>File System:</strong> @storage?.Fstype</p>
+                            <p><strong>Mounted at:</strong> @storage?.Mountpoint<br />
+                                <strong>File System:</strong> @storage?.Fstype</p>
                             <div class="graph-container">
                                 <div class="graph-bar">
                                     <div class="graph-mask" id="storageUsageGraphMask_@storageIndex"></div>
                                 </div>
                                 <span id="storageUsageGraphText_@storageIndex">@storage?.UsagePercent</span>
                             </div>
-                            <p>Used @storage?.Used out of @storage?.Free</p>
+                            <p>Used @storage?.Used out of @storage?.Size</p>
                         </div>
                     </div>
                 </div>
@@ -97,8 +97,8 @@
                     <div class="card mt-0">
                         <div class="card-body">
                             <h4><strong>@interfaceEntry.Key</strong></h4>
-                            <p>Is Up: @interfaceEntry.Value.IsUp</p>
-                            <p>Speed: @interfaceEntry.Value.Speed</p>
+                            <p>Is Up: @interfaceEntry.Value.IsUp<br />
+                                Speed: @interfaceEntry.Value.Speed</p>
                         </div>
                     </div>
                 </div>

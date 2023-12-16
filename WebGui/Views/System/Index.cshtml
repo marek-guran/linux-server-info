@@ -9,9 +9,9 @@
         <div class="col-6">
             <div class="card">
                 <div class="card-body">
-                    <p><strong>Distribution: @Model?.Os?.Distribution</strong></p>
-                    <p><strong>Kernel Version: @Model?.Os?.KernelVersion</strong></p>
-                    <p><strong>Uptime: <span id="uptime"></span></strong></p>
+                    <p><strong>Distribution: @Model?.Os?.Distribution</strong><br />
+                        <strong>Kernel: @Model?.Os?.KernelVersion</strong><br />
+                        <strong>Uptime: <span id="uptime"></span></strong></p>
                 </div>
             </div>
         </div>
@@ -24,20 +24,24 @@
 </div>
 
 <div class="container mt-3">
-    <h1 class="left-pill"><strong>CPU</strong></h1>
+    <div class="d-flex justify-content-end">
+        <h1 class="right-pill"><strong>CPU</strong></h1>
+    </div>
     <div class="row">
-        <div class="col-6">
-            <div class="image-container">
+        <div class="col-6 d-flex justify-content-end">
+            <div class="image-container d-flex justify-content-end">
                 <img class="sys-image" src="~/assets/@ViewBag.cpuInfo" alt="CPU Icon">
             </div>
         </div>
         <div class="col-6">
             <div class="card">
                 <div class="card-body">
-                    <p><strong>CPU: @(!string.IsNullOrEmpty(Model?.Cpu?.Brand) && Model.Cpu.Brand != "Unknown" ? Model.Cpu.Brand : Model?.Cpu?.Hardware)</strong></p>
-                    <p><strong>Architecture: @Model?.Cpu?.Architecture</strong></p>
-                    <p><strong>Type: @Model?.Cpu?.Type</strong></p>
-                    <p><strong>Cores: @(Model?.Cpu?.Cores?.Count ?? 0)</strong></p>
+                    <p>
+                        <strong>CPU: @(!string.IsNullOrEmpty(Model?.Cpu?.Brand) && Model.Cpu.Brand != "Unknown" ? Model.Cpu.Brand : Model?.Cpu?.Hardware)</strong><br />
+                        <strong>Architecture: @Model?.Cpu?.Architecture</strong><br />
+                        <strong>Type: @Model?.Cpu?.Type</strong><br />
+                        <strong>Cores: @(Model?.Cpu?.Cores?.Count ?? 0)</strong>
+                    </p>
                 </div>
             </div>
         </div>

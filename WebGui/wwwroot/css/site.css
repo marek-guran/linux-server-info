@@ -15,6 +15,31 @@ html {
   }
 }
 
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+p, span {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -174,8 +199,7 @@ body {
 }
 
 .sys-image {
-    height: 180px;
-    width: 180px;
+    height: 130px;
+    width: 130px;
     max-width: 100%;
-    object-fit: cover;
 }

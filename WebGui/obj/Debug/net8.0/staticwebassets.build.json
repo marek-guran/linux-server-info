@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l75oN1p74yc8LB2qox3FEv8Fei1NmILhnsqwNoxN1is=",
+  "Hash": "Fb+Qs0ZU8DlRQQLj+oCpSKFQ3Fnphm7N7MtayxUFWmI=",
   "Source": "Linux Server Info",
   "BasePath": "_content/Linux Server Info",
   "Mode": "Default",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\logo.svg",
+      "SourceId": "Linux Server Info",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
+      "BasePath": "_content/Linux Server Info",
+      "RelativePath": "assets/logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\logo.svg"
     },
     {
       "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\MG.ico",

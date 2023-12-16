@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj": {}
+    "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj": {}
   },
   "projects": {
-    "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj": {
+    "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj",
+        "projectUniqueName": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj",
         "projectName": "Linux Server Info",
-        "projectPath": "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\Linux Server Info.csproj",
+        "projectPath": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\Linux Server Info.csproj",
         "packagesPath": "C:\\Users\\skemg\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\skemg\\Desktop\\linux-server-info\\WebGui\\obj\\",
+        "outputPath": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\skemg\\AppData\\Roaming\\NuGet\\NuGet.Config",

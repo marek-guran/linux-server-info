@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\assets\\logo.png"
     },
     {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\logo.svg",
+      "PackagePath": "staticwebassets\\assets\\logo.svg"
+    },
+    {
       "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\raspberry.svg",
       "PackagePath": "staticwebassets\\assets\\raspberry.svg"
     },

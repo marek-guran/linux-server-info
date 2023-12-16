@@ -9,6 +9,7 @@
       "Linux Server Info/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": "8.0.0",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.0"
         },
         "runtime": {
@@ -1181,6 +1182,7 @@
           }
         }
       },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {},
       "Microsoft.VisualStudio.Web.CodeGeneration/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
@@ -2224,6 +2226,13 @@
       "sha512": "sha512-GDm2qPXJeWR4FSwY90zYZ+Wd0CN4FE+Nu2F57Vu8avatMzNQxV9WaVEBZFKbT4JLhNcXKc0CKBO50oVoRJR5BQ==",
       "path": "microsoft.net.stringtools/17.7.2",
       "hashPath": "microsoft.net.stringtools.17.7.2.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Kaa1rBZdJFq5A0qgAcl6Bmk/UqLXTq9acEqxUlPEBA8oscmakLfkvuSXfG7Wa9t1/keaT85EuuDNgOo+Z9VYOQ==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.5",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/8.0.0": {
       "type": "package",
