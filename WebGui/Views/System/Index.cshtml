@@ -1,0 +1,77 @@
+﻿@model Linux_Server_Info.Models.ServerInfoModel
+@{
+    ViewData["Title"] = "System";
+}
+
+<div class="container mt-3">
+    <h1 class="left-pill"><strong>System</strong></h1>
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <p><strong>Distribution: @Model?.Os?.Distribution</strong><br />
+                        <strong>Kernel: @Model?.Os?.KernelVersion</strong><br />
+                        <strong>Uptime: <span id="uptime"></span></strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="image-container">
+                <img class="sys-image" src="~/assets/@ViewBag.SvgFile" alt="System Icon">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="d-flex justify-content-end">
+        <h1 class="right-pill"><strong>CPU</strong></h1>
+    </div>
+    <div class="row">
+        <div class="col-6 d-flex justify-content-end">
+            <div class="image-container d-flex justify-content-end">
+                <img class="sys-image" src="~/assets/@ViewBag.cpuInfo" alt="CPU Icon">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <p>
+                        <strong>CPU: @(!string.IsNullOrEmpty(Model?.Cpu?.Brand) && Model.Cpu.Brand != "Unknown" ? Model.Cpu.Brand : Model?.Cpu?.Hardware)</strong><br />
+                        <strong>Architecture: @Model?.Cpu?.Architecture</strong><br />
+                        <strong>Type: @Model?.Cpu?.Type</strong><br />
+                        <strong>Cores: @(Model?.Cpu?.Cores?.Count ?? 0)</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <h5><strong>Network Devices: @(Model?.Network?.Count ?? 0)</strong></h5>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var initialTimestamp = parseInt("@Model?.Os?.Uptime".split('.')[0]);
+        var currentTime = Math.floor(Date.now() / 1000);
+        var initialUptime = currentTime - initialTimestamp;
+
+        function formatUptime(seconds) {
+            var days = Math.floor(seconds / 86400);
+            var hours = Math.floor((seconds % 86400) / 3600);
+            var minutes = Math.floor((seconds % 3600) / 60);
+            var secs = seconds % 60;
+            return days + ":" + hours.toString().padStart(2, '0') + ":" + minutes.toString().padStart(2, '0') + ":" + secs.toString().padStart(2, '0');
+        }
+
+        function updateUptime() {
+            var uptimeElement = document.getElementById('uptime');
+            initialUptime++;
+            uptimeElement.textContent = formatUptime(initialUptime);
+        }
+
+        setInterval(updateUptime, 1000);
+    });
+</script>

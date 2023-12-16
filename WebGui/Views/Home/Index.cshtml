@@ -1,0 +1,146 @@
+﻿@model Linux_Server_Info.Models.ServerInfoModel
+@{
+    ViewData["Title"] = "Hardware";
+    int storageIndex = 0;
+}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6 mb-3">
+            <h1 class="left-pill"><strong>CPU</strong></h1>
+            <div class="mt-1">
+                <div>
+                    <div>
+                        <p style="margin-bottom: 0;"><strong>Usage</strong></p>
+                        <div id="cpuUsageGraph" class="graph-container">
+                            <div class="graph-bar" id="cpuUsageGraphBar">
+                                <div class="graph-mask" id="cpuUsageGraphMask"></div>
+                            </div>
+                            <span id="cpuUsageGraphText">@Model?.Cpu?.Usage</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="margin-bottom: 0;"><strong>Temperature</strong></p>
+                        <div id="temperatureGraph" class="graph-container">
+                            <div class="graph-bar" id="tempGraphBar">
+                                <div class="graph-mask" id="tempGraphMask"></div>
+                            </div>
+                            <span id="tempGraphText">@Model?.Cpu?.Temperature°C</span>
+                        </div>
+                    </div>
+                    <p><strong>Frequency: @Model?.Cpu?.Speed</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 mb-3 ram-info">
+            <h1 class="right-pill"><strong>RAM</strong></h1>
+            <div class="mt-1">
+                <div>
+                    <div>
+                        <p style="margin-bottom: 0;"><strong>Usage</strong></p>
+                        <div id="ramUsageGraph" class="graph-container">
+                            <div class="graph-bar" id="ramUsageGraphBar">
+                                <div class="graph-mask" id="ramUsageGraphMask"></div>
+                            </div>
+                            <span id="ramUsageGraphText">@Model?.Ram?.UsagePercent</span>
+                        </div>
+                    </div>
+                    <p><strong>Used: @Model?.Ram?.Used<br />Free: @Model?.Ram?.Free<br />Total: @Model?.Ram?.Total</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h1 class="left-pill"><strong>Storage</strong></h1>
+        </div>
+    </div>
+    @if (Model?.Storage != null)
+    {
+        <div class="row">
+            @foreach (var storage in Model.Storage)
+            {
+                <div class="col-md-6 mb-3">
+                    <div class="card mt-0">
+                        <div class="card-body">
+                            <h4><strong>@storage?.Name</strong></h4>
+                            <p><strong>Mounted at:</strong> @storage?.Mountpoint<br />
+                                <strong>File System:</strong> @storage?.Fstype</p>
+                            <div class="graph-container">
+                                <div class="graph-bar">
+                                    <div class="graph-mask" id="storageUsageGraphMask_@storageIndex"></div>
+                                </div>
+                                <span id="storageUsageGraphText_@storageIndex">@storage?.UsagePercent</span>
+                            </div>
+                            <p>Used @storage?.Used out of @storage?.Size</p>
+                        </div>
+                    </div>
+                </div>
+                storageIndex++;
+            }
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-12 mb-3">
+            <h1 class="left-pill"><strong>Network</strong></h1>
+        </div>
+    </div>
+
+    @if (Model?.Network != null)
+    {
+        <div class="row">
+            @foreach (var interfaceEntry in Model.Network)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card mt-0">
+                        <div class="card-body">
+                            <h4><strong>@interfaceEntry.Key</strong></h4>
+                            <p>Is Up: @interfaceEntry.Value.IsUp<br />
+                                Speed: @interfaceEntry.Value.Speed</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-12">
+                <p>No Network Data Found</p>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    window.onload = function () {
+        // Temperature pill
+        var cpuTemperature = parseFloat(document.getElementById('tempGraphText').innerText);
+        var maxTemperature = 100;
+        var tempMaskWidth = 100 - (cpuTemperature / maxTemperature) * 100;
+        var tempMask = document.getElementById('tempGraphMask');
+        tempMask.style.width = tempMaskWidth + '%';
+
+        // CPU usage pill
+        var cpuUsage = parseFloat(document.getElementById('cpuUsageGraphText').innerText);
+        var cpuUsageMask = document.getElementById('cpuUsageGraphMask');
+        cpuUsageMask.style.width = (100 - cpuUsage) + '%';
+
+        // RAM usage pill
+        var ramUsage = parseFloat(document.getElementById('ramUsageGraphText').innerText);
+        var ramUsageMask = document.getElementById('ramUsageGraphMask');
+        ramUsageMask.style.width = (100 - ramUsage) + '%';
+
+        // Storage usage pills
+        var storageElements = document.querySelectorAll('[id^="storageUsageGraphText_"]');
+        storageElements.forEach(function (el) {
+            var storageUsage = parseFloat(el.innerText);
+            var storageIndex = el.id.split('_')[1];
+            var storageMask = document.getElementById('storageUsageGraphMask_' + storageIndex);
+            storageMask.style.width = (100 - storageUsage) + '%';
+        });
+    };
+</script>
