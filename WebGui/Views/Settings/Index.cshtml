@@ -3,5 +3,29 @@
     ViewData["Title"] = "Settings";
 }
 
-<h1>To Be Added</h1>
+<div class="container mt-3">
+    <h1 class="left-pill"><strong>Updates</strong></h1>
+    <div class="row">
+        <div class="col-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 id="update-title"><strong></strong></h5>
+                    <p id="update-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="https://github.com/marek-guran/linux-server-info/releases/latest" target="_blank" class="btn btn-primary">Open</a>
+    </div>
+</div>
 
+<script>
+    fetch('https://raw.githubusercontent.com/marek-guran/linux-server-info/main/update.json')
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector('#update-title strong').textContent = data.Title;
+            document.getElementById('update-description').textContent = data.Description;
+        })
+        .catch(error => console.error('Error fetching update data:', error));
+</script>

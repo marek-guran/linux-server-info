@@ -204,3 +204,9 @@ body {
     width: 130px;
     max-width: 100%;
 }
+
+.btn-primary {
+    background-color: #1C274C;
+    border-color: #1C274C;
+    border-radius: 50px;
+}
