@@ -93,7 +93,6 @@ body {
     align-items: center;
     white-space: nowrap;
     overflow: hidden;
-    transition: width 0.5s ease;
 }
 
 .graph-mask {
@@ -103,6 +102,8 @@ body {
     bottom: 0;
     background-color: #85BDD3;
     width: 0%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
     transition: width 0.8s ease;
 }
 
