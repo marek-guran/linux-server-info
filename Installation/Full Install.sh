@@ -7,10 +7,12 @@ current_user=$(whoami)
 sudo apt-get update
 sudo apt-get install -y python3 python3-pip lsb-release util-linux ifstat git
 
-# Clone the GitHub repository
-git clone https://github.com/marek-guran/linux-server-info
-sudo chmod -R 777 linux-server-info
-cd linux-server-info
+# Download files and create dir
+mkdir /home/$current_user/linux-server-info
+cd /home/$current_user/linux-server-info
+wget https://raw.githubusercontent.com/marek-guran/linux-server-info/web-gui/server-info.py
+wget https://raw.githubusercontent.com/marek-guran/linux-server-info/web-gui/requirements.txt
+sudo chmod -R 777 /home/$current_user/linux-server-info
 
 # Install requirements inside linux-server-info directory
 sudo pip3 install -r requirements.txt || { echo "Error: Failed to install Python requirements inside linux-server-info directory."; }
@@ -19,9 +21,9 @@ sudo pip3 install -r requirements.txt || { echo "Error: Failed to install Python
 sudo apt-get install docker.io -y
 
 # Run Docker container with restart always, linking to /home/user/linux-server-info/
-sudo docker run -d --restart=always -p 9000:80 -v /home/$current_user/linux-server-info:/usr/local/apache2/htdocs --name server-info httpd:latest
+sudo docker run -d --restart=always -p 9002:8080 -v /home/$current_user/linux-server-info:/app/wwwroot/api --name server-info emgi2/linux-server-info
 
-echo "Webserver installed and running on port 9000."
+echo "WEB GUi installed and running on port 9002."
 
 # Create the systemd service file dynamically
 cat <<EOL | sudo tee /etc/systemd/system/server-info.service > /dev/null

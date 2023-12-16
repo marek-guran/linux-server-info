@@ -17,9 +17,9 @@
 ```WEB GUI Coming soon```
 
 ## Monitor your server with this resources light python script without root priviges.
-After successful setup, you are able to monitor your server or anything what is running Debian based Linux by Android App app, which is compatible with all Android 6+ devices including Chromebooks and Android TV.
+After successful setup, you are able to monitor your server or anything what is running Debian based Linux by Android App, which is compatible with all Android 6+ devices including Chromebooks and Android TV. Or use WEB GUi that comes with this repository.
 
-# Automatic Installation (web server in docker by default uses port 9000)
+# Automatic Installation (web server in docker by default uses port 9002)
 Full Install
 ```
 curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Full%20Install.sh | bash
@@ -44,18 +44,18 @@ Uninstall Service
 ```
 curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Uninstall%20Service.sh | bash
 ```
-| Option             | Docker + httpd container | Dependencies | Service | Requirements.txt |
+| Option             | Docker + WEB Gui | Dependencies | Service | Requirements.txt |
 |--------------------|--------|--------------|---------|------------------|
 | Full Install       | ✅     | ✅           | ✅      | ✅               |
 | Dependencies + Service | ❌ | ✅           | ✅      | ✅               |
 | Dependencies only | ❌     | ✅           | ❌      | ✅               |
 
-Web server will use ```/home/user/server-info/``` directory to publish json file for app and will be on port ```9000```. Will be used httpd container and ```docker.io package```. You will be able to access it at: ```http://device-ip:9000/system_info.json```
+Web server will use ```/home/user/server-info/``` directory to publish json file for app and will be on port ```9002```. Will be used WEB GUi container and ```docker.io package```. You will be able to access it at: ```http://device-ip:9002/``` and api for Android App at: ```http://device-ip:9002/api```
 
-| Option           | Docker | Service | Docker Container |
-|------------------|--------|---------|------------------------------|
-| Full Uninstall   | ❌     | ✅      | ✅                           |
-| Uninstall Service| ❌     | ✅      | ❌                           |
+| Option           | Docker | Service | WEB GUi | Linux Server Info Folder |
+|------------------|--------|---------|---------|------------------------------|
+| Full Uninstall   | ❌     | ✅      | ✅       | ✅                          |
+| Uninstall Service| ❌     | ✅      | ❌       | ❌                          |
 
 You can uninstall ```docker.io``` by ```sudo apt remove docker.io -y```. It is not removed automatically, since docker is used by many people.
 ## Updating
@@ -72,4 +72,4 @@ There just change your file locations and start it with:
 and if you want it to start on each boot, use command:
 ```sudo systemctl enable server-info```
 ## Download app
-You can download it from releases section or by Google Play Store. Once installed, head to settings and put there your web server address with full path to file. For example: ```http://10.0.1.1:9000/system_info.json```
+You can download it from releases section or by Google Play Store. Once installed, head to settings and put there your web server address with full path to file. For example: ```http://10.0.1.1:9002/api```
