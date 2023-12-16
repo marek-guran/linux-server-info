@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.7 - Script and App",
-    "Description": "Script:\nScript now skips veth devices and br- (not br1,br3...) devices (these are mainly named by docker so it is not neccessary to have hundreds of them listed)\n\nApp:\nAdded translations support, new translations for SK and CZ and lastly new font: Nunito",
-    "Version": "1.0.7"
+    "Title": "Stable 1.0.8 - New WEB GUi",
+    "Description": "New WEB GUi released! It is based on ASP.NET Core MVC and also updated installtion scripts so you now download only 2 files! (Recommended new installation)",
+    "Version": "1.0.8"
 }
