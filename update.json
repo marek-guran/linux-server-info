@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.8 - New WEB GUi",
-    "Description": "New WEB GUi released! It is based on ASP.NET Core MVC and also updated installtion scripts so you now download only 2 files! (Recommended new installation)",
-    "Version": "1.0.8"
+    "Title": "Stable 1.0.9 - WEB GUi",
+    "Description": "Added: Dark Mode and PWA support",
+    "Version": "1.0.9"
 }
