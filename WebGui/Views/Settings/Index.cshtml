@@ -4,6 +4,14 @@
 }
 
 <div class="container mt-3">
+    <h1 class="left-pill"><strong>Settings</strong></h1>
+    <div class="dark-mode-toggle">
+        <label>
+            <strong>Dark Mode</strong>
+            <input type="checkbox" id="dark-mode-switch" class="switch-checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
     <h1 class="left-pill"><strong>Updates</strong></h1>
     <div class="row">
         <div class="col-12 mb-3">
@@ -16,11 +24,53 @@
         </div>
     </div>
     <div class="text-center">
-        <a href="https://github.com/marek-guran/linux-server-info/releases/latest" target="_blank" class="btn btn-primary">Open</a>
+        <a href="https://github.com/marek-guran/linux-server-info/releases/latest" target="_blank" class="btn btn-primary">OPEN</a>
     </div>
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const switchElement = document.getElementById('dark-mode-switch');
+        const darkMode = getCookie('dark-mode');
+
+        if (darkMode === 'true') {
+            switchElement.checked = true;
+            document.body.classList.add('dark-mode');
+        }
+
+        switchElement.addEventListener('change', function () {
+
+            if (this.checked) {
+                document.body.classList.add('dark-mode');
+                setCookie('dark-mode', 'true', 7);
+            } else {
+                document.body.classList.remove('dark-mode');
+                setCookie('dark-mode', 'false', 7);
+            }
+            location.reload();
+        });
+    });
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
     fetch('https://raw.githubusercontent.com/marek-guran/linux-server-info/main/update.json')
         .then(response => response.json())
         .then(data => {

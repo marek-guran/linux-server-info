@@ -1,11 +1,20 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var darkModeCookie = Context.Request.Cookies["dark-mode"];
+    var theme = "light";
+
+    if (!string.IsNullOrEmpty(darkModeCookie) && darkModeCookie == "true")
+    {
+        theme = "dark";
+    }
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/@(theme).css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Linux_Server_Info.styles.css" asp-append-version="true" />
 </head>
 <body>
@@ -13,7 +22,10 @@
         <nav class="container navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mt-3 mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand ml-3" href="/">
-                    <img src="~/assets/logo.svg" alt="Logo" style="width: 48px; height: 48px;" />
+                    @{
+                        var logoImage = theme == "dark" ? "logo-dark-mode.svg" : "logo.svg";
+                    }
+                    <img src="~/assets/@logoImage" alt="Logo" style="width: 48px; height: 48px;" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +36,29 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
                                 <div class="icon-text">
-                                    <img src="~/assets/@ViewBag.cpuInfo" alt="Hardware Icon" style="height: 48px; width: 48px;">
+                                    @{
+                                        var cpuIcon = "";
+                                        if (theme == "dark")
+                                        {
+                                            if (ViewBag.cpuInfo.EndsWith("cpu.svg"))
+                                            {
+                                                cpuIcon = "cpu-dark-mode.svg";
+                                            }
+                                            else if (ViewBag.cpuInfo.EndsWith("amd.svg"))
+                                            {
+                                                cpuIcon = "amd-dark-mode.svg";
+                                            }
+                                            else
+                                            {
+                                                cpuIcon = ViewBag.cpuInfo;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            cpuIcon = ViewBag.cpuInfo;
+                                        }
+                                    }
+                                    <img src="~/assets/@cpuIcon" alt="Hardware Icon" style="height: 48px; width: 48px;">
                                     <span>Hardware</span>
                                 </div>
                             </a>
@@ -32,7 +66,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="System" asp-action="Index">
                                 <div class="icon-text">
-                                    <img src="~/assets/@ViewBag.SvgFile" alt="System Icon" style="height: 48px; width: 48px;">
+                                    @{
+                                        var systemIcon = ViewBag.SvgFile.EndsWith("linux.svg") && theme == "dark" ? "linux.svg" : ViewBag.SvgFile;
+                                    }
+                                    <img src="~/assets/@systemIcon" alt="System Icon" style="height: 48px; width: 48px;">
                                     <span>System</span>
                                 </div>
                             </a>
@@ -40,7 +77,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">
                                 <div class="icon-text">
-                                    <img src="~/assets/settings.svg" alt="CPU" style="height: 48px; width: 48px;">
+                                    <img src="~/assets/@(theme == "dark" ? "settings-dark-mode.svg" : "settings.svg")" alt="Settings" style="height: 48px; width: 48px;">
                                     <span>Settings</span>
                                 </div>
                             </a>

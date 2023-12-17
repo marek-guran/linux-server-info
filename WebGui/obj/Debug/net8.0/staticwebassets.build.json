@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Fb+Qs0ZU8DlRQQLj+oCpSKFQ3Fnphm7N7MtayxUFWmI=",
+  "Hash": "gCcpo8t08fmeGW9bKryNw0ISw5EjvIuG42QVuFByL+4=",
   "Source": "Linux Server Info",
   "BasePath": "_content/Linux Server Info",
   "Mode": "Default",
@@ -131,6 +131,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\amd.svg"
     },
     {
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\amd-dark-mode.svg",
+      "SourceId": "Linux Server Info",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
+      "BasePath": "_content/Linux Server Info",
+      "RelativePath": "assets/amd-dark-mode.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\amd-dark-mode.svg"
+    },
+    {
       "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\broadcom.svg",
       "SourceId": "Linux Server Info",
       "SourceType": "Discovered",
@@ -167,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\cpu.svg"
+    },
+    {
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\cpu-dark-mode.svg",
+      "SourceId": "Linux Server Info",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
+      "BasePath": "_content/Linux Server Info",
+      "RelativePath": "assets/cpu-dark-mode.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\cpu-dark-mode.svg"
     },
     {
       "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\debian.svg",
@@ -264,6 +302,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\logo.svg"
     },
     {
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\logo-dark-mode.svg",
+      "SourceId": "Linux Server Info",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
+      "BasePath": "_content/Linux Server Info",
+      "RelativePath": "assets/logo-dark-mode.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\logo-dark-mode.svg"
+    },
+    {
       "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\MG.ico",
       "SourceId": "Linux Server Info",
       "SourceType": "Discovered",
@@ -321,6 +378,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\settings.svg"
     },
     {
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\settings-dark-mode.svg",
+      "SourceId": "Linux Server Info",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
+      "BasePath": "_content/Linux Server Info",
+      "RelativePath": "assets/settings-dark-mode.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\settings-dark-mode.svg"
+    },
+    {
       "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\ubuntu.svg",
       "SourceId": "Linux Server Info",
       "SourceType": "Discovered",
@@ -340,12 +416,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\ubuntu.svg"
     },
     {
-      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\css\\dark.css",
       "SourceId": "Linux Server Info",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
       "BasePath": "_content/Linux Server Info",
-      "RelativePath": "css/site.css",
+      "RelativePath": "css/dark.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -356,7 +432,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
+      "OriginalItemSpec": "wwwroot\\css\\dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\css\\light.css",
+      "SourceId": "Linux Server Info",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
+      "BasePath": "_content/Linux Server Info",
+      "RelativePath": "css/light.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\light.css"
     },
     {
       "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\favicon.ico",

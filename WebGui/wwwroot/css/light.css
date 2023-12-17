@@ -31,7 +31,7 @@ h4 {
     font-size: 28px;
 }
 
-h5 {
+h5, label {
     font-size: 24px;
 }
 
@@ -209,4 +209,54 @@ body {
     background-color: #1C274C;
     border-color: #1C274C;
     border-radius: 50px;
+    font-size: 18px;
+}
+
+.switch-checkbox {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.dark-mode-toggle label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Styling for the slider */
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    background-color: #85BDD3;
+    border-radius: 24px;
+    margin-left: 50px;
+}
+
+    .slider::after {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        left: 1px;
+        bottom: 1px;
+        background-color: #1C274C;
+        border-radius: 50%;
+        transition: 0.4s;
+    }
+
+input:checked + .slider {
+    background-color: #85BDD3;
+}
+
+    input:checked + .slider::after {
+        transform: translateX(26px);
+    }
+
+.dark-mode-toggle label {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    cursor: pointer;
 }
