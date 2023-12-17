@@ -57,6 +57,22 @@
       "PackagePath": "staticwebassets\\assets\\logo.svg"
     },
     {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\pwa\\logo-192x192.png",
+      "PackagePath": "staticwebassets\\assets\\pwa\\logo-192x192.png"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\pwa\\logo-512x512.png",
+      "PackagePath": "staticwebassets\\assets\\pwa\\logo-512x512.png"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\pwa\\pc_demo.png",
+      "PackagePath": "staticwebassets\\assets\\pwa\\pc_demo.png"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\pwa\\phone_demo.png",
+      "PackagePath": "staticwebassets\\assets\\pwa\\phone_demo.png"
+    },
+    {
       "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\raspberry.svg",
       "PackagePath": "staticwebassets\\assets\\raspberry.svg"
     },
@@ -87,6 +103,10 @@
     {
       "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\fonts\\nunito\\nunito.ttf",
       "PackagePath": "staticwebassets\\fonts\\nunito\\nunito.ttf"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\js\\service-worker.js",
+      "PackagePath": "staticwebassets\\js\\service-worker.js"
     },
     {
       "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\js\\site.js",
@@ -319,6 +339,10 @@
     {
       "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Linux Server Info.Microsoft.AspNetCore.StaticWebAssets.props",

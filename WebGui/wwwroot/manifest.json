@@ -1,0 +1,38 @@
+{
+  "name": "Linux Server Info",
+  "short_name": "Server Info",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "assets/pwa/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#5199bd",
+  "background_color": "#D6FFFF",
+  "display": "standalone",
+  "orientation": "any",
+  "screenshots": [
+    {
+      "src": "assets/pwa/pc_demo.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "platform": "wide",
+      "form_factor": "wide",
+      "label": "PWA - PC look a like"
+    },
+    {
+      "src": "assets/pwa/phone_demo.png",
+      "sizes": "1080x2400",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "PWA - Phone look a like"
+    }
+  ]
+}
