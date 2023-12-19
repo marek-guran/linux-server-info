@@ -42,12 +42,17 @@ After successful setup, you are able to monitor your server or anything what is 
     <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/460246dc-0809-4ae0-a8d4-4c67d465b068" width="320" height="180" alt="Snímka obrazovky (138)">
 </a>
 
-
 ### System and CPU Detection
-![Snímka obrazovky (148)](https://github.com/marek-guran/linux-server-info/assets/26904790/1c9f1d1c-9295-417b-ae43-1e4798130cb5)
-![Snímka obrazovky (147)](https://github.com/marek-guran/linux-server-info/assets/26904790/594bf198-75ed-4308-9ef9-6b686cb12593)
-![Snímka obrazovky (146)](https://github.com/marek-guran/linux-server-info/assets/26904790/ff00e288-bece-494d-938e-c8b6a4ef6180)
-![Snímka obrazovky (142)](https://github.com/marek-guran/linux-server-info/assets/26904790/fe6fca96-d68d-4a9d-a927-5ed375025b2d)
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/92041285-89ac-463a-8219-6c556595f93a">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/92041285-89ac-463a-8219-6c556595f93a" width="320" height="180" alt="Snímka obrazovky (139)">
+</a>
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/2da91114-7031-493b-8dbb-d562cb07fbb3">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/2da91114-7031-493b-8dbb-d562cb07fbb3" width="320" height="180" alt="Snímka obrazovky (140)">
+</a>
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/2643eb50-d07b-49bf-bbcd-501b710faf5d">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/2643eb50-d07b-49bf-bbcd-501b710faf5d" width="320" height="180" alt="Snímka obrazovky (141)">
+</a>
+
 
 
 # Automatic Installation (web server in docker by default uses port 9002)
