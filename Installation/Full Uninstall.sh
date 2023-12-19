@@ -1,5 +1,7 @@
 #!/bin/bash
 
+current_user=$(whoami)
+
 # Remove the Docker container
 sudo docker stop server-info
 sudo docker rm server-info
