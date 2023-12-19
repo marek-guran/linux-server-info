@@ -18,6 +18,38 @@
 ## Monitor your server with this resources light python script without root priviges.
 After successful setup, you are able to monitor your server or anything what is running Debian based Linux by Android App, which is compatible with all Android 6+ devices including Chromebooks and Android TV. Or use WEB GUi that comes with this repository.
 
+## WEB GUI Images
+
+### Light Mode
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/3cf012c9-7920-49b5-aeea-c0a084a20e62">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/3cf012c9-7920-49b5-aeea-c0a084a20e62" width="320" height="180" alt="Snímka obrazovky (133)">
+</a>
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/81ad57f4-5c4d-475f-a934-e25c0629ce7b">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/81ad57f4-5c4d-475f-a934-e25c0629ce7b" width="320" height="180" alt="Snímka obrazovky (134)">
+</a>
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/2b963a6d-1e21-4c6a-98dd-a413bd5f6efe">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/2b963a6d-1e21-4c6a-98dd-a413bd5f6efe" width="320" height="180" alt="Snímka obrazovky (135)">
+</a>
+
+### Dark Mode
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/4e10cc9b-ed80-451d-a40c-eca54d11de2b">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/4e10cc9b-ed80-451d-a40c-eca54d11de2b" width="320" height="180" alt="Snímka obrazovky (136)">
+</a>
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/7e4caa99-4c33-4a0c-80e7-bbe67b5a93ca">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/7e4caa99-4c33-4a0c-80e7-bbe67b5a93ca" width="320" height="180" alt="Snímka obrazovky (137)">
+</a>
+<a href="https://github.com/marek-guran/linux-server-info/assets/26904790/460246dc-0809-4ae0-a8d4-4c67d465b068">
+    <img src="https://github.com/marek-guran/linux-server-info/assets/26904790/460246dc-0809-4ae0-a8d4-4c67d465b068" width="320" height="180" alt="Snímka obrazovky (138)">
+</a>
+
+
+### System and CPU Detection
+![Snímka obrazovky (148)](https://github.com/marek-guran/linux-server-info/assets/26904790/1c9f1d1c-9295-417b-ae43-1e4798130cb5)
+![Snímka obrazovky (147)](https://github.com/marek-guran/linux-server-info/assets/26904790/594bf198-75ed-4308-9ef9-6b686cb12593)
+![Snímka obrazovky (146)](https://github.com/marek-guran/linux-server-info/assets/26904790/ff00e288-bece-494d-938e-c8b6a4ef6180)
+![Snímka obrazovky (142)](https://github.com/marek-guran/linux-server-info/assets/26904790/fe6fca96-d68d-4a9d-a927-5ed375025b2d)
+
+
 # Automatic Installation (web server in docker by default uses port 9002)
 Full Install
 ```
