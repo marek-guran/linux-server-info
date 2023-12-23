@@ -3,7 +3,7 @@
     "type": "aarch64",
     "architecture": "64bit",
     "architecture_type": "ARM",
-    "hardware": "BCM2835",
+    "hardware": "Amd i5-8520u",
     "brand": "Unknown",
     "usage": "0.8%",
     "speed": "0.60 GHz",
@@ -63,7 +63,7 @@
   },
   "os": {
     "name": "Linux",
-    "distribution": "Ubuntu 23.10",
+    "distribution": "Raspbian / Raspberry Pi OS",
     "kernel_version": "6.5.0-1006-raspi",
     "uptime": "1702586471.00 seconds"
   }

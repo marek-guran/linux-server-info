@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gYS27chfbCxHYck5drVpqOM8TlXG62/bmlgxd78rsrc=",
+  "Hash": "lRedLb66UcqNYHapURv3RFOse6ctL8iqH3aNCBTvaBU=",
   "Source": "Linux Server Info",
   "BasePath": "_content/Linux Server Info",
   "Mode": "Default",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\intel.svg"
+    },
+    {
+      "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\intel-dark-mode.svg",
+      "SourceId": "Linux Server Info",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\",
+      "BasePath": "_content/Linux Server Info",
+      "RelativePath": "assets/intel-dark-mode.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\intel-dark-mode.svg"
     },
     {
       "Identity": "C:\\Users\\skemg\\Desktop\\Linux Server Info\\wwwroot\\assets\\linux.svg",

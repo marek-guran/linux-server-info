@@ -49,6 +49,10 @@
                         {
                             cpuIcon = "amd-dark-mode.svg";
                         }
+                        else if (ViewBag.cpuInfo.EndsWith("intel.svg"))
+                        {
+                            cpuIcon = "intel-dark-mode.svg";
+                        }
                         else
                         {
                             cpuIcon = ViewBag.cpuInfo;
