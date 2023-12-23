@@ -89,9 +89,12 @@ body {
     background-color: #74B2CA;
     border-radius: 25px;
     height: 30px;
-    width: 100%;
-    margin: 5px;
+    width: calc(100% - 10px);
     position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
     display: flex;
     align-items: center;
     white-space: nowrap;
