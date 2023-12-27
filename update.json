@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.10 - WEB GUi",
-    "Description": "Fixed: WEB GUi progress bars style and updated Intel and AMD logos",
+    "Title": "Stable 1.0.10 - Android App",
+    "Description": "Fixed App random crashes and updated libraries, moved app version to 1.0.10 to meet WEB GUi version",
     "Version": "1.0.10"
 }
