@@ -10,7 +10,7 @@ class ApiAddressManager(context: Context) {
         private const val KEY_API_ADDRESS = ""
 
         // Default API address
-        private const val DEFAULT_API_ADDRESS = "http://10.0.1.1:9000/system_info.json"
+        private const val DEFAULT_API_ADDRESS = "http://10.0.1.1:9002/api"
     }
 
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)

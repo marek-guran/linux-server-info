@@ -46,7 +46,6 @@ class SystemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSystemBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
@@ -76,7 +75,7 @@ class SystemFragment : Fragment() {
                 fetchDataAndUpdateViews()
                 handler.postDelayed(this, 1000) // Update every 1 second
             }
-        }, 1000) // Initial delay also set to 1 second
+        }, 500) // Initial delay also set to 500 mili-seconds
     }
 
     private inner class FetchJsonDataTask : AsyncTask<String, Void, JSONObject>() {
@@ -111,44 +110,58 @@ class SystemFragment : Fragment() {
         @SuppressLint("SetTextI18n")
         @Deprecated("Deprecated in Java")
         override fun onPostExecute(jsonObject: JSONObject?) {
-            if (binding != null) {
+            val localBinding = _binding
+            if (localBinding == null || jsonObject == null) {
                 super.onPostExecute(jsonObject)
-                jsonObject?.let {
-                    val os = jsonObject.getJSONObject("os")
+                return
+            }
+
+            with(localBinding) {
+                jsonObject?.let { json ->
+                    // Parse OS information
+                    val os = json.getJSONObject("os")
                     val distribution = os.getString("distribution")
                     val kernel = os.getString("kernel_version")
-                    val cpuName = jsonObject.getJSONObject("cpu").getString("hardware")
-                    val cpuArchitecture = jsonObject.getJSONObject("cpu").getString("architecture")
-                    val cpuArchitectureType =
-                        jsonObject.getJSONObject("cpu").getString("architecture_type")
-                    val cpuType = jsonObject.getJSONObject("cpu").getString("type")
-                    val cpuCores = jsonObject.getJSONObject("cpu").getString("cores")
                     val uptimeInSeconds = os.getString("uptime")
-                    val networkDevices = jsonObject.getJSONObject("network")
 
-                    val distributionText = context?.getString(R2.string.distribution)
-                    val kernelText = context?.getString(R2.string.kernel)
-                    val uptimeText = context?.getString(R2.string.uptime)
-                    val cpuText = context?.getString(R2.string.cpu_sys)
-                    val architectureText = context?.getString(R2.string.architecture)
-                    val typeText = context?.getString(R2.string.type)
-                    val coresText = context?.getString(R2.string.cores)
-                    val networkDevicesText = context?.getString(R2.string.network_devices)
+                    // Parse CPU information
+                    val cpu = json.getJSONObject("cpu")
+                    val coresJson = cpu.getJSONObject("cores")
+                    var coreCount = 0
+                    val keys = coresJson.keys()
+                    val cpuName = cpu.getString("hardware")
+                    val cpuArchitecture = cpu.getString("architecture")
+                    val cpuArchitectureType = cpu.getString("architecture_type")
+                    val cpuType = cpu.getString("type")
+                    val cpuCores = cpu.getString("cores")
 
+                    // Parse network information
+                    val networkJson = json.getJSONObject("network")
+                    var networkDeviceCount = 0
+                    val networkkeys = networkJson.keys()
+
+                    while (networkkeys.hasNext()) {
+                        networkkeys.next() // Move to the next key
+                        networkDeviceCount++
+                    }
+
+                    val networkDevicesText = getString(R2.string.network_devices)
+                    val networkDevicesDisplay = "$networkDevicesText $networkDeviceCount"
+                    NetworkDevices.text = networkDevicesDisplay
+
+                    // Update UI components with the parsed data
                     if (!TextUtils.isEmpty(distribution)) {
-                        binding!!.Distribution?.text = "$distributionText $distribution"
+                        Distribution.text = "${getString(R2.string.distribution)} $distribution"
                     }
                     if (!TextUtils.isEmpty(kernel)) {
-                        binding.Kernel.text = "$kernelText $kernel"
+                        Kernel.text = "${getString(R2.string.kernel)} $kernel"
                     }
                     if (!TextUtils.isEmpty(uptimeInSeconds)) {
                         val uptimeSplit = uptimeInSeconds.split(".")
                         val uptimeInSecondsInt = uptimeSplit[0].toLong()
-                        val uptimeFraction =
-                            uptimeSplit[1].substring(0, 2).toLong() // Extract seconds as well
+                        val uptimeFraction = if (uptimeSplit.size > 1) uptimeSplit[1].substring(0, 2).toLong() else 0L
 
-                        val timestamp =
-                            uptimeInSecondsInt * 1000 + uptimeFraction // Convert to milliseconds
+                        val timestamp = uptimeInSecondsInt * 1000 + uptimeFraction // Convert to milliseconds
                         val currentTimeMillis = System.currentTimeMillis()
                         val uptimeMillis = currentTimeMillis - timestamp
 
@@ -157,48 +170,27 @@ class SystemFragment : Fragment() {
                         val minutes = TimeUnit.MILLISECONDS.toMinutes(uptimeMillis) % 60
                         val seconds = TimeUnit.MILLISECONDS.toSeconds(uptimeMillis) % 60
 
-                        val formattedUptime =
-                            String.format("%02d:%02d:%02d:%02d", days, hours, minutes, seconds)
-                        binding.Uptime.text = "$uptimeText $formattedUptime"
+                        val formattedUptime = String.format("%02d:%02d:%02d:%02d", days, hours, minutes, seconds)
+                        Uptime.text = "${getString(R2.string.uptime)} $formattedUptime"
                     }
                     if (!TextUtils.isEmpty(cpuName)) {
-                        binding.CpuName.text = "$cpuText $cpuName"
+                        CpuName.text = "${getString(R2.string.cpu_sys)} $cpuName"
                     }
                     if (!TextUtils.isEmpty(cpuArchitecture)) {
-                        binding.CpuArchitecture.text =
-                            "$architectureText $cpuArchitectureType - $cpuArchitecture"
+                        CpuArchitecture.text = "${getString(R2.string.architecture)} $cpuArchitectureType - $cpuArchitecture"
                     }
                     if (!TextUtils.isEmpty(cpuType)) {
-                        binding.CpuType.text = "$typeText $cpuType"
+                        CpuType.text = "${getString(R2.string.type)} $cpuType"
                     }
-                    if (!TextUtils.isEmpty(cpuCores)) {
-                        val coresJson = jsonObject.getJSONObject("cpu").getJSONObject("cores")
-                        var coreCount = 0
-                        val keys = coresJson.keys()
-
-                        while (keys.hasNext()) {
-                            val key = keys.next()
-                            if (key.startsWith("core_")) {
-                                coreCount++
-                            }
+                    while (keys.hasNext()) {
+                        val key = keys.next()
+                        if (key.startsWith("core_")) {
+                            coreCount++
                         }
-
-                        val cpuCores = "$coresText $coreCount"
-                        binding.CpuCores.text = cpuCores
                     }
-                    if (!TextUtils.isEmpty(networkDevices.toString())) {
-                        val networkJson = jsonObject.getJSONObject("network")
-                        var networkDeviceCount = 0
-                        val keys = networkJson.keys()
 
-                        while (keys.hasNext()) {
-                            keys.next() // Move to the next key
-                            networkDeviceCount++
-                        }
+                    CpuCores.text = "${getString(R2.string.cores)} $coreCount"
 
-                        val networkDevices = "$networkDevicesText $networkDeviceCount"
-                        binding.NetworkDevices.text = networkDevices
-                    }
                     val distributionImageResource = when {
                         distribution.toLowerCase(Locale.ROOT)
                             .contains("ubuntu") -> R.drawable.sys_ubuntu
@@ -226,6 +218,7 @@ class SystemFragment : Fragment() {
                     binding.cpuImage.setImageResource(cpuImageResource)
                 }
             }
+
         }
     }
 }

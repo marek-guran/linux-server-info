@@ -1,8 +1,6 @@
 package com.marekguran.serverinfo.ui.settings
 
 import android.content.Intent
-import android.content.pm.PackageInfo
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
@@ -12,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -58,8 +55,7 @@ class SettingsFragment : Fragment() {
 
         darkModeSwitch?.setOnCheckedChangeListener { _, isChecked ->
             // Convert isChecked (true or false) to a boolean
-            val isEnabled = isChecked
-            darkMode.setDarkModeEnabled(isEnabled)
+            darkMode.setDarkModeEnabled(isChecked)
             requireActivity().recreate()
         }
 

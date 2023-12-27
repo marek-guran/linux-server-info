@@ -1,5 +1,6 @@
 package com.marekguran.serverinfo.ui.hardware
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.os.AsyncTask
@@ -209,7 +210,7 @@ class HardwareFragment : Fragment() {
                 val networkNameTextView = TextView(context)
                 networkNameTextView.text = name
                 networkNameTextView.setTextColor(Color.parseColor("#f2f2fb"))
-                networkNameTextView.setTextSize(16F)
+                networkNameTextView.textSize = 16F
 
                 val networkSpeedTextView = TextView(context)
                 val runningLabel = context.getString(R2.string.running)
@@ -218,7 +219,7 @@ class HardwareFragment : Fragment() {
                 networkSpeedTextView.text = "$runningLabel $isUp\n$speedLabel $speed"
                 networkSpeedTextView.setTextColor(Color.parseColor("#f2f2fb"))
                 networkSpeedTextView.setPadding(0, 0, 0, 10)
-                networkSpeedTextView.setTextSize(16F)
+                networkSpeedTextView.textSize = 16F
 
                 networkContainer.addView(networkNameTextView)
                 networkContainer.addView(networkSpeedTextView)
@@ -246,7 +247,7 @@ class HardwareFragment : Fragment() {
                 storageNameTextView.text = "$name \n$mounted $mountedStorage\n" +
                         "$fs $fstypeStorage"
                 storageNameTextView.setTextColor(Color.parseColor("#f2f2fb"))
-                storageNameTextView.setTextSize(16F)
+                storageNameTextView.textSize = 16F
                 storageNameTextView.setPadding(0, 0, 0, 5)
 
                 val progressBar = ProgressBar(
@@ -271,7 +272,7 @@ class HardwareFragment : Fragment() {
                 val progressBarTextView = TextView(context)
                 progressBarTextView.text = "$storage1 $usedStorage $storage2 $totalStorage"
                 progressBarTextView.setTextColor(Color.parseColor("#f2f2fb"))
-                progressBarTextView.setTextSize(16F)
+                progressBarTextView.textSize = 16F
                 progressBarTextView.setPadding(0, 5, 0, 10)
 
                 storageContainer.addView(storageNameTextView)

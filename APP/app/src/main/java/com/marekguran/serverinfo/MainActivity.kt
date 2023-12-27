@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                 fetchDataAndUpdateIcon(navView)
                 handler.postDelayed(this, 5000) // 5000 milliseconds = 5 seconds
             }
-        }, 5000) // Initial delay also set to 5 seconds
+        }, 5000) // Initial delay set to 5 seconds
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
