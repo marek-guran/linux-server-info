@@ -71,10 +71,16 @@ while True:
     for line in lines:
         parts = line.split()
         name = parts[0].replace("├─", "").replace("└─", "")  # Remove symbols
+        size = parts[1] if len(parts) > 1 else "Unknown"  # Define size here
         if len(parts) >= 4 and parts[2] not in ("loop", "rom"):  # Exclude loop and rom devices
+            # Modify size string
+            if size != "Unknown":
+                size_value = size[:-1]  # Get all but the last character
+                size_unit = size[-1]  # Get the last character
+                size = f"{size_value} {size_unit.upper()}B"
             device_info = {
                 "name": name,
-                "size": parts[1] if len(parts) > 1 else "Unknown",
+                "size": size,  # Use modified size here
                 "type": parts[2] if len(parts) > 2 else "Unknown",
                 "mountpoint": parts[3] if len(parts) > 3 else "Unknown",
                 "fstype": parts[4] if len(parts) > 4 else "Unknown"
@@ -82,8 +88,8 @@ while True:
             if device_info["mountpoint"] != "N/A" and device_info["fstype"] != "N/A":
                 try:
                     usage = psutil.disk_usage(device_info["mountpoint"])
-                    device_info["used"] = f"{usage.used / (1024 ** 3):.2f} GB"
-                    device_info["free"] = f"{usage.free / (1024 ** 3):.2f} GB"
+                    device_info["used"] = f"{usage.used / (1000 ** 3):.2f} GB"
+                    device_info["free"] = f"{usage.free / (1000 ** 3):.2f} GB"
                     device_info["usage_percent"] = f"{usage.percent}%"
                 except FileNotFoundError:
                     device_info["used"] = "N/A"
