@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.10 - Android App",
-    "Description": "Fixed App random crashes and updated libraries, moved app version to 1.0.10 to meet WEB GUi version",
-    "Version": "1.0.10"
+    "Title": "Stable 1.0.11 - Python Script",
+    "Description": "Fixed wrong storage usage reporting and added letter B to end of total size of partitions.",
+    "Version": "1.0.11"
 }
