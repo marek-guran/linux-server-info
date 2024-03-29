@@ -10,8 +10,8 @@ sudo apt-get install -y python3 python3-pip lsb-release util-linux ifstat git
 # Download files and create dir
 mkdir /home/$current_user/linux-server-info
 cd /home/$current_user/linux-server-info
-wget https://raw.githubusercontent.com/marek-guran/linux-server-info/web-gui/server-info.py
-wget https://raw.githubusercontent.com/marek-guran/linux-server-info/web-gui/requirements.txt
+wget https://raw.githubusercontent.com/marek-guran/linux-server-info/ram-version/server-info.py
+wget https://raw.githubusercontent.com/marek-guran/linux-server-info/ram-version/requirements.txt
 sudo chmod -R 777 /home/$current_user/linux-server-info
 
 # Install requirements inside linux-server-info directory
@@ -21,7 +21,7 @@ sudo pip3 install -r requirements.txt || { echo "Error: Failed to install Python
 sudo apt-get install docker.io -y
 
 # Run Docker container with restart always, linking to /home/user/linux-server-info/
-sudo docker run -d --restart=always -p 9002:8080 -v /home/$current_user/linux-server-info:/app/wwwroot/api --name server-info emgi2/linux-server-info
+sudo docker run -d --restart=always -p 9002:8080 -v /mnt/ramdisk:/app/wwwroot/api --name server-info emgi2/linux-server-info
 
 echo "WEB GUi installed and running on port 9002."
 
@@ -33,7 +33,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/home/$current_user/linux-server-info
-ExecStart=/usr/bin/python3 /home/$current_user/linux-server-info/server-info.py
+ExecStart=/usr/bin/sudo /usr/bin/python3 /home/$current_user/linux-server-info/server-info.py
 Restart=on-failure
 RestartSec=5
 

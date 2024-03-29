@@ -5,6 +5,15 @@ import os
 import json
 import time
 
+# Define the path to the RAM disk
+RAM_DISK_PATH = "/mnt/ramdisk"
+JSON_FILE_PATH = os.path.join(RAM_DISK_PATH, "system_info.json")
+
+# Create RAM disk if it doesn't exist
+if not os.path.exists(RAM_DISK_PATH):
+    os.makedirs(RAM_DISK_PATH)
+    subprocess.run(["mount", "-t", "tmpfs", "-o", "size=1M", "tmpfs", RAM_DISK_PATH])
+
 while True:
     system_info = {}
 
@@ -170,7 +179,7 @@ while True:
     }
 
     # Save the JSON data to a file
-    with open("system_info.json", "w") as json_file:
+    with open(JSON_FILE_PATH, "w") as json_file:
         json.dump(system_info, json_file, indent=4)
 
     # Sleep for 15 seconds before the next iteration
