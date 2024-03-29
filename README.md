@@ -18,6 +18,8 @@
 ## Monitor your server with this resources light python script without root priviges.
 After successful setup, you are able to monitor your server or anything what is running Debian based Linux by Android App, which is compatible with all Android 6+ devices including Chromebooks and Android TV. Or use WEB GUi that comes with this repository.
 
+#### If you want to save JSON file in RAM, choose second branch
+
 ## WEB GUI Images
 
 ### Light Mode

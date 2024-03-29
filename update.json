@@ -1,5 +1,5 @@
 {
-    "Title": "Stable 1.0.11 - Python Script",
-    "Description": "Fixed wrong storage usage reporting and added letter B to end of total size of partitions.",
-    "Version": "1.0.11"
+    "Title": "Stable 1.0.12 - Needs attention",
+    "Description": "Now you have 2 options: save inside of RAM the JSON file created by python script (you have to execute uninstall.sh and then install.sh again but from new branch called ram-version), if you do not wish to use the RAM version, nothing changes for you and you dont have to do anything.",
+    "Version": "1.0.12"
 }
