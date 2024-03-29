@@ -58,27 +58,27 @@ After successful setup, you are able to monitor your server or anything what is 
 # Automatic Installation (web server in docker by default uses port 9002)
 Full Install
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Installation/Full%20Install.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/ram-version/Installation/Full%20Install.sh | bash
 ```
 
 Dependencies + Service
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Installation/Dependencies%20%2B%20Service.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/ram-version/Installation/Dependencies%20%2B%20Service.sh | bash
 ```
 
 Dependencies Only
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Installation/Dependencies%20Only.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/ram-version/Installation/Dependencies%20Only.sh | bash
 ```
 
 Full Uninstall
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Installation/Full%20Uninstall.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/ram-version/Installation/Full%20Uninstall.sh | bash
 ```
 
 Uninstall Service
 ```
-curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/main/Installation/Uninstall%20Service.sh | bash
+curl -sSL https://raw.githubusercontent.com/marek-guran/linux-server-info/ram-version/Installation/Uninstall%20Service.sh | bash
 ```
 | Option             | Docker + WEB Gui | Dependencies | Service | Requirements.txt |
 |--------------------|--------|--------------|---------|------------------|
